@@ -4,7 +4,7 @@
 Single repository containing all website components, styles, and content with clean separation of concerns. This approach supports our efficient development workflow and simplifies deployment processes.
 
 ## Service Architecture
-JAMstack architecture with pre-built static files and minimal dynamic elements. Static site generation approach using modern JavaScript framework (React/Next.js preferred). No backend database required - all content will be statically generated for optimal performance and simplicity.
+Hybrid JAMstack architecture with pre-built static files and serverless capability. Static site generation approach using Next.js App Router with hybrid deployment supporting future API routes. No backend database required for current functionality - all content statically generated for optimal performance while maintaining serverless flexibility for future enhancements.
 
 ## Testing Requirements
 Unit testing for core components and integration testing for build process. Manual testing for accessibility compliance and cross-browser compatibility. Automated performance testing to ensure sub-2-second load times and 95+ Lighthouse scores. Visual regression testing to ensure design precision is maintained.

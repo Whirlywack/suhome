@@ -4,7 +4,7 @@
 
 | Category | Technology | Version | Purpose | Rationale |
 |----------|------------|---------|---------|-----------|
-| Framework | Next.js | 14.2.25 | Secure static site generation | Critical CVE-2025-29927 security fix, App Router optimization |
+| Framework | Next.js | 14.2.25 | Hybrid static + serverless deployment | Critical CVE-2025-29927 security fix, App Router optimization, future API capability |
 | UI Library | React | 18.3.1 | Component-based visual architecture | Stable compatibility, proven reliability for 3-page structure |
 | Routing | Next.js App Router | 14.2.25 | Simple 3-page routing | Built-in optimization, minimal complexity |
 | Build Tool | Next.js/Turbopack | 14.2.25 | Optimized secure build | Security patches, efficient development workflow |
