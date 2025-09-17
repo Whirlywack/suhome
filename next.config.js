@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Removed output: 'export' for Vercel compatibility and future API support
   trailingSlash: true,
-  skipTrailingSlashRedirect: true,
   images: {
     unoptimized: true
   },
