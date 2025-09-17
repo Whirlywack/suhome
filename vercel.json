@@ -16,9 +16,15 @@
   ],
   "redirects": [
     {
-      "source": "https://www.superoptimised.com/(.*)",
+      "source": "/(.*)",
       "destination": "https://superoptimised.com/$1",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.superoptimised.com"
+        }
+      ]
     }
   ]
 }
