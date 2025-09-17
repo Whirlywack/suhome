@@ -6,7 +6,11 @@ export default function Home() {
     <main className="min-h-screen bg-off-white">
       <div className="architectural-container">
         <ErrorBoundary level="section" componentName="Hero">
-          <Hero />
+          <Hero
+            title="Superoptimised"
+            subtitle={<span className="text-primary">Coming Soon</span>}
+            description="Beautiful digital experiences with architectural precision and mathematical design are on the way."
+          />
         </ErrorBoundary>
       </div>
     </main>
