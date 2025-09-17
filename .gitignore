@@ -34,3 +34,38 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# BMad Method - AI Development Workflow
+.ai/
+*.ai-session
+.claude/
+.cursor/
+
+# BMad Method - Temporary & Debug Files
+debug-log.md
+.bmad-temp/
+*.bmad-temp
+.dev-notes/
+
+# BMad Method - Local Development Only
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# BMad Method - Sensitive Data Protection
+.env
+.env.production
+.env.staging
+secrets.json
+*.key
+*.pem
+*.p12
+
+# BMad Method - Build Artifacts
+dist/
+build/
+.cache/
+temp/
+tmp/
