@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brutalist Color System */
+  --color-off-black: #1a1a1a;
+  --color-off-white: #fafafa;
+  --color-warm-gray: #6b7280;
+  --color-light-gray: #e5e7eb;
+  --color-primary: #3b82f6;
+
+  /* Mathematical Spacing System (8px base) */
+  --spacing-0-5: 0.25rem;   /* 4px */
+  --spacing-1: 0.5rem;      /* 8px */
+  --spacing-2: 1rem;        /* 16px */
+  --spacing-3: 1.5rem;      /* 24px */
+  --spacing-4: 2rem;        /* 32px */
+  --spacing-5: 2.5rem;      /* 40px */
+  --spacing-6: 3rem;        /* 48px */
+  --spacing-8: 4rem;        /* 64px */
+  --spacing-10: 5rem;       /* 80px */
+  --spacing-12: 6rem;       /* 96px */
+
+  /* Typography Scale */
+  --font-size-mega: 4rem;
+  --font-size-hero: 3rem;
+  --font-size-display: 2rem;
+  --font-size-base: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-off-white text-off-black;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-lexend;
+  }
+
+  p, span, div {
+    @apply font-inter;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-mega {
+    font-size: var(--font-size-mega);
+    line-height: 1.1;
+  }
+
+  .text-hero {
+    font-size: var(--font-size-hero);
+    line-height: 1.1;
+  }
+
+  .text-display {
+    font-size: var(--font-size-display);
+    line-height: 1.2;
+  }
+
+  .text-base {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  .font-lexend {
+    font-family: var(--font-lexend), system-ui, sans-serif;
+  }
+}
