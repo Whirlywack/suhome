@@ -4,12 +4,15 @@ import { Heading, Text } from '@/components/ui/typography'
 import { Button } from '@/components/ui/button'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import ErrorBoundary from '@/components/ui/ErrorBoundary'
 
 // Design system showcase page for component documentation
 export default function DesignSystem() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <ErrorBoundary level="section" componentName="Navigation">
+        <Header />
+      </ErrorBoundary>
 
       <main className="container py-12 space-y-16">
         {/* Page Header */}

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Lexend } from 'next/font/google'
 import './globals.css'
+import ErrorBoundary from '@/components/ui/ErrorBoundary'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,7 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${lexend.variable}`}>
-      <body className="font-inter antialiased">{children}</body>
+      <body className="font-inter antialiased">
+        <ErrorBoundary level="root" componentName="Application">
+          {children}
+        </ErrorBoundary>
+      </body>
     </html>
   )
 }
