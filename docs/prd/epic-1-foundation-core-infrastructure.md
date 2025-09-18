@@ -71,3 +71,33 @@ so that content can be managed without code changes and components remain reusab
 4. Props support rich text formatting while maintaining security
 5. Component maintains brutalist design system consistency regardless of content length
 6. Configuration system is documented with usage examples for future development
+
+## Story 1.5.5: Dependencies & Prerequisites
+
+As a developer,
+I want all required dependencies installed and component skeletons created,
+so that Stories 1.6 and 2.1 can proceed without import errors or missing dependencies.
+
+### Acceptance Criteria
+1. Required npm packages installed (clsx for className merging)
+2. Component skeleton files created (about-story, contact-email, theme-toggle)
+3. PWA asset files created (manifest.webmanifest, icon files)
+4. Utils.ts verified for clsx pattern compatibility
+5. Build verification (npm run build/dev work without errors)
+6. Import path verification (all expected imports resolve correctly)
+
+## Story 1.6: Pre-Implementation Cleanup & Design System Alignment
+
+As a developer,
+I want the codebase cleaned and design system aligned with HTML mockup,
+so that Story 2.1 implementation can proceed without conflicts or inconsistencies.
+
+### Acceptance Criteria
+1. Footer component removed from codebase and layout imports
+2. Design system demo page deleted (app/design-system/)
+3. Color tokens updated to match HTML mockup exactly
+4. Layout.tsx prepared for Header integration and theme system
+5. Homepage placeholder cleared and ready for 6-section implementation
+6. Perfect Fifth spacing verified and documented as compatible
+7. No broken imports or references after cleanup
+8. All existing functionality preserved (error boundaries, fonts, etc.)

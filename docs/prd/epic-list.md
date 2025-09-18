@@ -3,8 +3,5 @@
 **Epic 1: Foundation & Core Infrastructure**
 Establish project setup, development environment, brutalist design system implementation with architectural precision, and deploy a basic canary page with full CI/CD pipeline.
 
-**Epic 2: Homepage & Core Content**
-Create the main homepage with company name and simple mission statement, implementing the full brutalist design system with beautiful typography and perfect spacing.
-
-**Epic 3: About & Contact Pages**
-Develop the About page presenting passion projects and innovation focus, plus the Contact page with friendly content and beautiful email presentation, completing the authentic 3-page structure.
+**Epic 2: One-Page Website**
+Create the complete one-pager website with all sectioned content (Hero, Studio Story, AI Notes, Principles, About, Contact), one-pager navigation behavior, and performance optimization.

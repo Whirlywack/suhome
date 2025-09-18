@@ -1,36 +1,39 @@
-# Epic 2: Homepage & Core Content
+# Epic 2: One-Page Website
 
-Create the complete homepage featuring simple company name and mission statement "We create AI products with beautiful UI/UX", plus primary navigation, implementing the full brutalist design system with perfect spacing and beautiful typography.
+Create the complete one-pager website with all sectioned content including Hero, Studio Story, AI Notes, Principles, About, and Contact sections, plus one-pager navigation behavior with mobile anchor scrolling.
 
-## Story 2.1: Homepage Content
-
-As a visitor,
-I want to understand what Superoptimised does,
-so that I can learn about the company's authentic mission.
-
-### Acceptance Criteria
-1. Homepage prominently displays company name "Superoptimised"
-2. Clear statement: "We create AI products with beautiful UI/UX"
-3. Content presented simply and authentically without marketing language
-4. NO call-to-action buttons or conversion elements
-5. Visual design implements brutalist aesthetic with beautiful typography and perfect spacing
-6. Section is fully responsive and loads in under 1 second
-
-## Story 2.2: Navigation System
+## Story 2.1: One-Page Website Content
 
 As a visitor,
-I want clean, intuitive navigation between pages,
-so that I can easily explore the company information.
+I want to understand what Superoptimised does and their philosophy,
+so that I can learn about the company through a complete one-page experience.
 
 ### Acceptance Criteria
-1. Navigation header displays on all pages with consistent styling
-2. Clear links to Homepage, About, and Contact pages
-3. Current page indicator shows user location
-4. Mobile navigation is accessible and user-friendly with perfect spacing
-5. Navigation implements brutalist design system with architectural precision
-6. NO services or portfolio links anywhere in navigation
+1. Hero section with company name and indie studio mission
+2. Studio Story section explaining philosophy and process
+3. AI Notes section with thoughtful perspective on AI
+4. Principles section with design values
+5. About section with team and focus details
+6. Contact section with email presentation
+7. All content matches mockup text and sectioned layout
+8. Visual design implements sophisticated typography and geometric elements
+9. Fully responsive with proper section spacing
 
-## Story 2.3: Homepage Performance Validation
+## Story 2.2: One-Pager Navigation System
+
+As a visitor,
+I want smooth navigation within the one-page experience,
+so that I can easily jump to different sections.
+
+### Acceptance Criteria
+1. Fixed navigation header with backdrop blur effect
+2. Desktop: Traditional links to standalone pages (/about, /contact)
+3. Mobile: Anchor links to sections (#about, #contact) for one-pager behavior
+4. Theme toggle button with sun/moon icons
+5. Smooth scrolling to sections with proper offset for fixed header
+6. Navigation implements sophisticated styling from mockup
+
+## Story 2.3: One-Page Performance Validation
 
 As a stakeholder,
 I want the homepage to meet all performance and accessibility standards,

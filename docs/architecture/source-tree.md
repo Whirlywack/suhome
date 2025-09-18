@@ -1,7 +1,7 @@
 # Project Structure
 
 ```plaintext
-superoptimised-web/
+superoptimised/
 ├── app/                              # Next.js App Router - Simple 3-Page Structure
 │   ├── about/
 │   │   └── page.tsx                  # About: passion projects & innovation
