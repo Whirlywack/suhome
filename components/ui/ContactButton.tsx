@@ -64,56 +64,38 @@ export const ContactButton = ({ className = '' }: ContactButtonProps) => {
 
   // Trigger animation when contact section becomes visible
   useEffect(() => {
-    let scrollListener: (() => void) | null = null
+    let hasTriggered = false
 
-    const handleContactNavigation = () => {
-      // Set up scroll listener to trigger animation when we reach contact section
-      const handleScroll = () => {
-        const contactSection = document.getElementById('contact')
-        if (contactSection) {
-          const rect = contactSection.getBoundingClientRect()
-          const isVisible = rect.top <= window.innerHeight * 0.7 && rect.bottom >= 0
+    const handleScroll = () => {
+      if (hasTriggered) return
 
-          if (isVisible) {
-            // Add small delay so eyes can focus on the button first
-            setTimeout(() => {
-              scrambleText()
-            }, 200) // 0.2 seconds delay
+      const contactSection = document.getElementById('contact')
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect()
+        const isVisible = rect.top <= window.innerHeight * 0.7 && rect.bottom >= 0
 
-            // Clean up scroll listener
-            if (scrollListener) {
-              window.removeEventListener('scroll', scrollListener)
-              scrollListener = null
-            }
-          }
+        if (isVisible) {
+          hasTriggered = true
+
+          // Add small delay so eyes can focus on the button first
+          setTimeout(() => {
+            scrambleText()
+          }, 200) // 0.2 seconds delay
+
+          // Clean up scroll listener
+          window.removeEventListener('scroll', handleScroll)
         }
       }
-
-      scrollListener = handleScroll
-      // Add scroll listener immediately
-      window.addEventListener('scroll', handleScroll, { passive: true })
-
-      // Fallback: trigger animation after expected scroll duration if scroll detection fails
-      setTimeout(() => {
-        if (scrollListener) {
-          // If listener still exists, scroll detection didn't work, so trigger animation manually
-          scrambleText()
-
-          // Clean up listener
-          window.removeEventListener('scroll', scrollListener)
-          scrollListener = null
-        }
-      }, 1000) // Fallback after 1 second
     }
 
-    window.addEventListener('contactNavClicked', handleContactNavigation)
+    // Add scroll listener immediately
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    // Also check immediately in case section is already visible
+    handleScroll()
 
     return () => {
-      window.removeEventListener('contactNavClicked', handleContactNavigation)
-      // Clean up any remaining scroll listener
-      if (scrollListener) {
-        window.removeEventListener('scroll', scrollListener)
-      }
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
