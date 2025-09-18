@@ -1,25 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import ErrorBoundary from '@/components/ui/ErrorBoundary'
+import ContactButton from '@/components/ui/ContactButton'
 
 export default function Home() {
-  const [animateContact, setAnimateContact] = useState(false)
-
-  // Listen for contact navigation clicks
-  useEffect(() => {
-    const handleContactNavigation = () => {
-      setAnimateContact(true)
-      // Stop animation after 3 seconds
-      setTimeout(() => setAnimateContact(false), 3000)
-    }
-
-    // Listen for contact navigation clicks from header
-    window.addEventListener('contactNavClicked', handleContactNavigation)
-
-    return () => window.removeEventListener('contactNavClicked', handleContactNavigation)
-  }, [])
   return (
     <>
       <main id="main-content" className="min-h-screen bg-background">
@@ -436,39 +421,7 @@ export default function Home() {
                     No forms, no funnels. Just an email.
                   </p>
                   <div style={{ marginTop: '1.5rem' }}>
-                    <motion.a
-                      href="mailto:connect@superoptimised.com"
-                      className="inline-block font-mono text-background hover:text-background/80 hover:bg-background/10 transition-all duration-200 relative overflow-hidden"
-                      style={{
-                        fontSize: '1.125rem',
-                        fontWeight: '500',
-                        textDecoration: 'none',
-                        padding: '1rem 1.5rem',
-                        border: '1px solid hsla(var(--background) / 0.3)'
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      connect@superoptimised.com
-
-                      {/* Metallic sheen overlay - only shows when triggered */}
-                      {animateContact && (
-                        <motion.div
-                          className="absolute inset-0 pointer-events-none"
-                          style={{
-                            background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%)',
-                            backgroundSize: '200% 100%'
-                          }}
-                          initial={{ backgroundPosition: '-200% 0%' }}
-                          animate={{ backgroundPosition: '200% 0%' }}
-                          transition={{
-                            duration: 1.5,
-                            ease: "easeInOut",
-                            repeat: 2,
-                            repeatType: "loop"
-                          }}
-                        />
-                      )}
-                    </motion.a>
+                    <ContactButton />
                   </div>
                 </ErrorBoundary>
               </div>
