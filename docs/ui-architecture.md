@@ -102,16 +102,16 @@ superoptimised-web/
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-// Visual Principle: Every component follows systematic typing for beautiful results
+// Design System: Every component follows Perfect Fifth mathematical progression
 interface ComponentNameProps {
   children?: React.ReactNode;
   className?: string;
   variant?: 'default' | 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
-  // Mathematical precision in prop definitions for perfect spacing
+  // Perfect Fifth mathematical precision in prop definitions
 }
 
-// Beautiful Pattern: Consistent component structure for visual excellence
+// Design System Pattern: Consistent component structure using new system
 export const ComponentName = React.forwardRef<
   HTMLDivElement,
   ComponentNameProps
@@ -120,21 +120,21 @@ export const ComponentName = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        // Base visual styles - beautiful foundation
+        // Base styles using HSL design tokens
         'relative',
-        // Mathematical spacing using 8px base unit system for perfect alignment
-        'p-4', // 32px padding - visual precision
-        // Variant styles - beautiful visual organization
+        // Perfect Fifth spacing progression (see design-system-architecture.md)
+        'p-lg', // 1rem - Perfect Fifth base unit
+        // HSL design token variants
         {
           'bg-primary text-primary-foreground': variant === 'primary',
           'bg-secondary text-secondary-foreground': variant === 'secondary',
           'bg-background text-foreground': variant === 'default',
         },
-        // Size variations - proportional relationships for visual harmony
+        // Perfect Fifth size progression
         {
-          'text-sm min-h-[32px]': size === 'sm',  // 8px * 4 = mathematical precision
-          'text-base min-h-[40px]': size === 'md', // 8px * 5 = systematic sizing
-          'text-lg min-h-[48px]': size === 'lg',   // 8px * 6 = perfect spacing
+          'text-sm p-sm': size === 'sm',   // Perfect Fifth: sm scale
+          'text-base p-lg': size === 'md',  // Perfect Fifth: base scale
+          'text-lg p-xl': size === 'lg',    // Perfect Fifth: xl scale
         },
         className
       )}

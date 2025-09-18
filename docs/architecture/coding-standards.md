@@ -43,5 +43,58 @@
 ### Essential Commands - Beautiful Workflow
 
 ```bash
-# dev commands go here
+# Development server - secure and optimized
+npm run dev              # Start development with hot reload
+npm run build           # Production build with optimization
+npm run start           # Start production server
+npm run lint            # Code quality check with ESLint
+npm run type-check      # TypeScript validation
+
+# Deployment
+vercel                  # Deploy to preview environment
+vercel --prod          # Deploy to production
+
+# Quality assurance
+npm run format         # Code formatting with Prettier
+npm run analyze        # Bundle size analysis
+```
+
+### Key Import Patterns - Clean Organization
+
+```typescript
+// Component imports - following design system
+import { Button } from '@/components/ui/button';
+import { Heading, Text } from '@/components/ui/typography';
+import { HeroSection } from '@/components/sections/hero';
+
+// Utility imports - minimal helpers
+import { cn } from '@/lib/utils';
+import { env } from '@/lib/env';
+
+// Animation imports - Framer Motion for visual excellence
+import { motion, useAnimation, useInView } from 'framer-motion';
+
+// Type imports - design system compliance
+import type { ComponentProps } from '@/types/components';
+```
+
+### Design System Compliance Examples
+
+```typescript
+// Perfect Fifth spacing usage
+<div className="space-y-xl p-lg">          {/* 1.5rem, 1rem */}
+  <div className="mb-2xl">                 {/* 2.25rem */}
+    <Heading variant="hero">Title</Heading>
+  </div>
+  <div className="grid gap-md">            {/* 0.75rem */}
+    <Text variant="large">Content</Text>
+  </div>
+</div>
+
+// HSL design tokens only
+<div className="bg-background text-foreground border-border">
+  <div className="bg-primary text-primary-foreground">
+    Interactive element
+  </div>
+</div>
 ```

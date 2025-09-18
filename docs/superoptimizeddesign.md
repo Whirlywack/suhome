@@ -1,17 +1,28 @@
 # SuperOptimised Design System
 
-## ⚠️ **IMPORTANT: SYSTEM UPDATED**
+## ⚠️ **SYSTEM COMPLETELY REPLACED**
 
-**This document has been superseded by the new mathematically perfect design system.**
+**This entire design system has been superseded by the new mathematically perfect brutalist design system.**
 
-👉 **New authoritative source**: [`/design-system-architecture.md`](../design-system-architecture.md)
+🚨 **DO NOT USE THIS DOCUMENTATION** - It contains outdated specifications that conflict with the current system.
 
-The new system features:
-- **Perfect Fifth mathematical progression** (1.5x ratio scaling)
-- **Multi-screen optimization** (7 responsive breakpoints: 16px→22px)
-- **HSL design tokens only** (no direct colors)
-- **Reading-width optimized containers**
-- **Accessibility-first approach** (respects user preferences)
+👉 **NEW AUTHORITATIVE SOURCE**: [`/design-system-architecture.md`](../design-system-architecture.md)
+
+### Key Changes in New System:
+- **Perfect Fifth mathematical progression** replaces arbitrary spacing values
+- **Multi-screen responsive root font scaling** (16px→22px across 7 breakpoints)
+- **HSL design tokens only** - all direct colors removed
+- **Reading-optimized containers** - mathematically determined widths
+- **Component-based styling** - no CSS utility classes
+- **Accessibility-first** - respects user browser preferences
+
+### Migration Required:
+- ❌ Old spacing: `'18': '4.5rem'`, `'22': '5.5rem'`
+- ✅ New spacing: Perfect Fifth progression `xs: 0.25rem` → `6xl: 11.25rem`
+- ❌ Old breakpoints: Fixed pixels `'xs': '475px'`
+- ✅ New breakpoints: Rem-based `'mobile-lg': '26.75rem'`
+- ❌ Old typography: `clamp(4rem, 8vw, 7.5rem)`
+- ✅ New typography: Mathematical Perfect Fifth + Golden Ratio scaling
 
 ---
 
