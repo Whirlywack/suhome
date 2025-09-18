@@ -13,12 +13,13 @@ export default function Home() {
           <div className="container">
             <ErrorBoundary level="section" componentName="Hero">
               <h1
-                className="relative mb-6 hero-title"
+                className="relative hero-title"
                 style={{
                   fontSize: '8rem',
                   fontWeight: '200',
                   lineHeight: '0.85',
-                  letterSpacing: '-0.05em'
+                  letterSpacing: '-0.05em',
+                  marginBottom: '2.5rem'
                 }}
               >
                 Superoptimised
@@ -29,7 +30,7 @@ export default function Home() {
                   fontSize: '1.25rem',
                   lineHeight: '1.4',
                   color: 'hsl(var(--muted-foreground))',
-                  maxWidth: '40rem',
+                  maxWidth: '42rem',
                   fontWeight: '300'
                 }}
               >
