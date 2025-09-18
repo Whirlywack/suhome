@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Heading } from '@/components/ui/typography'
 import { SITE_CONFIG } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import ThemeToggle from '@/components/ui/theme-toggle'
@@ -30,33 +29,27 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-2xl items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border">
+      <div className="container flex items-center justify-between" style={{ height: '4.5rem' }}>
         {/* Logo/Brand - architectural precision */}
         <Link href="/" className="flex items-center space-x-sm">
-          <Heading
-            variant="h3"
-            as="h1"
-            className="text-xl font-bold tracking-tight"
+          <div
+            className="text-lg font-bold"
+            style={{ letterSpacing: '-0.01em' }}
           >
             {SITE_CONFIG.name}
-          </Heading>
+          </div>
         </Link>
 
         {/* Desktop Navigation - traditional page links */}
-        <div className="hidden md:flex items-center space-x-2xl">
-          <nav className="flex items-center space-x-2xl">
+        <div className="hidden md:flex items-center" style={{ gap: '3.375rem' }}>
+          <nav className="flex items-center" style={{ gap: '3.375rem' }}>
             {desktopNav.map(item => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={cn(
-                  // Navigation styling - uppercase, letter-spaced
-                  'text-xs font-medium uppercase tracking-wider transition-colors hover:text-primary',
-                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                  'focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-                  'text-foreground/80 hover:text-foreground'
-                )}
+                className="text-sm font-medium uppercase text-muted-foreground hover:text-foreground transition-colors"
+                style={{ letterSpacing: '0.1em' }}
               >
                 {item.label}
               </Link>
