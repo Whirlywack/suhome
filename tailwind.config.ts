@@ -55,6 +55,7 @@ const config: Config = {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
+        subtle: 'hsl(var(--subtle))',
 
         // Note: Direct color values removed to prevent conflicts
         // Use HSL design tokens above for all styling

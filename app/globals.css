@@ -9,17 +9,18 @@
     font-size: 100%; /* Mobile: Respects user preference (usually 16px) */
 
     /* Brutalist Color System - Light Mode Architecture */
-    --background: 0 0% 98%;          /* off-white */
-    --foreground: 0 0% 10.2%;        /* off-black */
-    --muted: 220 14% 96%;            /* light-gray */
-    --muted-foreground: 220 9% 46%;  /* warm-gray */
-    --border: 220 14% 96%;           /* light-gray */
-    --input: 0 0% 98%;               /* off-white */
-    --ring: 212 12% 47%;             /* primary */
-    --primary: 212 12% 47%;          /* architectural primary */
-    --primary-foreground: 0 0% 98%;  /* off-white */
-    --secondary: 220 14% 96%;        /* light-gray */
-    --secondary-foreground: 0 0% 10.2%; /* off-black */
+    --background: 0 0% 97%;          /* updated off-white */
+    --foreground: 0 0% 8%;           /* updated off-black */
+    --muted: 0 0% 94%;               /* updated muted */
+    --muted-foreground: 0 0% 40%;    /* updated muted-foreground */
+    --border: 0 0% 88%;              /* updated border */
+    --input: 0 0% 97%;               /* matches background */
+    --ring: 0 0% 15%;                /* matches accent */
+    --primary: 0 0% 15%;             /* updated to accent value */
+    --primary-foreground: 0 0% 97%;  /* matches background */
+    --secondary: 0 0% 94%;           /* matches muted */
+    --secondary-foreground: 0 0% 8%; /* matches foreground */
+    --subtle: 0 0% 92%;              /* new subtle token */
 
     /* Architectural spacing variables */
     --radius: 0.5rem;                /* 8px base radius */
@@ -76,17 +77,18 @@
 
   .dark {
     /* Dark Mode Architectural Inversion */
-    --background: 0 0% 10.2%;        /* off-black */
-    --foreground: 0 0% 98%;          /* off-white */
-    --muted: 0 0% 20%;               /* dark muted */
-    --muted-foreground: 220 9% 46%;  /* warm-gray */
-    --border: 0 0% 20%;              /* dark border */
-    --input: 0 0% 15%;               /* dark input */
-    --ring: 212 12% 47%;             /* primary (consistent) */
-    --primary: 212 12% 47%;          /* primary (consistent) */
-    --primary-foreground: 0 0% 98%;  /* off-white */
+    --background: 0 0% 8%;           /* dark background */
+    --foreground: 0 0% 97%;          /* light foreground */
+    --muted: 0 0% 15%;               /* dark muted */
+    --muted-foreground: 0 0% 60%;    /* light muted-foreground */
+    --border: 0 0% 15%;              /* dark border */
+    --input: 0 0% 12%;               /* dark input */
+    --ring: 0 0% 85%;                /* light ring */
+    --primary: 0 0% 85%;             /* light primary */
+    --primary-foreground: 0 0% 8%;   /* dark text on light */
     --secondary: 0 0% 15%;           /* dark secondary */
-    --secondary-foreground: 0 0% 98%; /* off-white */
+    --secondary-foreground: 0 0% 97%; /* light text */
+    --subtle: 0 0% 12%;              /* dark subtle token */
   }
 }
 
