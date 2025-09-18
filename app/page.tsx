@@ -26,7 +26,7 @@ export default function Home() {
               <p
                 className="text-muted-foreground mx-auto"
                 style={{
-                  fontSize: '1.125rem',
+                  fontSize: '1.25rem',
                   lineHeight: '1.4',
                   color: 'hsl(var(--muted-foreground))',
                   maxWidth: '40rem',
@@ -364,7 +364,7 @@ export default function Home() {
         <section
           id="contact"
           className="relative bg-foreground text-background"
-          style={{ padding: '2.25rem 0' }}
+          style={{ padding: '2.25rem 0', marginTop: '4rem' }}
         >
           <div className="container">
             {/* Section Header */}
