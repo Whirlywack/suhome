@@ -274,30 +274,86 @@ export default function Home() {
                   letterSpacing: '0.1em'
                 }}
               >
-                Studio<br />& Mission
+                Team<br />& Values
               </div>
               <div style={{ fontSize: '1.125rem', lineHeight: '1.5' }}>
                 <ErrorBoundary level="section" componentName="About">
-                  <p style={{ marginBottom: '1rem' }}>
+                  <p style={{ marginBottom: '2rem' }}>
                     Superoptimised is small by design. A few people, enough to
                     experiment, never enough to get lost in scale. Work
                     happens where curiosity and fit align. Everything else is
                     politely left behind.
                   </p>
-                  <p style={{ marginBottom: '1rem' }}>
-                    Curiosity starts the path. A fragment of an idea, a
-                    tool that feels missing, a playful thought worth
-                    chasing. Some journeys end quickly; others become
-                    long-running companions. Each sharpens the next.
-                  </p>
-                  <p>
-                    Edges are where things get interesting — the overlap
-                    of UI, UX, and AI. Superoptimised builds what feels
-                    engaging to explore, not what's easiest to
-                    explain. Most of the time, there's no
-                    availability for outside work. But when a project
-                    feels like a match, it's worth the time.
-                  </p>
+
+                  <div style={{ marginBottom: '2rem' }}>
+                    <h3 style={{
+                      fontSize: '1.25rem',
+                      fontWeight: '600',
+                      marginBottom: '0.75rem',
+                      lineHeight: '1.2'
+                    }}>
+                      The Journey
+                    </h3>
+                    <p>
+                      Curiosity starts the path. A fragment of an idea, a
+                      tool that feels missing, a playful thought worth
+                      chasing. Some journeys end quickly; others become
+                      long-running companions. Each sharpens the next.
+                    </p>
+                  </div>
+
+                  <div style={{ marginBottom: '2rem' }}>
+                    <h3 style={{
+                      fontSize: '1.25rem',
+                      fontWeight: '600',
+                      marginBottom: '0.75rem',
+                      lineHeight: '1.2'
+                    }}>
+                      Focus
+                    </h3>
+                    <p>
+                      Edges are where things get interesting — the overlap
+                      of UI, UX, and AI. Superoptimised builds what feels
+                      engaging to explore, not what's easiest to
+                      explain. Most of the time, there's no
+                      availability for outside work. But when a project
+                      feels like a match, it's worth the time.
+                    </p>
+                  </div>
+
+                  <div style={{ marginBottom: '2rem' }}>
+                    <h3 style={{
+                      fontSize: '1.25rem',
+                      fontWeight: '600',
+                      marginBottom: '0.75rem',
+                      lineHeight: '1.2'
+                    }}>
+                      Design and Experience
+                    </h3>
+                    <p>
+                      Contemporary products deserve more than function. They
+                      should be sleek, enjoyable, and meaningful. UI and UX
+                      aren't polish added at the end — they are the
+                      beginning. A product that feels good to use is already
+                      halfway to being loved.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 style={{
+                      fontSize: '1.25rem',
+                      fontWeight: '600',
+                      marginBottom: '0.75rem',
+                      lineHeight: '1.2'
+                    }}>
+                      Who
+                    </h3>
+                    <p>
+                      Based in London, reaching anywhere ideas travel.
+                      Always in motion, always busy, working on projects
+                      that feel alive.
+                    </p>
+                  </div>
                 </ErrorBoundary>
               </div>
             </div>
@@ -359,10 +415,17 @@ export default function Home() {
                   <p className="text-background/80" style={{ marginBottom: '1.5rem' }}>
                     No forms, no funnels. Just an email.
                   </p>
-                  <div>
+                  <div style={{ marginTop: '1.5rem' }}>
                     <a
                       href="mailto:connect@superoptimised.com"
-                      className="text-2xl font-mono text-background hover:text-background/80 transition-colors duration-200 underline decoration-background/30 underline-offset-4 hover:decoration-background/60"
+                      className="inline-block font-mono text-background hover:text-background/80 hover:bg-background/10 transition-all duration-200"
+                      style={{
+                        fontSize: '1.125rem',
+                        fontWeight: '500',
+                        textDecoration: 'none',
+                        padding: '1rem 1.5rem',
+                        border: '1px solid hsla(var(--background) / 0.3)'
+                      }}
                     >
                       connect@superoptimised.com
                     </a>
