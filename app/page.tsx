@@ -315,10 +315,10 @@ export default function Home() {
                     <p>
                       Edges are where things get interesting — the overlap
                       of UI, UX, and AI. Superoptimised builds what feels
-                      engaging to explore, not what's easiest to
-                      explain. Most of the time, there's no
+                      engaging to explore, not what&rsquo;s easiest to
+                      explain. Most of the time, there&rsquo;s no
                       availability for outside work. But when a project
-                      feels like a match, it's worth the time.
+                      feels like a match, it&rsquo;s worth the time.
                     </p>
                   </div>
 
@@ -334,7 +334,7 @@ export default function Home() {
                     <p>
                       Contemporary products deserve more than function. They
                       should be sleek, enjoyable, and meaningful. UI and UX
-                      aren't polish added at the end — they are the
+                      aren&rsquo;t polish added at the end — they are the
                       beginning. A product that feels good to use is already
                       halfway to being loved.
                     </p>

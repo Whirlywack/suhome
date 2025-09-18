@@ -17,9 +17,64 @@ const lexend = Lexend({
 })
 
 export const metadata: Metadata = {
-  title: 'SuperOptimised - AI Products & Beautiful UI/UX',
+  title: {
+    default: 'Superoptimised — Indie Dev Studio London | UI/UX & AI Design',
+    template: '%s | Superoptimised',
+  },
   description:
-    'Creating innovative AI products with exceptional user experience and beautiful design',
+    'London-based indie development studio specializing in UI/UX design and AI integration. Creating thoughtful, engaging digital experiences that feel natural and meaningful.',
+  keywords: [
+    'UI design',
+    'UX design',
+    'AI development',
+    'indie studio',
+    'London',
+    'digital design',
+    'user experience',
+    'interface design',
+  ],
+  authors: [{ name: 'Superoptimised' }],
+  creator: 'Superoptimised',
+  publisher: 'Superoptimised',
+  metadataBase: new URL('https://superoptimised.com'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: 'https://superoptimised.com',
+    title: 'Superoptimised — Indie Dev Studio London',
+    description:
+      'Projects chosen by fit — curiosity, design, and the chance to make something enjoyable, meaningful, or just plain fun.',
+    siteName: 'Superoptimised',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Superoptimised — Indie Dev Studio London',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Superoptimised — Indie Dev Studio London',
+    description:
+      'Creating thoughtful digital experiences at the intersection of UI, UX, and AI.',
+    images: ['/twitter-card.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'theme-color': '#f5f5f5',
+  },
 }
 
 export default function RootLayout({
@@ -41,6 +96,26 @@ export default function RootLayout({
                 document.documentElement.setAttribute('data-theme', theme);
               })();
             `,
+          }}
+        />
+
+        {/* Structured Data for Local Business */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Superoptimised',
+              description: 'Indie development studio specializing in UI/UX design and AI integration',
+              url: 'https://superoptimised.com',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'London',
+                addressCountry: 'GB'
+              },
+              email: 'connect@superoptimised.com'
+            })
           }}
         />
       </head>
