@@ -27,6 +27,11 @@ export function Header() {
   const handleScrollToSection = (href: string) => {
     setIsMobileMenuOpen(false)
 
+    // Trigger contact animation if clicking contact
+    if (href === '#contact') {
+      window.dispatchEvent(new CustomEvent('contactNavClicked'))
+    }
+
     if (href === '#home') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
