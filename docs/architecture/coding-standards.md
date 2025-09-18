@@ -4,7 +4,7 @@
 
 ### Universal Standards for Beautiful Results
 
-1. **Perfect Spacing**: All spacing must use 8px base unit system (0.5rem increments) for visual harmony
+1. **Perfect Mathematical Spacing**: All spacing must use Perfect Fifth progression (1.5x ratio) for visual harmony
 2. **Type Safety**: Every component must have complete TypeScript interfaces
 3. **Visual Performance**: Sub-2-second load times ensure beautiful user experiences
 4. **Accessibility Excellence**: WCAG AA compliance is essential for inclusive design
@@ -18,13 +18,15 @@
 9. **Image Optimization**: Use Next.js Image component with perfect sizing
 10. **Font Loading**: Use next/font with display: swap for beautiful typography
 
-### Brutalist Design System for Visual Excellence
+### Mathematical Design System for Visual Excellence
 
-11. **5-Color Limit**: Strictly adhere to defined color palette for maximum visual impact
-12. **Typography Scale**: Use only defined font sizes (mega, hero, display, base) for beautiful hierarchy
-13. **Spacing Consistency**: Apply spacing scale systematically for visual perfection
-14. **Beautiful Layouts**: Align all layouts to systematic grid patterns for stunning presentation
-15. **Visual Flow**: Structure layouts for optimal visual experience and readability
+11. **HSL Design Tokens**: Use only HSL design tokens, never direct colors
+12. **Perfect Fifth Typography**: Use mathematically precise font sizes with Golden Ratio relationships
+13. **Perfect Fifth Spacing**: Apply 1.5x ratio spacing progression systematically (0.25rem → 11.25rem)
+14. **Multi-Screen Optimization**: Ensure responsive root font scaling across 7 breakpoints (16px → 22px)
+15. **Reading Width Optimization**: Use container widths optimized for all screen sizes (320px → 4K)
+
+📖 **Complete specification**: [`/design-system-architecture.md`](../../design-system-architecture.md)
 
 ### Code Organization for Clean Architecture
 

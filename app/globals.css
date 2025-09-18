@@ -5,6 +5,9 @@
 /* Architectural CSS Custom Properties */
 @layer base {
   :root {
+    /* Responsive Root Font Size - Perfect Scaling Foundation */
+    font-size: 100%; /* Mobile: Respects user preference (usually 16px) */
+
     /* Brutalist Color System - Light Mode Architecture */
     --background: 0 0% 98%;          /* off-white */
     --foreground: 0 0% 10.2%;        /* off-black */
@@ -25,6 +28,50 @@
 
     /* Typography architectural variables */
     --font-feature-settings: "cv01", "cv02", "cv03", "cv04", "cv05", "cv06", "cv09", "cv10", "cv11";
+  }
+
+  /* Advanced Responsive Root Font Size - Multi-Screen Optimization */
+
+  /* Large Mobile/Phablet (iPhone 14 Pro Max, etc.) */
+  @media (min-width: 26.75rem) { /* 428px */
+    :root {
+      font-size: 106.25%; /* 17px equivalent - Larger phones need bigger text */
+    }
+  }
+
+  /* Mobile Landscape/Small Tablet */
+  @media (min-width: 36rem) { /* 576px */
+    :root {
+      font-size: 112.5%; /* 18px equivalent - Landscape reading optimization */
+    }
+  }
+
+  /* Tablet Portrait */
+  @media (min-width: 48rem) { /* 768px */
+    :root {
+      font-size: 118.75%; /* 19px equivalent - Tablet-specific readability */
+    }
+  }
+
+  /* Desktop/Laptop */
+  @media (min-width: 64rem) { /* 1024px */
+    :root {
+      font-size: 125%; /* 20px equivalent - Desktop optimization */
+    }
+  }
+
+  /* Large Desktop */
+  @media (min-width: 90rem) { /* 1440px */
+    :root {
+      font-size: 131.25%; /* 21px equivalent - Large screen readability */
+    }
+  }
+
+  /* 4K/Ultra-wide */
+  @media (min-width: 160rem) { /* 2560px */
+    :root {
+      font-size: 137.5%; /* 22px equivalent - Maximum readability */
+    }
   }
 
   .dark {
@@ -68,17 +115,48 @@
 
 /* Architectural component styles */
 @layer components {
-  /* Grid-based section architecture */
+  /* Grid-based section architecture - Optimized for all screen sizes */
   .architectural-container {
-    @apply px-4 sm:px-6 lg:px-8;
-    max-width: 1400px;
-    margin: 0 auto;
+    @apply container;
+    /* Uses optimized container system with built-in responsive padding */
   }
 
   .architectural-section {
-    @apply py-24 px-4;
-    max-width: 1200px;
+    @apply py-6xl;
+    /* Perfect Fifth spacing - Scales harmoniously with font size */
+    max-width: 72rem;       /* Optimal reading width - 1152px at 16px, scales proportionally */
     margin: 0 auto;
+    padding-left: 1rem;     /* Base padding */
+    padding-right: 1rem;
+  }
+
+  /* Enhanced section padding for larger screens */
+  @media (min-width: 26.75rem) {
+    .architectural-section {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+  }
+
+  @media (min-width: 36rem) {
+    .architectural-section {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .architectural-section {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .architectural-section {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
   }
 
   /* Z-pattern layout implementation */
@@ -90,24 +168,7 @@
     @apply grid grid-cols-1 md:grid-cols-2 gap-8 items-start;
   }
 
-  /* Brutalist button architecture */
-  .btn-brutalist {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium;
-    @apply border-2 border-transparent transition-all duration-200;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary;
-    @apply focus-visible:ring-offset-2 focus-visible:ring-offset-background;
-    min-height: 44px; /* Architectural touch target */
-  }
-
-  .btn-primary {
-    @apply btn-brutalist bg-primary text-primary-foreground;
-    @apply hover:bg-primary/90 active:bg-primary-dark;
-  }
-
-  .btn-outline {
-    @apply btn-brutalist border-primary text-primary;
-    @apply hover:bg-primary/5 active:bg-primary/10;
-  }
+  /* Note: Button styles moved to component-based system in components/ui/button.tsx */
 
   /* Mathematical spacing utilities */
   .space-architectural > * + * {

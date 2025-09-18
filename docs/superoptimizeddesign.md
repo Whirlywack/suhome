@@ -1,8 +1,29 @@
 # SuperOptimised Design System
 
-## Overview
+## ⚠️ **IMPORTANT: SYSTEM UPDATED**
 
-This document outlines the complete design system for the SuperOptimised web application, including colors, typography, spacing, components, and design patterns. The system follows a **Brutalist Design Philosophy** with a strict 5-color palette and dramatic typography ratios.
+**This document has been superseded by the new mathematically perfect design system.**
+
+👉 **New authoritative source**: [`/design-system-architecture.md`](../design-system-architecture.md)
+
+The new system features:
+- **Perfect Fifth mathematical progression** (1.5x ratio scaling)
+- **Multi-screen optimization** (7 responsive breakpoints: 16px→22px)
+- **HSL design tokens only** (no direct colors)
+- **Reading-width optimized containers**
+- **Accessibility-first approach** (respects user preferences)
+
+---
+
+## Legacy Documentation (Deprecated)
+
+*The content below represents the previous system and is maintained for historical reference only.*
+
+### Overview
+
+This document outlines the previous design system for the SuperOptimised web application. The system followed a **Brutalist Design Philosophy** with a 5-color palette and dramatic typography ratios.
+
+**⚠️ Note**: This system has been replaced with a mathematically superior approach. Please refer to the new documentation above.
 
 ## Brand Colors
 

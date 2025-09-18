@@ -26,19 +26,19 @@ export const ComponentName = React.forwardRef<
       className={cn(
         // Base visual styles - beautiful foundation
         'relative',
-        // Mathematical spacing using 8px base unit system for perfect alignment
-        'p-4', // 32px padding - visual precision
+        // Mathematical spacing using Perfect Fifth progression for harmonious alignment
+        'p-lg', // 1rem - Perfect base unit spacing
         // Variant styles - beautiful visual organization
         {
           'bg-primary text-primary-foreground': variant === 'primary',
           'bg-secondary text-secondary-foreground': variant === 'secondary',
           'bg-background text-foreground': variant === 'default',
         },
-        // Size variations - proportional relationships for visual harmony
+        // Size variations - Perfect Fifth mathematical progression for visual harmony
         {
-          'text-sm min-h-[32px]': size === 'sm',  // 8px * 4 = mathematical precision
-          'text-base min-h-[40px]': size === 'md', // 8px * 5 = systematic sizing
-          'text-lg min-h-[48px]': size === 'lg',   // 8px * 6 = perfect spacing
+          'text-sm min-h-[2rem]': size === 'sm',   // Perfect Fifth: small scale
+          'text-base min-h-[2.5rem]': size === 'md', // Perfect Fifth: base scale
+          'text-lg min-h-[3rem]': size === 'lg',   // Perfect Fifth: large scale
         },
         className
       )}

@@ -3,7 +3,7 @@ import ErrorBoundary from '@/components/ui/ErrorBoundary'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-off-white">
+    <main className="min-h-screen bg-background">
       <div className="architectural-container">
         <ErrorBoundary level="section" componentName="Hero">
           <Hero

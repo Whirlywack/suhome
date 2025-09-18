@@ -27,7 +27,7 @@ export const Button = React.forwardRef<
       disabled={disabled}
       className={cn(
         // Base brutalist button architecture
-        'btn-brutalist',
+        'border-2 border-transparent transition-all duration-200 min-h-[44px]',
         'inline-flex items-center justify-center font-medium transition-all duration-200',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
         'focus-visible:ring-offset-2 focus-visible:ring-offset-background',

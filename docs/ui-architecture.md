@@ -22,11 +22,13 @@ This frontend architecture is designed to achieve **"Wow, this looks beautiful"*
 
 This frontend architecture follows **brutalist design perfection principles**:
 
-1. **Mathematical Precision**: All spacing follows calculated relationships (8px base unit system)
-2. **Architectural Spacing**: Perfect implementation of systematic spacing relationships
-3. **Typography Excellence**: Beautiful typography execution with dramatic scale relationships
-4. **Visual Perfection**: Technical architecture focused on stunning visual results
-5. **Component Precision**: Clean, precise component architecture demonstrating capabilities
+1. **Mathematical Precision**: Perfect Fifth progression (1.5x ratio) with Golden Ratio typography
+2. **Multi-Screen Optimization**: Responsive root font scaling across 7 breakpoints (16px→22px)
+3. **Accessibility Excellence**: Respects user preferences with rem-based scaling
+4. **HSL Design Tokens**: Theme-aware color architecture for perfect dark/light modes
+5. **Reading Optimization**: Container widths optimized for all screen sizes (320px→4K)
+
+📖 **Complete specification**: [`/design-system-architecture.md`](../design-system-architecture.md)
 
 **Framework Decision**: Next.js 14.2.25 with App Router (CVE-2025-29927 Security Fix)
 - **Rationale**: Security-first approach, perfect static generation, optimal performance
@@ -410,145 +412,31 @@ export const metadata: Metadata = {
 
 ### Styling Approach
 
-The frontend architecture implements a **Brutalist Design System** with mathematical precision through Tailwind CSS. Every spacing decision follows an 8px base unit system, creating visual perfection and stunning results that demonstrate capabilities.
+The frontend architecture implements a **Mathematically Perfect Brutalist Design System** through Tailwind CSS. Every decision follows Perfect Fifth mathematical progression, creating accessibility-first visual perfection across all devices.
 
 #### Core Styling Principles
 
-1. **Perfect Spacing**: All margins, padding, and sizing use multiples of 8px (0.5rem base unit) for visual harmony
-2. **Beautiful Layouts**: Components align to systematic grid structures for stunning presentation
-3. **Typography Excellence**: Dramatic scale relationships creating beautiful hierarchies
-4. **Minimal Color Palette**: Strict 5-color system for maximum visual impact
-5. **Visual Perfection**: CSS optimized for stunning rendering and beautiful results
+1. **Perfect Fifth Progression**: All spacing uses 1.5x mathematical ratio (0.25rem→11.25rem)
+2. **Multi-Screen Excellence**: 7-breakpoint responsive root font scaling (16px→22px)
+3. **Typography Harmony**: Perfect Fifth + Golden Ratio mathematical relationships
+4. **HSL Design Tokens**: Theme-aware color architecture (no direct colors)
+5. **Reading Optimization**: Container widths optimized for comfort on all screen sizes
+
+📖 **New system specification**: [`/design-system-architecture.md`](../design-system-architecture.md)
 
 #### Tailwind Configuration Architecture
 
-```typescript
-// tailwind.config.ts - Architectural Design System Implementation
-import type { Config } from 'tailwindcss';
+⚠️ **Updated System**: The Tailwind configuration has been completely rewritten with mathematical precision.
 
-const config: Config = {
-  darkMode: ['class'],
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    // Architectural Container System
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px', // Maximum architectural width
-      },
-    },
-    extend: {
-      // Brutalist Color System - Architectural Precision
-      colors: {
-        // Primary architectural colors
-        'off-black': '#1a1a1a',
-        'off-white': '#fafafa',
-        'warm-gray': '#6b7280',
-        'light-gray': '#f3f4f6',
-        'primary': '#64748b',
+**Key improvements**:
+- **Perfect Fifth spacing progression** (0.25rem → 11.25rem)
+- **Multi-screen responsive breakpoints** (7 breakpoints: 320px → 4K)
+- **HSL design tokens only** (direct colors removed)
+- **Reading-optimized containers** (perfect for all screen sizes)
+- **Responsive root font scaling** (16px → 22px progression)
 
-        // Systematic variations
-        'primary-light': '#94a3b8',
-        'primary-dark': '#475569',
-
-        // Design system token mapping
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-      },
-
-      // Architectural Typography Scale
-      fontSize: {
-        'mega': ['clamp(4rem, 8vw, 7.5rem)', { lineHeight: '0.9', letterSpacing: '-0.02em' }],
-        'hero': ['clamp(3rem, 6vw, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
-        'display': ['clamp(1.5rem, 3vw, 2.5rem)', { lineHeight: '1.2' }],
-      },
-
-      // Mathematical Spacing System - 8px base architecture
-      spacing: {
-        '18': '4.5rem',   // 72px - architectural intermediate
-        '22': '5.5rem',   // 88px - systematic progression
-        '26': '6.5rem',   // 104px - mathematical precision
-        '30': '7.5rem',   // 120px - architectural spacing
-      },
-
-      // Architectural Animation System
-      animation: {
-        'fade-in': 'fadeIn 0.3s ease-out',
-        'slide-up': 'slideUp 0.4s ease-out',
-        'scale-in': 'scaleIn 0.2s ease-out',
-      },
-
-      // Typography precision
-      fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-lexend)', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
-      },
-
-      // Systematic breakpoints
-      screens: {
-        'xs': '475px',
-        '3xl': '1680px',
-      },
-    },
-  },
-  plugins: [
-    require('tailwindcss-animate'),
-    // Custom architectural utilities
-    function({ addUtilities }) {
-      addUtilities({
-        // Z-pattern layout utilities
-        '.z-pattern-grid': {
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '2rem',
-          alignItems: 'center',
-        },
-
-        // Architectural spacing utilities
-        '.section-spacing': {
-          paddingTop: '6rem',
-          paddingBottom: '6rem',
-        },
-
-        '.component-spacing': {
-          marginBottom: '2rem',
-        },
-
-        // Brutalist focus architecture
-        '.brutalist-focus': {
-          '&:focus-visible': {
-            outline: '3px solid hsl(var(--primary))',
-            outlineOffset: '2px',
-          },
-        },
-      });
-    },
-  ],
-} satisfies Config;
-
-export default config;
-```
+📖 **Current implementation**: See `/tailwind.config.ts` in the project root
+📖 **Complete specification**: [`/design-system-architecture.md`](../design-system-architecture.md)
 
 ### Global Theme Variables
 

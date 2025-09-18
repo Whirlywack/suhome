@@ -9,9 +9,24 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: {
+        DEFAULT: '1rem',        // Mobile: Tight padding for small screens
+        'mobile-lg': '1.25rem', // Large Mobile: Comfortable padding
+        sm: '1.5rem',           // Small Tablet: Standard padding
+        md: '2rem',             // Tablet: Generous padding
+        lg: '2.5rem',           // Desktop: Spacious padding
+        xl: '3rem',             // Large Desktop: Maximum padding
+        '2xl': '3rem',          // Ultra-wide: Consistent padding
+        '4k': '3.5rem',         // 4K: Maximum comfortable padding
+      },
       screens: {
-        '2xl': '1400px',
+        // Rem-based screens for perfect scaling with reading width optimization
+        sm: '34rem',            // Mobile landscape: 544px at 16px, grows proportionally
+        md: '44rem',            // Tablet: 704px at 16px, optimal for tablet reading
+        lg: '58rem',            // Desktop: 928px at 16px, perfect reading width
+        xl: '72rem',            // Large desktop: 1152px at 16px, comfortable wide screen
+        '2xl': '78rem',         // Ultra-wide: 1248px at 16px, max comfortable reading
+        '4k': '82rem',          // 4K: 1312px at 16px, prevents ultra-wide containers
       },
     },
     extend: {
@@ -22,17 +37,7 @@ const config: Config = {
         'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       colors: {
-        // Brutalist Color System - Architectural Precision
-        'off-black': '#1a1a1a',
-        'off-white': '#fafafa',
-        'warm-gray': '#6b7280',
-        'light-gray': '#f3f4f6',
-
-        // Systematic variations
-        'primary-light': '#94a3b8',
-        'primary-dark': '#475569',
-
-        // Design system token mapping
+        // Design system token mapping - HSL-based for theme switching
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -50,19 +55,44 @@ const config: Config = {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
+
+        // Note: Direct color values removed to prevent conflicts
+        // Use HSL design tokens above for all styling
       },
       fontSize: {
-        'mega': ['clamp(4rem, 8vw, 7.5rem)', { lineHeight: '0.9', letterSpacing: '-0.02em' }],
-        'hero': ['clamp(3rem, 6vw, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
-        'display': ['clamp(1.5rem, 3vw, 2.5rem)', { lineHeight: '1.2' }],
+        // Perfect Typography Scale - Musical Harmony + Golden Ratio
+        'xs': ['0.75rem', { lineHeight: '1.4' }],        // 12px - Captions, fine print
+        'sm': ['0.875rem', { lineHeight: '1.5' }],       // 14px - Small text, UI labels
+        'base': ['1rem', { lineHeight: '1.6' }],         // 16px - Body text baseline
+        'lg': ['1.125rem', { lineHeight: '1.6' }],       // 18px - Large body text
+        'xl': ['1.25rem', { lineHeight: '1.5' }],        // 20px - Subheadings
+        '2xl': ['1.5rem', { lineHeight: '1.4' }],        // 24px - Section headings (Perfect Fifth)
+        '3xl': ['1.875rem', { lineHeight: '1.3' }],      // 30px - Major headings (Golden Ratio)
+        '4xl': ['2.25rem', { lineHeight: '1.2' }],       // 36px - Page headings (Perfect Fifth from 2xl)
+        '5xl': ['3rem', { lineHeight: '1.1' }],          // 48px - Hero headings (Perfect Fifth from 3xl)
+        '6xl': ['3.75rem', { lineHeight: '1.05' }],      // 60px - Display headings (Golden Ratio)
+        '7xl': ['4.5rem', { lineHeight: '1' }],          // 72px - Mega headings (Perfect Fifth)
+        '8xl': ['6rem', { lineHeight: '0.95' }],         // 96px - Ultra display (Perfect Fifth)
+        '9xl': ['8rem', { lineHeight: '0.9' }],          // 128px - Maximum impact (Perfect Fifth)
+
+        // Responsive clamp versions for fluid scaling
+        'hero': ['clamp(2.25rem, 1rem + 3vw, 4.5rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
+        'display': ['clamp(1.5rem, 0.75rem + 2vw, 3rem)', { lineHeight: '1.2', letterSpacing: 'normal' }],
+        'mega': ['clamp(3rem, 1.5rem + 4vw, 6rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
       },
 
-      // Mathematical Spacing System - 8px base architecture
+      // Mathematical Spacing System - Perfect Fifth Progression (rem-based)
       spacing: {
-        '18': '4.5rem',   // 72px - architectural intermediate
-        '22': '5.5rem',   // 88px - systematic progression
-        '26': '6.5rem',   // 104px - mathematical precision
-        '30': '7.5rem',   // 120px - architectural spacing
+        'xs': '0.25rem',    // Micro spacing - Perfect for tight elements
+        'sm': '0.5rem',     // Base unit - Foundation of all spacing
+        'md': '0.75rem',    // 1.5x base - Harmonious progression
+        'lg': '1rem',       // Font size equivalent - Typography alignment
+        'xl': '1.5rem',     // Perfect Fifth - Musical harmony
+        '2xl': '2.25rem',   // Perfect Fifth squared - Major sections
+        '3xl': '3.375rem',  // Perfect Fifth cubed - Hero sections
+        '4xl': '5rem',      // Perfect Fifth to 4th - Page divisions
+        '5xl': '7.5rem',    // Perfect Fifth to 5th - Major layouts
+        '6xl': '11.25rem',  // Perfect Fifth to 6th - Architectural spacing
       },
 
       // Architectural Animation System
@@ -86,10 +116,16 @@ const config: Config = {
         },
       },
 
-      // Systematic breakpoints
+      // Multi-Screen Breakpoints (rem units for perfect scaling)
       screens: {
-        'xs': '475px',
-        '3xl': '1680px',
+        'xs': '20rem',          // 320px - Minimum phone width
+        'mobile-lg': '26.75rem', // 428px - Large phones (iPhone 14 Pro Max)
+        'sm': '36rem',          // 576px - Mobile landscape/Small tablet
+        'md': '48rem',          // 768px - Tablet portrait
+        'lg': '64rem',          // 1024px - Desktop/Laptop
+        'xl': '90rem',          // 1440px - Large desktop (optimized reading width)
+        '2xl': '120rem',        // 1920px - Ultra-wide (but container maxes out earlier)
+        '4k': '160rem',         // 2560px - 4K/Ultra-wide displays
       },
     },
   },

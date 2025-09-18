@@ -1,13 +1,15 @@
+import { Heading, Text } from '@/components/ui/typography'
+
 export default function About() {
   return (
-    <main className="min-h-screen bg-off-white">
+    <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-lexend font-bold text-off-black mb-4">
+        <Heading variant="h1" className="mb-4">
           About
-        </h1>
-        <p className="text-lg text-warm-gray">
+        </Heading>
+        <Text variant="large" className="text-muted-foreground">
           Passion projects & innovation
-        </p>
+        </Text>
       </div>
     </main>
   )

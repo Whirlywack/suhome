@@ -1,22 +1,26 @@
 # SuperOptimised Web
 
-A modern, fast, and beautiful website built with Next.js 14.2.25 and TypeScript.
+A mathematically perfect, accessibility-first website built with brutalist design precision. Features multi-screen optimized scaling and Perfect Fifth mathematical progression.
 
 ## 🚀 Tech Stack
 
 - **Framework**: Next.js 14.2.25 (with security CVE-2025-29927 fix)
 - **Language**: TypeScript 5.6.3
-- **Styling**: Tailwind CSS 3.4.14 with brutalist design system
-- **Fonts**: Inter & Lexend (optimized with next/font)
+- **Styling**: Tailwind CSS 3.4.14 with Perfect Fifth brutalist design system
+- **Fonts**: Inter & Lexend (optimized with next/font + responsive scaling)
 - **Animation**: Framer Motion 10.18.0
 - **Code Quality**: ESLint & Prettier
 
-## 🎨 Design System
+## 🎨 Advanced Design System
 
-- **Colors**: 5-color brutalist palette (off-black, off-white, warm-gray, light-gray, primary)
-- **Spacing**: Mathematical 8px base unit system
-- **Typography**: Inter for body text, Lexend for headings
-- **Layout**: Responsive grid with perfect alignment
+- **Mathematical Foundation**: Perfect Fifth progression (1.5x ratio) + Golden Ratio
+- **Color Architecture**: HSL design tokens for perfect theme switching
+- **Multi-Screen Scaling**: Responsive root font (16px→22px) across 7 breakpoints
+- **Spacing Harmony**: Perfect Fifth rem progression (0.25rem→11.25rem)
+- **Typography Scale**: Mathematical precision with controlled fluid scaling
+- **Reading Optimization**: Container widths optimized for all screen sizes (320px→4K)
+
+📖 **Complete specification**: [`design-system-architecture.md`](design-system-architecture.md)
 
 ## 🏗️ Project Structure
 
@@ -83,12 +87,16 @@ npm run build
 
 ## 🎯 Features
 
-- ⚡ Sub-2-second load times
-- 📱 Fully responsive design
-- ♿ WCAG AA accessibility compliance
+- ⚡ Sub-2-second load times with perfect optimization
+- 📱 Multi-screen responsive (320px → 4K displays)
+- ♿ WCAG AA accessibility with user preference respect
 - 🔒 Security headers and best practices
-- 🎨 Beautiful brutalist design system
+- 🎨 Mathematically perfect brutalist design system
 - 🚀 Optimized static site generation
+- 🎯 Perfect Fifth mathematical spacing progression
+- 📏 Responsive root font scaling (7 breakpoints)
+- 🖥️ Reading-width optimized containers
+- 🌗 Perfect dark/light mode theme switching
 
 ## 📝 Pages
 
