@@ -9,27 +9,44 @@ interface ContactButtonProps {
 
 export const ContactButton = ({ className = '' }: ContactButtonProps) => {
   const [isAnimating, setIsAnimating] = useState(false)
-  const [displayText, setDisplayText] = useState('connect@superoptimised.com')
+  const [displayText, setDisplayText] = useState('')
 
   const targetText = 'connect@superoptimised.com'
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789@.'
 
-  // Scramble animation function - all characters change simultaneously
+  // Initialize with random characters on component mount
+  useEffect(() => {
+    const randomText = targetText
+      .split('')
+      .map(() => chars[Math.floor(Math.random() * chars.length)])
+      .join('')
+    setDisplayText(randomText)
+  }, [])
+
+  // Enhanced scramble animation - progressive decryption effect
   const scrambleText = () => {
     setIsAnimating(true)
     let iteration = 0
-    const totalIterations = 15
+    const scramblePhase = 4 // Frames of full scrambling
+    const totalIterations = scramblePhase + targetText.length // 4 + 26 = 30 total
 
     const interval = setInterval(() => {
       setDisplayText((current) =>
         current
           .split('')
           .map((char, index) => {
-            // All characters change simultaneously until final reveal
-            if (iteration === totalIterations - 1) {
-              return targetText[index]
+            // Phase 1: Full scrambling for first few frames
+            if (iteration < scramblePhase) {
+              return chars[Math.floor(Math.random() * chars.length)]
             }
-            // Show random characters for all positions
+
+            // Phase 2: Progressive reveal from left to right
+            const revealedCount = iteration - scramblePhase + 1
+            if (index < revealedCount) {
+              return targetText[index] // Show correct character
+            }
+
+            // Still scrambling unrevealed characters
             return chars[Math.floor(Math.random() * chars.length)]
           })
           .join('')
@@ -42,19 +59,61 @@ export const ContactButton = ({ className = '' }: ContactButtonProps) => {
         setDisplayText(targetText)
         setIsAnimating(false)
       }
-    }, 60)
+    }, 20) // 20ms per frame for 0.6 second animation
   }
 
-  // Listen for contact navigation clicks
+  // Trigger animation when contact section becomes visible
   useEffect(() => {
+    let scrollListener: (() => void) | null = null
+
     const handleContactNavigation = () => {
-      scrambleText()
+      // Set up scroll listener to trigger animation when we reach contact section
+      const handleScroll = () => {
+        const contactSection = document.getElementById('contact')
+        if (contactSection) {
+          const rect = contactSection.getBoundingClientRect()
+          const isVisible = rect.top <= window.innerHeight * 0.7 && rect.bottom >= 0
+
+          if (isVisible) {
+            // Add small delay so eyes can focus on the button first
+            setTimeout(() => {
+              scrambleText()
+            }, 200) // 0.2 seconds delay
+
+            // Clean up scroll listener
+            if (scrollListener) {
+              window.removeEventListener('scroll', scrollListener)
+              scrollListener = null
+            }
+          }
+        }
+      }
+
+      scrollListener = handleScroll
+      // Add scroll listener immediately
+      window.addEventListener('scroll', handleScroll, { passive: true })
+
+      // Fallback: trigger animation after expected scroll duration if scroll detection fails
+      setTimeout(() => {
+        if (scrollListener) {
+          // If listener still exists, scroll detection didn't work, so trigger animation manually
+          scrambleText()
+
+          // Clean up listener
+          window.removeEventListener('scroll', scrollListener)
+          scrollListener = null
+        }
+      }, 1000) // Fallback after 1 second
     }
 
     window.addEventListener('contactNavClicked', handleContactNavigation)
 
     return () => {
       window.removeEventListener('contactNavClicked', handleContactNavigation)
+      // Clean up any remaining scroll listener
+      if (scrollListener) {
+        window.removeEventListener('scroll', scrollListener)
+      }
     }
   }, [])
 
