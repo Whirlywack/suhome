@@ -39,11 +39,11 @@ export const Button = React.forwardRef<
           'border-2 border-primary text-primary hover:bg-primary/5 active:bg-primary/10': variant === 'outline',
           'text-primary hover:bg-primary/5 active:bg-primary/10': variant === 'ghost',
         },
-        // Size variations - mathematical 8px base unit progression
+        // Size variations - Perfect Fifth spacing progression
         {
-          'px-4 py-2 text-sm min-h-[36px]': size === 'sm',   // 8px * 4.5 = architectural precision
-          'px-6 py-3 text-base min-h-[44px]': size === 'md', // 8px * 5.5 = systematic sizing
-          'px-8 py-4 text-lg min-h-[52px]': size === 'lg',   // 8px * 6.5 = perfect spacing
+          'px-lg py-sm text-sm min-h-2xl': size === 'sm',   // Perfect Fifth: 1rem, 0.5rem
+          'px-xl py-md text-base min-h-3xl': size === 'md', // Perfect Fifth: 1.5rem, 0.75rem
+          'px-2xl py-lg text-lg min-h-4xl': size === 'lg',   // Perfect Fifth: 2.25rem, 1rem
         },
         className
       )}

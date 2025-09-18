@@ -58,7 +58,7 @@ export function Hero({
   subtitle = <span className="text-primary">Coming Soon</span>,
   description = "Beautiful digital experiences with architectural precision and mathematical design are on the way.",
   visualContent = (
-    <div className="aspect-square w-80 rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 p-8">
+    <div className="aspect-square w-6xl rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 p-2xl">
       <div className="flex h-full items-center justify-center">
         <Text variant="large" className="text-center text-muted-foreground">
           Visual showcase
@@ -76,7 +76,7 @@ export function Hero({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="space-y-6"
+        className="space-y-xl"
       >
         <Heading variant="hero" className="text-balance">
           {title}{subtitle && <> - {subtitle}</>}

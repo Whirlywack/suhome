@@ -31,22 +31,22 @@ const DefaultErrorFallback: React.FC<{ error?: Error; retry: () => void; level?:
     'flex flex-col items-center justify-center',
     'bg-background border-2 border-primary',
     'text-center',
-    // Mathematical 8px base unit spacing for visual precision
+    // Perfect Fifth spacing progression for visual precision
     {
-      'min-h-screen p-8': level === 'root',
-      'min-h-[400px] p-6': level === 'section',
-      'min-h-[200px] p-4': level === 'component',
+      'min-h-screen p-2xl': level === 'root',
+      'min-h-4xl p-xl': level === 'section',
+      'min-h-3xl p-lg': level === 'component',
     }
   )}>
     {/* Error icon with brutalist styling */}
-    <div className="mb-4 text-4xl text-primary">⚠️</div>
+    <div className="mb-lg text-4xl text-primary">⚠️</div>
 
     {/* Error message typography following design system */}
-    <h2 className="mb-2 text-lg font-medium text-foreground">
+    <h2 className="mb-sm text-lg font-medium text-foreground">
       {level === 'root' ? 'Application Error' : `${componentName} Error`}
     </h2>
 
-    <p className="mb-6 text-sm text-muted-foreground max-w-md">
+    <p className="mb-xl text-sm text-muted-foreground max-w-md">
       {level === 'root'
         ? 'Something went wrong with the application. Please try refreshing the page.'
         : `The ${componentName.toLowerCase()} component encountered an error. You can try again or continue using other parts of the page.`
@@ -58,7 +58,7 @@ const DefaultErrorFallback: React.FC<{ error?: Error; retry: () => void; level?:
       variant="primary"
       size="md"
       onClick={retry}
-      className="mb-2"
+      className="mb-sm"
     >
       Try Again
     </Button>
@@ -66,10 +66,10 @@ const DefaultErrorFallback: React.FC<{ error?: Error; retry: () => void; level?:
     {/* Development error details - only in development */}
     {process.env.NODE_ENV === 'development' && error && (
       <details className="mt-4 text-left w-full max-w-2xl">
-        <summary className="cursor-pointer text-sm text-muted-foreground mb-2">
+        <summary className="cursor-pointer text-sm text-muted-foreground mb-sm">
           Technical Details (Development Only)
         </summary>
-        <pre className="text-xs text-red-600 bg-red-50 p-3 rounded border overflow-auto">
+        <pre className="text-xs text-red-600 bg-red-50 p-md rounded border overflow-auto">
           {error.message}
           {error.stack}
         </pre>

@@ -4,8 +4,8 @@ import { Text } from '@/components/ui/typography'
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="container py-8">
-        <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:justify-between md:space-y-0">
+      <div className="container py-2xl">
+        <div className="flex flex-col items-center justify-center space-y-lg md:flex-row md:justify-between md:space-y-0">
           {/* Copyright - minimal and clean */}
           <Text variant="small" className="text-muted-foreground">
             © 2025 SuperOptimised. All rights reserved.

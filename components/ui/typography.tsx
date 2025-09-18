@@ -27,15 +27,15 @@ export const Heading = React.forwardRef<
       className={cn(
         // Base heading styles - architectural foundation
         'font-display tracking-tight',
-        // Variant styles - beautiful visual hierarchy
+        // Variant styles - beautiful visual hierarchy using semantic tokens
         {
           'text-mega font-bold leading-none': variant === 'mega',
           'text-hero font-bold leading-tight': variant === 'hero',
           'text-display font-semibold leading-tight': variant === 'display',
-          'text-4xl font-bold leading-tight': variant === 'h1',
-          'text-3xl font-semibold leading-tight': variant === 'h2',
-          'text-2xl font-semibold leading-tight': variant === 'h3',
-          'text-xl font-medium leading-tight': variant === 'h4',
+          'text-4xl font-bold leading-tight': variant === 'h1',    // Maps to semantic 4xl
+          'text-3xl font-semibold leading-tight': variant === 'h2', // Maps to semantic 3xl
+          'text-2xl font-semibold leading-tight': variant === 'h3', // Maps to semantic 2xl
+          'text-xl font-medium leading-tight': variant === 'h4',    // Maps to semantic xl
         },
         className
       )}
