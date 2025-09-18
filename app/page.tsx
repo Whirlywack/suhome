@@ -238,7 +238,7 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section className="relative" style={{ padding: '2.25rem 0' }}>
+        <section id="about" className="relative" style={{ padding: '2.25rem 0' }}>
           <div className="container">
             {/* Section Header */}
             <div className="grid gap-9 items-baseline mb-12" style={{ gridTemplateColumns: 'auto 1fr' }}>

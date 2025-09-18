@@ -6,26 +6,33 @@ import { SITE_CONFIG } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import ThemeToggle from '@/components/ui/theme-toggle'
 
-// Desktop navigation - traditional page links
-const desktopNav = [
-  { href: '/', label: 'HOME' },
-  { href: '/about', label: 'ABOUT' },
-  { href: '/contact', label: 'CONTACT' },
+// Navigation - scroll-based for single page
+const navigation = [
+  { href: '#home', label: 'HOME' },
+  { href: '#about', label: 'ABOUT' },
+  { href: '#contact', label: 'CONTACT' },
 ]
 
-// Mobile navigation - anchor-based for one-pager
-const mobileNav = [
-  { href: '/#about', label: 'ABOUT' },
-  { href: '/#contact', label: 'CONTACT' },
-]
-
-// Header component with dual navigation behavior
+// Header component with smooth scroll navigation
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // Close mobile menu when clicking on a link
-  const handleMobileNavClick = () => {
+  // Smooth scroll to section
+  const handleScrollToSection = (href: string) => {
     setIsMobileMenuOpen(false)
+
+    if (href === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
   }
 
   return (
@@ -41,18 +48,18 @@ export function Header() {
           </div>
         </Link>
 
-        {/* Desktop Navigation - traditional page links */}
+        {/* Desktop Navigation - smooth scroll */}
         <div className="hidden md:flex items-center" style={{ gap: '3.375rem' }}>
           <nav className="flex items-center" style={{ gap: '3.375rem' }}>
-            {desktopNav.map(item => (
-              <Link
+            {navigation.map(item => (
+              <button
                 key={item.href}
-                href={item.href}
-                className="text-sm font-medium uppercase text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => handleScrollToSection(item.href)}
+                className="text-sm font-medium uppercase text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
                 style={{ letterSpacing: '0.1em' }}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -116,35 +123,20 @@ export function Header() {
           className="md:hidden border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80"
         >
           <div className="container py-lg space-y-md">
-            {/* Home link for mobile */}
-            <Link
-              href="/"
-              className={cn(
-                'block text-sm font-medium uppercase tracking-wider transition-colors',
-                'text-foreground/80 hover:text-foreground py-sm',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                'focus-visible:ring-offset-2 focus-visible:ring-offset-background'
-              )}
-              onClick={handleMobileNavClick}
-            >
-              HOME
-            </Link>
-
-            {/* Mobile anchor navigation */}
-            {mobileNav.map(item => (
-              <Link
+            {/* Mobile smooth scroll navigation */}
+            {navigation.map(item => (
+              <button
                 key={item.href}
-                href={item.href}
+                onClick={() => handleScrollToSection(item.href)}
                 className={cn(
-                  'block text-sm font-medium uppercase tracking-wider transition-colors',
-                  'text-foreground/80 hover:text-foreground py-sm',
+                  'block text-sm font-medium uppercase tracking-wider transition-colors w-full text-left',
+                  'text-foreground/80 hover:text-foreground py-sm cursor-pointer',
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
                   'focus-visible:ring-offset-2 focus-visible:ring-offset-background'
                 )}
-                onClick={handleMobileNavClick}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
