@@ -1,700 +1,824 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Superoptimised — Indie Dev Studio London</title>
     <style>
-        /* Perfect Fifth Mathematical Foundation */
+      /* Perfect Fifth Mathematical Foundation */
+      :root {
+        /* Off-Black/Off-White Color System */
+        --background: 0 0% 97%;
+        --foreground: 0 0% 8%;
+        --muted: 0 0% 94%;
+        --muted-foreground: 0 0% 40%;
+        --border: 0 0% 88%;
+        --accent: 0 0% 15%;
+        --subtle: 0 0% 92%;
+
+        /* Perfect Fifth Spacing Scale */
+        --space-xs: 0.25rem;
+        --space-sm: 0.5rem;
+        --space-md: 0.75rem;
+        --space-lg: 1rem;
+        --space-xl: 1.5rem;
+        --space-2xl: 2.25rem;
+        --space-3xl: 3.375rem;
+        --space-4xl: 5rem;
+
+        /* Typography Scale */
+        --text-sm: 0.875rem;
+        --text-base: 1rem;
+        --text-lg: 1.125rem;
+        --text-xl: 1.25rem;
+        --text-2xl: 1.5rem;
+        --text-3xl: 1.875rem;
+        --text-4xl: 2.25rem;
+        --text-5xl: 3rem;
+        --text-6xl: 3.75rem;
+        --text-7xl: 4.5rem;
+        --text-8xl: 6rem;
+        --text-9xl: 8rem;
+
+        /* Container */
+        --container-max: 70rem;
+      }
+
+      /* Dark Mode */
+      @media (prefers-color-scheme: dark) {
         :root {
-            /* Off-Black/Off-White Color System */
-            --background: 0 0% 97%;
-            --foreground: 0 0% 8%;
-            --muted: 0 0% 94%;
-            --muted-foreground: 0 0% 40%;
-            --border: 0 0% 88%;
-            --accent: 0 0% 15%;
-            --subtle: 0 0% 92%;
-
-            /* Perfect Fifth Spacing Scale */
-            --space-xs: 0.25rem;
-            --space-sm: 0.5rem;
-            --space-md: 0.75rem;
-            --space-lg: 1rem;
-            --space-xl: 1.5rem;
-            --space-2xl: 2.25rem;
-            --space-3xl: 3.375rem;
-            --space-4xl: 5rem;
-
-            /* Typography Scale */
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            --text-5xl: 3rem;
-            --text-6xl: 3.75rem;
-            --text-7xl: 4.5rem;
-            --text-8xl: 6rem;
-            --text-9xl: 8rem;
-
-            /* Container */
-            --container-max: 70rem;
+          --background: 0 0% 5%;
+          --foreground: 0 0% 95%;
+          --muted: 0 0% 8%;
+          --muted-foreground: 0 0% 60%;
+          --border: 0 0% 15%;
+          --accent: 0 0% 85%;
+          --subtle: 0 0% 7%;
         }
+      }
 
-        /* Dark Mode */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --background: 0 0% 5%;
-                --foreground: 0 0% 95%;
-                --muted: 0 0% 8%;
-                --muted-foreground: 0 0% 60%;
-                --border: 0 0% 15%;
-                --accent: 0 0% 85%;
-                --subtle: 0 0% 7%;
-            }
+      /* Force Light Mode */
+      [data-theme='light'] {
+        --background: 0 0% 97%;
+        --foreground: 0 0% 8%;
+        --muted: 0 0% 94%;
+        --muted-foreground: 0 0% 40%;
+        --border: 0 0% 88%;
+        --accent: 0 0% 15%;
+        --subtle: 0 0% 92%;
+      }
+
+      /* Force Dark Mode */
+      [data-theme='dark'] {
+        --background: 0 0% 5%;
+        --foreground: 0 0% 95%;
+        --muted: 0 0% 8%;
+        --muted-foreground: 0 0% 60%;
+        --border: 0 0% 15%;
+        --accent: 0 0% 85%;
+        --subtle: 0 0% 7%;
+      }
+
+      /* Responsive Root Font Size */
+      html {
+        font-size: 100%;
+      }
+      @media (min-width: 26.75rem) {
+        html {
+          font-size: 106.25%;
         }
-
-        /* Force Light Mode */
-        [data-theme="light"] {
-            --background: 0 0% 97%;
-            --foreground: 0 0% 8%;
-            --muted: 0 0% 94%;
-            --muted-foreground: 0 0% 40%;
-            --border: 0 0% 88%;
-            --accent: 0 0% 15%;
-            --subtle: 0 0% 92%;
+      }
+      @media (min-width: 36rem) {
+        html {
+          font-size: 112.5%;
         }
-
-        /* Force Dark Mode */
-        [data-theme="dark"] {
-            --background: 0 0% 5%;
-            --foreground: 0 0% 95%;
-            --muted: 0 0% 8%;
-            --muted-foreground: 0 0% 60%;
-            --border: 0 0% 15%;
-            --accent: 0 0% 85%;
-            --subtle: 0 0% 7%;
+      }
+      @media (min-width: 48rem) {
+        html {
+          font-size: 118.75%;
         }
-
-        /* Responsive Root Font Size */
-        html { font-size: 100%; }
-        @media (min-width: 26.75rem) { html { font-size: 106.25%; } }
-        @media (min-width: 36rem) { html { font-size: 112.5%; } }
-        @media (min-width: 48rem) { html { font-size: 118.75%; } }
-        @media (min-width: 64rem) { html { font-size: 125%; } }
-        @media (min-width: 90rem) { html { font-size: 131.25%; } }
-
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      }
+      @media (min-width: 64rem) {
+        html {
+          font-size: 125%;
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', system-ui, sans-serif;
-            line-height: 1.4;
-            background: hsl(var(--background));
-            color: hsl(var(--foreground));
-            font-size: var(--text-base);
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
+      }
+      @media (min-width: 90rem) {
+        html {
+          font-size: 131.25%;
         }
+      }
 
-        /* Texture Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 25% 25%, hsl(var(--subtle)) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, hsl(var(--subtle)) 0%, transparent 50%);
-            opacity: 0.3;
-            z-index: -1;
-            pointer-events: none;
-        }
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* Container System */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter',
+          'SF Pro Display', system-ui, sans-serif;
+        line-height: 1.4;
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-size: var(--text-base);
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      /* Texture Background */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 25% 25%,
+            hsl(var(--subtle)) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            hsl(var(--subtle)) 0%,
+            transparent 50%
+          );
+        opacity: 0.3;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Container System */
+      .container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 var(--space-xl);
+      }
+
+      @media (min-width: 48rem) {
         .container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 var(--space-xl);
+          padding: 0 var(--space-3xl);
         }
+      }
 
-        @media (min-width: 48rem) {
-            .container {
-                padding: 0 var(--space-3xl);
-            }
-        }
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: hsl(var(--background) / 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid hsl(var(--border));
+        z-index: 100;
+      }
 
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: hsl(var(--background) / 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid hsl(var(--border));
-            z-index: 100;
-        }
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 4.5rem;
+      }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 4.5rem;
-        }
+      .nav-logo {
+        font-weight: 700;
+        font-size: var(--text-lg);
+        letter-spacing: -0.01em;
+      }
 
-        .nav-logo {
-            font-weight: 700;
-            font-size: var(--text-lg);
-            letter-spacing: -0.01em;
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2xl);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: var(--space-3xl);
+        list-style: none;
+      }
+
+      .theme-toggle {
+        background: none;
+        border: 1px solid hsl(var(--border));
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: hsl(var(--muted-foreground));
+      }
+
+      .theme-toggle:hover {
+        border-color: hsl(var(--accent));
+        color: hsl(var(--foreground));
+        transform: rotate(180deg);
+      }
+
+      .theme-icon {
+        width: 1rem;
+        height: 1rem;
+        transition: opacity 0.2s ease;
+      }
+
+      .nav-links a {
+        color: hsl(var(--muted-foreground));
+        text-decoration: none;
+        font-size: var(--text-sm);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: hsl(var(--foreground));
+      }
+
+      @media (max-width: 48rem) {
+        .nav-links {
+          display: none;
         }
 
         .nav-right {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2xl);
+          gap: 0;
         }
+      }
 
-        .nav-links {
-            display: flex;
-            gap: var(--space-3xl);
-            list-style: none;
-        }
+      /* Hero Section */
+      .hero {
+        padding: var(--space-4xl) 0 var(--space-3xl);
+        text-align: center;
+        position: relative;
+        margin-top: 4.5rem;
+      }
 
-        .theme-toggle {
-            background: none;
-            border: 1px solid hsl(var(--border));
-            border-radius: 50%;
-            width: 2.5rem;
-            height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: hsl(var(--muted-foreground));
-        }
+      .hero-title {
+        font-size: var(--text-9xl);
+        font-weight: 200;
+        line-height: 0.85;
+        letter-spacing: -0.05em;
+        margin-bottom: var(--space-xl);
+        position: relative;
+      }
 
-        .theme-toggle:hover {
-            border-color: hsl(var(--accent));
-            color: hsl(var(--foreground));
-            transform: rotate(180deg);
-        }
+      .hero-title::after {
+        content: '';
+        position: absolute;
+        bottom: -var(--space-lg);
+        left: 50%;
+        transform: translateX(-50%);
+        width: var(--space-4xl);
+        height: 2px;
+        background: hsl(var(--accent));
+      }
 
-        .theme-icon {
-            width: 1rem;
-            height: 1rem;
-            transition: opacity 0.2s ease;
-        }
+      .hero-intro {
+        font-size: var(--text-xl);
+        line-height: 1.4;
+        color: hsl(var(--muted-foreground));
+        max-width: 40rem;
+        margin: 0 auto;
+        font-weight: 300;
+      }
 
-        .nav-links a {
-            color: hsl(var(--muted-foreground));
-            text-decoration: none;
-            font-size: var(--text-sm);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: hsl(var(--foreground));
-        }
-
-        @media (max-width: 48rem) {
-            .nav-links {
-                display: none;
-            }
-            
-            .nav-right {
-                gap: 0;
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: var(--space-4xl) 0 var(--space-3xl);
-            text-align: center;
-            position: relative;
-            margin-top: 4.5rem;
-        }
-
+      @media (max-width: 48rem) {
         .hero-title {
-            font-size: var(--text-9xl);
-            font-weight: 200;
-            line-height: 0.85;
-            letter-spacing: -0.05em;
-            margin-bottom: var(--space-xl);
-            position: relative;
-        }
-
-        .hero-title::after {
-            content: '';
-            position: absolute;
-            bottom: -var(--space-lg);
-            left: 50%;
-            transform: translateX(-50%);
-            width: var(--space-4xl);
-            height: 2px;
-            background: hsl(var(--accent));
+          font-size: var(--text-6xl);
+          line-height: 0.9;
         }
 
         .hero-intro {
-            font-size: var(--text-xl);
-            line-height: 1.4;
-            color: hsl(var(--muted-foreground));
-            max-width: 40rem;
-            margin: 0 auto;
-            font-weight: 300;
+          font-size: var(--text-lg);
         }
+      }
 
-        @media (max-width: 48rem) {
-            .hero-title {
-                font-size: var(--text-6xl);
-                line-height: 0.9;
-            }
-            
-            .hero-intro {
-                font-size: var(--text-lg);
-            }
-        }
+      /* Section System */
+      .section {
+        padding: var(--space-2xl) 0;
+        position: relative;
+      }
 
-        /* Section System */
-        .section {
-            padding: var(--space-2xl) 0;
-            position: relative;
-        }
+      .section-header {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-2xl);
+        align-items: baseline;
+        margin-bottom: var(--space-3xl);
+      }
 
+      .section-number {
+        font-size: var(--text-5xl);
+        font-weight: 100;
+        color: hsl(var(--muted-foreground));
+        line-height: 1;
+        width: 6rem;
+      }
+
+      .section-title {
+        font-size: var(--text-4xl);
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      @media (max-width: 64rem) {
         .section-header {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: var(--space-2xl);
-            align-items: baseline;
-            margin-bottom: var(--space-3xl);
+          grid-template-columns: 1fr;
+          gap: var(--space-lg);
+          text-align: center;
         }
 
         .section-number {
-            font-size: var(--text-5xl);
-            font-weight: 100;
-            color: hsl(var(--muted-foreground));
-            line-height: 1;
-            width: 6rem;
+          width: auto;
+          font-size: var(--text-3xl);
         }
 
         .section-title {
-            font-size: var(--text-4xl);
-            font-weight: 600;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+          font-size: var(--text-3xl);
         }
+      }
 
-        @media (max-width: 64rem) {
-            .section-header {
-                grid-template-columns: 1fr;
-                gap: var(--space-lg);
-                text-align: center;
-            }
-            
-            .section-number {
-                width: auto;
-                font-size: var(--text-3xl);
-            }
-            
-            .section-title {
-                font-size: var(--text-3xl);
-            }
-        }
+      /* Content Layout */
+      .content-grid {
+        display: grid;
+        gap: var(--space-2xl);
+      }
 
-        /* Content Layout */
+      @media (min-width: 64rem) {
         .content-grid {
-            display: grid;
-            gap: var(--space-2xl);
+          grid-template-columns: 1fr 2fr;
+          gap: var(--space-4xl);
+        }
+      }
+
+      .content-sidebar {
+        color: hsl(var(--muted-foreground));
+        font-size: var(--text-sm);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .content-main {
+        font-size: var(--text-lg);
+        line-height: 1.5;
+      }
+
+      .content-main p {
+        margin-bottom: var(--space-lg);
+      }
+
+      .content-main h3 {
+        font-size: var(--text-xl);
+        font-weight: 600;
+        margin-top: var(--space-2xl);
+        margin-bottom: var(--space-lg);
+      }
+
+      /* Special Elements */
+      .highlight-quote {
+        font-size: var(--text-xl);
+        font-weight: 300;
+        font-style: italic;
+        color: hsl(var(--accent));
+        padding: var(--space-2xl);
+        border-left: 3px solid hsl(var(--accent));
+        background: hsl(var(--subtle));
+        margin: var(--space-2xl) 0;
+      }
+
+      .principles-list {
+        display: grid;
+        gap: var(--space-xl);
+        margin-top: var(--space-2xl);
+      }
+
+      .principle {
+        display: grid;
+        grid-template-columns: 3rem 1fr;
+        gap: var(--space-lg);
+        padding: var(--space-lg) 0;
+        border-bottom: 1px solid hsl(var(--border));
+        align-items: baseline;
+      }
+
+      .principle:last-child {
+        border-bottom: none;
+      }
+
+      .principle-number {
+        font-size: var(--text-sm);
+        font-weight: 700;
+        color: hsl(var(--accent));
+        text-align: right;
+      }
+
+      .principle-text {
+        font-size: var(--text-lg);
+        line-height: 1.4;
+      }
+
+      /* Contact Section */
+      .contact {
+        background: hsl(var(--accent));
+        color: hsl(var(--background));
+        margin-top: var(--space-4xl);
+        padding: var(--space-4xl) 0;
+      }
+
+      .contact .section-number,
+      .contact .section-title {
+        color: hsl(var(--background));
+      }
+
+      .contact .content-main {
+        color: hsla(var(--background) / 0.8);
+      }
+
+      .contact-email {
+        display: inline-block;
+        font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+        font-size: var(--text-lg);
+        font-weight: 500;
+        color: hsl(var(--background));
+        text-decoration: none;
+        padding: var(--space-lg) var(--space-xl);
+        border: 1px solid hsla(var(--background) / 0.3);
+        margin-top: var(--space-xl);
+        transition: all 0.2s ease;
+      }
+
+      .contact-email:hover {
+        background: hsla(var(--background) / 0.1);
+        border-color: hsl(var(--background));
+      }
+
+      /* Geometric Elements */
+      .section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: var(--space-2xl);
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          hsl(var(--border)),
+          transparent
+        );
+      }
+
+      .section:first-of-type::before {
+        display: none;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 48rem) {
+        .section {
+          padding: var(--space-xl) 0;
         }
 
-        @media (min-width: 64rem) {
-            .content-grid {
-                grid-template-columns: 1fr 2fr;
-                gap: var(--space-4xl);
-            }
-        }
-
-        .content-sidebar {
-            color: hsl(var(--muted-foreground));
-            font-size: var(--text-sm);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .hero {
+          padding: var(--space-3xl) 0 var(--space-2xl);
         }
 
         .content-main {
-            font-size: var(--text-lg);
-            line-height: 1.5;
+          font-size: var(--text-base);
         }
 
-        .content-main p {
-            margin-bottom: var(--space-lg);
-        }
-
-        .content-main h3 {
-            font-size: var(--text-xl);
-            font-weight: 600;
-            margin-top: var(--space-2xl);
-            margin-bottom: var(--space-lg);
-        }
-
-        /* Special Elements */
         .highlight-quote {
-            font-size: var(--text-xl);
-            font-weight: 300;
-            font-style: italic;
-            color: hsl(var(--accent));
-            padding: var(--space-2xl);
-            border-left: 3px solid hsl(var(--accent));
-            background: hsl(var(--subtle));
-            margin: var(--space-2xl) 0;
-        }
-
-        .principles-list {
-            display: grid;
-            gap: var(--space-xl);
-            margin-top: var(--space-2xl);
+          font-size: var(--text-lg);
+          padding: var(--space-xl);
         }
 
         .principle {
-            display: grid;
-            grid-template-columns: 3rem 1fr;
-            gap: var(--space-lg);
-            padding: var(--space-lg) 0;
-            border-bottom: 1px solid hsl(var(--border));
-            align-items: baseline;
+          grid-template-columns: 2rem 1fr;
+          gap: var(--space-md);
         }
-
-        .principle:last-child {
-            border-bottom: none;
-        }
-
-        .principle-number {
-            font-size: var(--text-sm);
-            font-weight: 700;
-            color: hsl(var(--accent));
-            text-align: right;
-        }
-
-        .principle-text {
-            font-size: var(--text-lg);
-            line-height: 1.4;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: hsl(var(--accent));
-            color: hsl(var(--background));
-            margin-top: var(--space-4xl);
-            padding: var(--space-4xl) 0;
-        }
-
-        .contact .section-number,
-        .contact .section-title {
-            color: hsl(var(--background));
-        }
-
-        .contact .content-main {
-            color: hsla(var(--background) / 0.8);
-        }
-
-        .contact-email {
-            display: inline-block;
-            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-            font-size: var(--text-lg);
-            font-weight: 500;
-            color: hsl(var(--background));
-            text-decoration: none;
-            padding: var(--space-lg) var(--space-xl);
-            border: 1px solid hsla(var(--background) / 0.3);
-            margin-top: var(--space-xl);
-            transition: all 0.2s ease;
-        }
-
-        .contact-email:hover {
-            background: hsla(var(--background) / 0.1);
-            border-color: hsl(var(--background));
-        }
-
-        /* Geometric Elements */
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: var(--space-2xl);
-            background: linear-gradient(to bottom, transparent, hsl(var(--border)), transparent);
-        }
-
-        .section:first-of-type::before {
-            display: none;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 48rem) {
-            .section {
-                padding: var(--space-xl) 0;
-            }
-            
-            .hero {
-                padding: var(--space-3xl) 0 var(--space-2xl);
-            }
-            
-            .content-main {
-                font-size: var(--text-base);
-            }
-            
-            .highlight-quote {
-                font-size: var(--text-lg);
-                padding: var(--space-xl);
-            }
-            
-            .principle {
-                grid-template-columns: 2rem 1fr;
-                gap: var(--space-md);
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="nav">
-        <div class="container nav-container">
-            <div class="nav-logo">Superoptimised</div>
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                    <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle id="sun-icon" cx="12" cy="12" r="5"></circle>
-                        <line id="sun-line-1" x1="12" y1="1" x2="12" y2="3"></line>
-                        <line id="sun-line-2" x1="12" y1="21" x2="12" y2="23"></line>
-                        <line id="sun-line-3" x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line id="sun-line-4" x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line id="sun-line-5" x1="1" y1="12" x2="3" y2="12"></line>
-                        <line id="sun-line-6" x1="21" y1="12" x2="23" y2="12"></line>
-                        <line id="sun-line-7" x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line id="sun-line-8" x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        <path id="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" style="opacity: 0;"></path>
-                    </svg>
-                </button>
-            </div>
+      <div class="container nav-container">
+        <div class="nav-logo">Superoptimised</div>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle theme"
+          >
+            <svg
+              class="theme-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle id="sun-icon" cx="12" cy="12" r="5"></circle>
+              <line id="sun-line-1" x1="12" y1="1" x2="12" y2="3"></line>
+              <line id="sun-line-2" x1="12" y1="21" x2="12" y2="23"></line>
+              <line
+                id="sun-line-3"
+                x1="4.22"
+                y1="4.22"
+                x2="5.64"
+                y2="5.64"
+              ></line>
+              <line
+                id="sun-line-4"
+                x1="18.36"
+                y1="18.36"
+                x2="19.78"
+                y2="19.78"
+              ></line>
+              <line id="sun-line-5" x1="1" y1="12" x2="3" y2="12"></line>
+              <line id="sun-line-6" x1="21" y1="12" x2="23" y2="12"></line>
+              <line
+                id="sun-line-7"
+                x1="4.22"
+                y1="19.78"
+                x2="5.64"
+                y2="18.36"
+              ></line>
+              <line
+                id="sun-line-8"
+                x1="18.36"
+                y1="5.64"
+                x2="19.78"
+                y2="4.22"
+              ></line>
+              <path
+                id="moon-icon"
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                style="opacity: 0"
+              ></path>
+            </svg>
+          </button>
         </div>
+      </div>
     </nav>
 
     <main>
-        <!-- Hero -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h1 class="hero-title">Superoptimised</h1>
-                <p class="hero-intro">An indie dev studio in London. Projects are chosen by fit — curiosity, design, and the chance to make something enjoyable, meaningful, or just plain fun.</p>
+      <!-- Hero -->
+      <section id="home" class="hero">
+        <div class="container">
+          <h1 class="hero-title">Superoptimised</h1>
+          <p class="hero-intro">
+            An indie dev studio in London. Projects are chosen by fit —
+            curiosity, design, and the chance to make something enjoyable,
+            meaningful, or just plain fun.
+          </p>
+        </div>
+      </section>
+
+      <!-- Studio Story -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">01</div>
+            <h2 class="section-title">Studio Story</h2>
+          </div>
+          <div class="content-grid">
+            <div class="content-sidebar">Philosophy<br />& Process</div>
+            <div class="content-main">
+              <p>
+                Superoptimised exists to follow ideas wherever they lead.
+                Sometimes the result is small, almost throwaway; other times it
+                grows into something bigger. The scale matters less than the
+                spark.
+              </p>
+              <p>
+                The process is more of a rhythm than a method: sketch an idea,
+                test it, shape it, discard or keep. Curiosity and play drive
+                everything. What stays is what feels alive.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Studio Story -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-number">01</div>
-                    <h2 class="section-title">Studio Story</h2>
-                </div>
-                <div class="content-grid">
-                    <div class="content-sidebar">
-                        Philosophy<br>& Process
-                    </div>
-                    <div class="content-main">
-                        <p>Superoptimised exists to follow ideas wherever they lead. Sometimes the result is small, almost throwaway; other times it grows into something bigger. The scale matters less than the spark.</p>
-                        <p>The process is more of a rhythm than a method: sketch an idea, test it, shape it, discard or keep. Curiosity and play drive everything. What stays is what feels alive.</p>
-                    </div>
-                </div>
+      <!-- Notes on AI -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">02</div>
+            <h2 class="section-title">Notes on AI</h2>
+          </div>
+          <div class="content-grid">
+            <div class="content-sidebar">Technology<br />& Humanity</div>
+            <div class="content-main">
+              <div class="highlight-quote">
+                AI isn't a feature to bolt on. It feels closer to the printing
+                press or the microchip — a shift so deep it changes the way
+                people live and create. A kind of quiet miracle.
+              </div>
+              <p>
+                Superoptimised approaches it with curiosity and care. The goal
+                is not to automate everything, but to fold intelligence into the
+                everyday in ways that feel natural, playful, and humane. When it
+                works, life becomes lighter: less friction, more joy, new kinds
+                of meaning.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Notes on AI -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-number">02</div>
-                    <h2 class="section-title">Notes on AI</h2>
+      <!-- Principles -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">03</div>
+            <h2 class="section-title">Principles</h2>
+          </div>
+          <div class="content-grid">
+            <div class="content-sidebar">Design<br />Values</div>
+            <div class="content-main">
+              <div class="principles-list">
+                <div class="principle">
+                  <div class="principle-number">01</div>
+                  <div class="principle-text">
+                    Ideas should invite exploration, not exhaustion.
+                  </div>
                 </div>
-                <div class="content-grid">
-                    <div class="content-sidebar">
-                        Technology<br>& Humanity
-                    </div>
-                    <div class="content-main">
-                        <div class="highlight-quote">
-                            AI isn't a feature to bolt on. It feels closer to the printing press or the microchip — a shift so deep it changes the way people live and create. A kind of quiet miracle.
-                        </div>
-                        <p>Superoptimised approaches it with curiosity and care. The goal is not to automate everything, but to fold intelligence into the everyday in ways that feel natural, playful, and humane. When it works, life becomes lighter: less friction, more joy, new kinds of meaning.</p>
-                    </div>
+                <div class="principle">
+                  <div class="principle-number">02</div>
+                  <div class="principle-text">
+                    Design is attention: typography, space, motion.
+                  </div>
                 </div>
+                <div class="principle">
+                  <div class="principle-number">03</div>
+                  <div class="principle-text">
+                    Fun matters, even in serious work.
+                  </div>
+                </div>
+                <div class="principle">
+                  <div class="principle-number">04</div>
+                  <div class="principle-text">
+                    A good interface disappears; a great one lingers in memory.
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Principles -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-number">03</div>
-                    <h2 class="section-title">Principles</h2>
-                </div>
-                <div class="content-grid">
-                    <div class="content-sidebar">
-                        Design<br>Values
-                    </div>
-                    <div class="content-main">
-                        <div class="principles-list">
-                            <div class="principle">
-                                <div class="principle-number">01</div>
-                                <div class="principle-text">Ideas should invite exploration, not exhaustion.</div>
-                            </div>
-                            <div class="principle">
-                                <div class="principle-number">02</div>
-                                <div class="principle-text">Design is attention: typography, space, motion.</div>
-                            </div>
-                            <div class="principle">
-                                <div class="principle-number">03</div>
-                                <div class="principle-text">Fun matters, even in serious work.</div>
-                            </div>
-                            <div class="principle">
-                                <div class="principle-number">04</div>
-                                <div class="principle-text">A good interface disappears; a great one lingers in memory.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">04</div>
+            <h2 class="section-title">About</h2>
+          </div>
+          <div class="content-grid">
+            <div class="content-sidebar">Team<br />& Focus</div>
+            <div class="content-main">
+              <p>
+                Superoptimised is small by design. A few people, enough to
+                experiment, never enough to get lost in scale. Work happens
+                where curiosity and fit align. Everything else is politely left
+                behind.
+              </p>
+
+              <h3>The Journey</h3>
+              <p>
+                Curiosity starts the path. A fragment of an idea, a tool that
+                feels missing, a playful thought worth chasing. Some journeys
+                end quickly; others become long-running companions. Each
+                sharpens the next.
+              </p>
+
+              <h3>Focus</h3>
+              <p>
+                Edges are where things get interesting — the overlap of UI, UX,
+                and AI. Superoptimised builds what feels engaging to explore,
+                not what's easiest to explain. Most of the time, there's no
+                availability for outside work. But when a project feels like a
+                match, it's worth the time.
+              </p>
+
+              <h3>Design and Experience</h3>
+              <p>
+                Contemporary products deserve more than function. They should be
+                sleek, enjoyable, and meaningful. UI and UX aren't polish added
+                at the end — they are the beginning. A product that feels good
+                to use is already halfway to being loved.
+              </p>
+
+              <h3>Who</h3>
+              <p>
+                Based in London, reaching anywhere ideas travel. Always in
+                motion, always busy, working on projects that feel alive.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- About -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-number">04</div>
-                    <h2 class="section-title">About</h2>
-                </div>
-                <div class="content-grid">
-                    <div class="content-sidebar">
-                        Team<br>& Focus
-                    </div>
-                    <div class="content-main">
-                        <p>Superoptimised is small by design. A few people, enough to experiment, never enough to get lost in scale. Work happens where curiosity and fit align. Everything else is politely left behind.</p>
-
-                        <h3>The Journey</h3>
-                        <p>Curiosity starts the path. A fragment of an idea, a tool that feels missing, a playful thought worth chasing. Some journeys end quickly; others become long-running companions. Each sharpens the next.</p>
-
-                        <h3>Focus</h3>
-                        <p>Edges are where things get interesting — the overlap of UI, UX, and AI. Superoptimised builds what feels engaging to explore, not what's easiest to explain. Most of the time, there's no availability for outside work. But when a project feels like a match, it's worth the time.</p>
-
-                        <h3>Design and Experience</h3>
-                        <p>Contemporary products deserve more than function. They should be sleek, enjoyable, and meaningful. UI and UX aren't polish added at the end — they are the beginning. A product that feels good to use is already halfway to being loved.</p>
-
-                        <h3>Who</h3>
-                        <p>Based in London, reaching anywhere ideas travel. Always in motion, always busy, working on projects that feel alive.</p>
-                    </div>
-                </div>
+      <!-- Contact -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-number">05</div>
+            <h2 class="section-title">Contact</h2>
+          </div>
+          <div class="content-grid">
+            <div class="content-sidebar">Get In<br />Touch</div>
+            <div class="content-main">
+              <p>
+                Superoptimised is usually at capacity, but an open channel
+                remains. If a project feels aligned — thoughtful, curious, or
+                simply fun — a short note is welcome.
+              </p>
+              <p>No forms, no funnels. Just an email.</p>
+              <a href="mailto:connect@superoptimised.com" class="contact-email"
+                >connect@superoptimised.com</a
+              >
             </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-number">05</div>
-                    <h2 class="section-title">Contact</h2>
-                </div>
-                <div class="content-grid">
-                    <div class="content-sidebar">
-                        Get In<br>Touch
-                    </div>
-                    <div class="content-main">
-                        <p>Superoptimised is usually at capacity, but an open channel remains. If a project feels aligned — thoughtful, curious, or simply fun — a short note is welcome.</p>
-                        <p>No forms, no funnels. Just an email.</p>
-                        <a href="mailto:connect@superoptimised.com" class="contact-email">connect@superoptimised.com</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script>
-        // Theme functionality
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
-            const sunLines = document.querySelectorAll('[id^="sun-line-"]');
-            
-            if (currentTheme === 'dark') {
-                html.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                // Show sun icon
-                sunIcon.style.opacity = '1';
-                moonIcon.style.opacity = '0';
-                sunLines.forEach(line => line.style.opacity = '1');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                // Show moon icon
-                sunIcon.style.opacity = '0';
-                moonIcon.style.opacity = '1';
-                sunLines.forEach(line => line.style.opacity = '0');
-            }
-        }
+      // Theme functionality
+      function toggleTheme() {
+        const html = document.documentElement
+        const currentTheme = html.getAttribute('data-theme')
+        const sunIcon = document.getElementById('sun-icon')
+        const moonIcon = document.getElementById('moon-icon')
+        const sunLines = document.querySelectorAll('[id^="sun-line-"]')
 
-        // Initialize theme on load
-        function initTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
-            const sunLines = document.querySelectorAll('[id^="sun-line-"]');
-            
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-theme', savedTheme);
-                if (savedTheme === 'dark') {
-                    sunIcon.style.opacity = '0';
-                    moonIcon.style.opacity = '1';
-                    sunLines.forEach(line => line.style.opacity = '0');
-                } else {
-                    sunIcon.style.opacity = '1';
-                    moonIcon.style.opacity = '0';
-                    sunLines.forEach(line => line.style.opacity = '1');
-                }
-            } else if (systemPrefersDark) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                sunIcon.style.opacity = '0';
-                moonIcon.style.opacity = '1';
-                sunLines.forEach(line => line.style.opacity = '0');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                sunIcon.style.opacity = '1';
-                moonIcon.style.opacity = '0';
-                sunLines.forEach(line => line.style.opacity = '1');
-            }
+        if (currentTheme === 'dark') {
+          html.setAttribute('data-theme', 'light')
+          localStorage.setItem('theme', 'light')
+          // Show sun icon
+          sunIcon.style.opacity = '1'
+          moonIcon.style.opacity = '0'
+          sunLines.forEach(line => (line.style.opacity = '1'))
+        } else {
+          html.setAttribute('data-theme', 'dark')
+          localStorage.setItem('theme', 'dark')
+          // Show moon icon
+          sunIcon.style.opacity = '0'
+          moonIcon.style.opacity = '1'
+          sunLines.forEach(line => (line.style.opacity = '0'))
         }
+      }
 
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initTheme);
+      // Initialize theme on load
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme')
+        const systemPrefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches
+        const sunIcon = document.getElementById('sun-icon')
+        const moonIcon = document.getElementById('moon-icon')
+        const sunLines = document.querySelectorAll('[id^="sun-line-"]')
+
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme)
+          if (savedTheme === 'dark') {
+            sunIcon.style.opacity = '0'
+            moonIcon.style.opacity = '1'
+            sunLines.forEach(line => (line.style.opacity = '0'))
+          } else {
+            sunIcon.style.opacity = '1'
+            moonIcon.style.opacity = '0'
+            sunLines.forEach(line => (line.style.opacity = '1'))
+          }
+        } else if (systemPrefersDark) {
+          document.documentElement.setAttribute('data-theme', 'dark')
+          sunIcon.style.opacity = '0'
+          moonIcon.style.opacity = '1'
+          sunLines.forEach(line => (line.style.opacity = '0'))
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light')
+          sunIcon.style.opacity = '1'
+          moonIcon.style.opacity = '0'
+          sunLines.forEach(line => (line.style.opacity = '1'))
+        }
+      }
+
+      // Initialize when DOM is loaded
+      document.addEventListener('DOMContentLoaded', initTheme)
     </script>
-</body>
+  </body>
 </html>

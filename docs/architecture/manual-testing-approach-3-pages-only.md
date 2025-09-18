@@ -5,12 +5,14 @@
 With only 3 pages and simplified functionality, manual testing is sufficient:
 
 1. **Homepage Testing**:
+
    - Hero section loads correctly
    - AI products display properly
    - Navigation works smoothly
    - Framer Motion animations perform well
 
 2. **About Page Testing**:
+
    - Content renders correctly
    - Passion projects showcase displays
    - Page transitions are smooth
@@ -32,36 +34,37 @@ export const testUtils = {
     const requiredElements = {
       home: ['hero', 'products', 'navigation'],
       about: ['content', 'projects', 'navigation'],
-      contact: ['contact-info', 'navigation']
-    };
+      contact: ['contact-info', 'navigation'],
+    }
 
-    return requiredElements[page].every(id =>
-      document.getElementById(id) !== null
-    );
+    return requiredElements[page].every(
+      id => document.getElementById(id) !== null
+    )
   },
 
   // Check performance metrics
   checkLoadTime: () => {
-    const [navigation] = performance.getEntriesByType('navigation');
-    return navigation.loadEventEnd - navigation.loadEventStart;
+    const [navigation] = performance.getEntriesByType('navigation')
+    return navigation.loadEventEnd - navigation.loadEventStart
   },
 
   // Validate accessibility basics
   checkA11y: () => {
-    const images = document.querySelectorAll('img');
-    const links = document.querySelectorAll('a');
+    const images = document.querySelectorAll('img')
+    const links = document.querySelectorAll('a')
 
     return {
       imagesWithAlt: Array.from(images).every(img => img.getAttribute('alt')),
-      linksWithText: Array.from(links).every(link => link.textContent?.trim())
-    };
-  }
-};
+      linksWithText: Array.from(links).every(link => link.textContent?.trim()),
+    }
+  },
+}
 ```
 
 ## Removed Testing Libraries
 
 **No Longer Required:**
+
 - Automated testing frameworks (manual testing for 3 pages)
 - Testing Library utilities
 - Jest configuration
@@ -70,6 +73,7 @@ export const testUtils = {
 - Integration testing setup
 
 **Replaced With:**
+
 - Manual browser testing
 - Visual inspection
 - Device testing (mobile/desktop)
@@ -79,3 +83,5 @@ export const testUtils = {
 ## Browser-Based Testing Workflow
 
 ```bash
+
+```

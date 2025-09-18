@@ -2,11 +2,11 @@
 
 ## Change Log
 
-| Date | Version | Description | Author |
-|------|---------|-------------|---------|
-| 2025-09-17 | 3.0 | Simplified secure stack for 3-page architecture with critical security fixes | Architect Persona |
-| 2025-09-17 | 2.0 | Refocused architecture on visual perfection and brutalist design excellence | Architect Persona |
-| 2025-09-16 | 1.0 | Initial frontend architecture following architectural precision principles | Architect Persona |
+| Date       | Version | Description                                                                  | Author            |
+| ---------- | ------- | ---------------------------------------------------------------------------- | ----------------- |
+| 2025-09-17 | 3.0     | Simplified secure stack for 3-page architecture with critical security fixes | Architect Persona |
+| 2025-09-17 | 2.0     | Refocused architecture on visual perfection and brutalist design excellence  | Architect Persona |
+| 2025-09-16 | 1.0     | Initial frontend architecture following architectural precision principles   | Architect Persona |
 
 ## Vision Statement
 
@@ -31,6 +31,7 @@ This frontend architecture follows **brutalist design perfection principles**:
 📖 **Complete specification**: [`/design-system-architecture.md`](../design-system-architecture.md)
 
 **Framework Decision**: Next.js 14.2.25 with App Router (CVE-2025-29927 Security Fix)
+
 - **Rationale**: Security-first approach, perfect static generation, optimal performance
 - **Architectural Principle**: Minimal complexity with precise spacing relationships
 - **Goal**: Visual perfection through simplified, secure architecture
@@ -39,16 +40,16 @@ This frontend architecture follows **brutalist design perfection principles**:
 
 ### Technology Stack Table
 
-| Category | Technology | Version | Purpose | Rationale |
-|----------|------------|---------|---------|-----------|
-| Framework | Next.js | 14.2.25 | Secure static site generation | Critical CVE-2025-29927 security fix, App Router optimization |
-| UI Library | React | 18.3.1 | Component-based visual architecture | Stable compatibility, proven reliability for 3-page structure |
-| Routing | Next.js App Router | 14.2.25 | Simple 3-page routing | Built-in optimization, minimal complexity |
-| Build Tool | Next.js/Turbopack | 14.2.25 | Optimized secure build | Security patches, efficient development workflow |
-| Styling | Tailwind CSS | 3.4.14 | Mathematical spacing system | Extensive browser support, brutalist design implementation |
-| Animation | Framer Motion | 10.18.0 | Beautiful micro-interactions | SSR compatibility, performant animations for visual excellence |
-| Dev Tools | TypeScript | 5.6.3 | Type safety and precision | Proven stability, architectural precision |
-| Code Quality | ESLint + Prettier | 8.57.1 + 2.8.8 | Stable code quality tools | Mature, reliable formatting and linting standards |
+| Category     | Technology         | Version        | Purpose                             | Rationale                                                      |
+| ------------ | ------------------ | -------------- | ----------------------------------- | -------------------------------------------------------------- |
+| Framework    | Next.js            | 14.2.25        | Secure static site generation       | Critical CVE-2025-29927 security fix, App Router optimization  |
+| UI Library   | React              | 18.3.1         | Component-based visual architecture | Stable compatibility, proven reliability for 3-page structure  |
+| Routing      | Next.js App Router | 14.2.25        | Simple 3-page routing               | Built-in optimization, minimal complexity                      |
+| Build Tool   | Next.js/Turbopack  | 14.2.25        | Optimized secure build              | Security patches, efficient development workflow               |
+| Styling      | Tailwind CSS       | 3.4.14         | Mathematical spacing system         | Extensive browser support, brutalist design implementation     |
+| Animation    | Framer Motion      | 10.18.0        | Beautiful micro-interactions        | SSR compatibility, performant animations for visual excellence |
+| Dev Tools    | TypeScript         | 5.6.3          | Type safety and precision           | Proven stability, architectural precision                      |
+| Code Quality | ESLint + Prettier  | 8.57.1 + 2.8.8 | Stable code quality tools           | Mature, reliable formatting and linting standards              |
 
 ## Project Structure
 
@@ -99,15 +100,15 @@ superoptimised-web/
 ### Component Template
 
 ```typescript
-import React from 'react';
-import { cn } from '@/lib/utils';
+import React from 'react'
+import { cn } from '@/lib/utils'
 
 // Design System: Every component follows Perfect Fifth mathematical progression
 interface ComponentNameProps {
-  children?: React.ReactNode;
-  className?: string;
-  variant?: 'default' | 'primary' | 'secondary';
-  size?: 'sm' | 'md' | 'lg';
+  children?: React.ReactNode
+  className?: string
+  variant?: 'default' | 'primary' | 'secondary'
+  size?: 'sm' | 'md' | 'lg'
   // Perfect Fifth mathematical precision in prop definitions
 }
 
@@ -115,56 +116,64 @@ interface ComponentNameProps {
 export const ComponentName = React.forwardRef<
   HTMLDivElement,
   ComponentNameProps
->(({ children, className, variant = 'default', size = 'md', ...props }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        // Base styles using HSL design tokens
-        'relative',
-        // Perfect Fifth spacing progression (see design-system-architecture.md)
-        'p-lg', // 1rem - Perfect Fifth base unit
-        // HSL design token variants
-        {
-          'bg-primary text-primary-foreground': variant === 'primary',
-          'bg-secondary text-secondary-foreground': variant === 'secondary',
-          'bg-background text-foreground': variant === 'default',
-        },
-        // Perfect Fifth size progression
-        {
-          'text-sm p-sm': size === 'sm',   // Perfect Fifth: sm scale
-          'text-base p-lg': size === 'md',  // Perfect Fifth: base scale
-          'text-lg p-xl': size === 'lg',    // Perfect Fifth: xl scale
-        },
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-});
+>(
+  (
+    { children, className, variant = 'default', size = 'md', ...props },
+    ref
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          // Base styles using HSL design tokens
+          'relative',
+          // Perfect Fifth spacing progression (see design-system-architecture.md)
+          'p-lg', // 1rem - Perfect Fifth base unit
+          // HSL design token variants
+          {
+            'bg-primary text-primary-foreground': variant === 'primary',
+            'bg-secondary text-secondary-foreground': variant === 'secondary',
+            'bg-background text-foreground': variant === 'default',
+          },
+          // Perfect Fifth size progression
+          {
+            'text-sm p-sm': size === 'sm', // Perfect Fifth: sm scale
+            'text-base p-lg': size === 'md', // Perfect Fifth: base scale
+            'text-lg p-xl': size === 'lg', // Perfect Fifth: xl scale
+          },
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    )
+  }
+)
 
-ComponentName.displayName = 'ComponentName';
+ComponentName.displayName = 'ComponentName'
 
-export default ComponentName;
+export default ComponentName
 ```
 
 ### Naming Conventions
 
 **Files and Directories:**
+
 - **Components**: PascalCase for component files (`HeroSection.tsx`, `ProductCard.tsx`)
 - **Directories**: kebab-case for folders (`ui-components/`, `page-sections/`)
 - **Utilities**: camelCase for utility files (`mathUtils.ts`, `spacingHelpers.ts`)
 - **Constants**: UPPER_SNAKE_CASE for constant values (`VISUAL_SPACING`, `GRID_BREAKPOINTS`)
 
 **Component Architecture:**
+
 - **Props interfaces**: ComponentNameProps pattern
 - **Variants**: Systematic naming (`primary`, `secondary`, `outline`, `ghost`)
 - **Sizes**: Mathematical progression (`sm`, `md`, `lg`, `xl`)
 - **State**: Descriptive prefixes (`isLoading`, `hasError`, `isVisible`)
 
 **CSS Classes:**
+
 - **Utilities**: Tailwind utility classes following mathematical 8px base system
 - **Custom**: BEM methodology when needed (`hero__title--primary`)
 - **Components**: Scoped to component name (`hero-section`, `product-card`)
@@ -174,16 +183,19 @@ export default ComponentName;
 ### Removed Components
 
 **State Management Libraries:**
+
 - Complex state libraries (simple useState for 3 pages)
 - React Hook Form (simple mailto: contact approach)
 - Complex state stores and hooks
 
 **Testing Infrastructure:**
+
 - Vitest (manual testing for 3 pages)
 - Testing Library setup
 - E2E testing frameworks
 
 **Component Libraries:**
+
 - Using existing brutalist design system
 - Simple, custom components only
 
@@ -202,35 +214,36 @@ src/components/
 
 ```typescript
 // Simple component state for navigation
-const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 // Simple scroll tracking with useEffect
-const [isVisible, setIsVisible] = useState(false);
+const [isVisible, setIsVisible] = useState(false)
 
 useEffect(() => {
   const observer = new IntersectionObserver(
     ([entry]) => setIsVisible(entry.isIntersecting),
     { threshold: 0.1 }
-  );
+  )
 
-  if (ref.current) observer.observe(ref.current);
-  return () => observer.disconnect();
-}, []);
+  if (ref.current) observer.observe(ref.current)
+  return () => observer.disconnect()
+}, [])
 
 // Simple contact approach - no form state management
 const handleContact = () => {
-  window.location.href = 'mailto:hello@superoptimised.com?subject=Contact from website';
-};
+  window.location.href =
+    'mailto:hello@superoptimised.com?subject=Contact from website'
+}
 
 // Framer Motion state for animations
-const controls = useAnimation();
-const [ref, inView] = useInView({ threshold: 0.1 });
+const controls = useAnimation()
+const [ref, inView] = useInView({ threshold: 0.1 })
 
 useEffect(() => {
   if (inView) {
-    controls.start('visible');
+    controls.start('visible')
   }
-}, [controls, inView]);
+}, [controls, inView])
 ```
 
 ## Simplified Contact Approach
@@ -244,22 +257,30 @@ useEffect(() => {
 export const contactUtils = {
   // Generate mailto link for different purposes
   getContactLink: (subject?: string, body?: string) => {
-    const params = new URLSearchParams();
-    if (subject) params.set('subject', subject);
-    if (body) params.set('body', body);
+    const params = new URLSearchParams()
+    if (subject) params.set('subject', subject)
+    if (body) params.set('body', body)
 
-    const queryString = params.toString();
-    return `mailto:hello@superoptimised.com${queryString ? '?' + queryString : ''}`;
+    const queryString = params.toString()
+    return `mailto:hello@superoptimised.com${
+      queryString ? '?' + queryString : ''
+    }`
   },
 
   // Quick contact functions
   generalInquiry: () => contactUtils.getContactLink('General Inquiry'),
   projectDiscussion: () => contactUtils.getContactLink('Project Discussion'),
   collaboration: () => contactUtils.getContactLink('Collaboration Opportunity'),
-};
+}
 
 // Simple contact component pattern
-const ContactButton = ({ subject, children }: { subject?: string; children: React.ReactNode }) => (
+const ContactButton = ({
+  subject,
+  children,
+}: {
+  subject?: string
+  children: React.ReactNode
+}) => (
   <a
     href={contactUtils.getContactLink(subject)}
     className="btn-primary"
@@ -268,27 +289,30 @@ const ContactButton = ({ subject, children }: { subject?: string; children: Reac
   >
     {children}
   </a>
-);
+)
 ```
 
 ### Security Headers Only
 
 ```typescript
 // Next.js security configuration - simplified protection
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server'
 
 // Security middleware - essential headers only
 export async function middleware(request: NextRequest) {
-  const response = NextResponse.next();
+  const response = NextResponse.next()
 
   // Essential security headers for static site
-  response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('X-Frame-Options', 'DENY');
-  response.headers.set('X-XSS-Protection', '1; mode=block');
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  response.headers.set('Content-Security-Policy', "default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'");
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-XSS-Protection', '1; mode=block')
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
+  response.headers.set(
+    'Content-Security-Policy',
+    "default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'"
+  )
 
-  return response;
+  return response
 }
 
 // Middleware configuration - static pages only
@@ -296,7 +320,7 @@ export const config = {
   matcher: [
     '/((?!_next/static|_next/image|favicon.ico).*)', // All pages, no API routes
   ],
-};
+}
 ```
 
 ## Routing
@@ -307,11 +331,11 @@ export const config = {
 // Next.js App Router configuration - beautiful organization
 // File: src/app/layout.tsx
 
-import type { Metadata } from 'next';
-import { Inter, Lexend } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import { Header } from '@/components/layout/header';
-import '@/styles/globals.css';
+import type { Metadata } from 'next'
+import { Inter, Lexend } from 'next/font/google'
+import { cn } from '@/lib/utils'
+import { Header } from '@/components/layout/header'
+import '@/styles/globals.css'
 
 // Font optimization - secure, beautiful precision
 const inter = Inter({
@@ -319,14 +343,14 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap', // Performance and security
   preload: true,
-});
+})
 
 const lexend = Lexend({
   subsets: ['latin'],
   variable: '--font-lexend',
   display: 'swap',
   preload: true,
-});
+})
 
 // Metadata configuration - beautiful SEO
 export const metadata: Metadata = {
@@ -334,8 +358,15 @@ export const metadata: Metadata = {
     default: 'Superoptimised - Simple AI Products with Beautiful UI/UX',
     template: '%s | Superoptimised',
   },
-  description: 'Passionate team creating simple AI products with beautiful interfaces. Innovation through design excellence.',
-  keywords: ['AI products', 'beautiful UI/UX', 'design excellence', 'innovation', 'brutalist design'],
+  description:
+    'Passionate team creating simple AI products with beautiful interfaces. Innovation through design excellence.',
+  keywords: [
+    'AI products',
+    'beautiful UI/UX',
+    'design excellence',
+    'innovation',
+    'brutalist design',
+  ],
   authors: [{ name: 'Superoptimised Team' }],
   creator: 'Superoptimised',
   publisher: 'Superoptimised',
@@ -344,13 +375,15 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://superoptimised.com',
     title: 'Superoptimised - Simple AI Products with Beautiful UI/UX',
-    description: 'Passionate team creating simple AI products with beautiful interfaces.',
+    description:
+      'Passionate team creating simple AI products with beautiful interfaces.',
     siteName: 'Superoptimised',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Superoptimised - Simple AI Products with Beautiful UI/UX',
-    description: 'Passionate team creating simple AI products with beautiful interfaces.',
+    description:
+      'Passionate team creating simple AI products with beautiful interfaces.',
   },
   robots: {
     index: true,
@@ -363,13 +396,13 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-};
+}
 
 // Root layout - beautiful foundation
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -385,27 +418,27 @@ export default function RootLayout({
           <Header />
 
           {/* Main content - beautiful layout */}
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
         </div>
       </body>
     </html>
-  );
+  )
 }
 
 // Route-specific configurations
 // File: src/app/(routes)/about/page.tsx
 export const metadata: Metadata = {
   title: 'About - Passion Projects & Innovation',
-  description: 'Learn about our passion for creating beautiful AI products and innovative solutions.',
-};
+  description:
+    'Learn about our passion for creating beautiful AI products and innovative solutions.',
+}
 
 // File: src/app/(routes)/contact/page.tsx
 export const metadata: Metadata = {
   title: 'Contact - Get in Touch',
-  description: 'Friendly communication - reach out to discuss AI products and collaboration.',
-};
+  description:
+    'Friendly communication - reach out to discuss AI products and collaboration.',
+}
 ```
 
 ## Styling Guidelines
@@ -429,6 +462,7 @@ The frontend architecture implements a **Mathematically Perfect Brutalist Design
 ⚠️ **Updated System**: The Tailwind configuration has been completely rewritten with mathematical precision.
 
 **Key improvements**:
+
 - **Perfect Fifth spacing progression** (0.25rem → 11.25rem)
 - **Multi-screen responsive breakpoints** (7 breakpoints: 320px → 4K)
 - **HSL design tokens only** (direct colors removed)
@@ -450,39 +484,40 @@ The frontend architecture implements a **Mathematically Perfect Brutalist Design
 @layer base {
   :root {
     /* Brutalist Color System - Light Mode Architecture */
-    --background: 0 0% 98%;          /* off-white */
-    --foreground: 0 0% 10.2%;        /* off-black */
-    --muted: 220 14% 96%;            /* light-gray */
-    --muted-foreground: 220 9% 46%;  /* warm-gray */
-    --border: 220 14% 96%;           /* light-gray */
-    --input: 0 0% 98%;               /* off-white */
-    --ring: 212 12% 47%;             /* primary */
-    --primary: 212 12% 47%;          /* architectural primary */
-    --primary-foreground: 0 0% 98%;  /* off-white */
-    --secondary: 220 14% 96%;        /* light-gray */
+    --background: 0 0% 98%; /* off-white */
+    --foreground: 0 0% 10.2%; /* off-black */
+    --muted: 220 14% 96%; /* light-gray */
+    --muted-foreground: 220 9% 46%; /* warm-gray */
+    --border: 220 14% 96%; /* light-gray */
+    --input: 0 0% 98%; /* off-white */
+    --ring: 212 12% 47%; /* primary */
+    --primary: 212 12% 47%; /* architectural primary */
+    --primary-foreground: 0 0% 98%; /* off-white */
+    --secondary: 220 14% 96%; /* light-gray */
     --secondary-foreground: 0 0% 10.2%; /* off-black */
 
     /* Architectural spacing variables */
-    --radius: 0.5rem;                /* 8px base radius */
-    --section-spacing: 6rem;         /* 96px systematic spacing */
-    --component-spacing: 2rem;       /* 32px component separation */
+    --radius: 0.5rem; /* 8px base radius */
+    --section-spacing: 6rem; /* 96px systematic spacing */
+    --component-spacing: 2rem; /* 32px component separation */
 
     /* Typography architectural variables */
-    --font-feature-settings: "cv01", "cv02", "cv03", "cv04", "cv05", "cv06", "cv09", "cv10", "cv11";
+    --font-feature-settings: 'cv01', 'cv02', 'cv03', 'cv04', 'cv05', 'cv06',
+      'cv09', 'cv10', 'cv11';
   }
 
   .dark {
     /* Dark Mode Architectural Inversion */
-    --background: 0 0% 10.2%;        /* off-black */
-    --foreground: 0 0% 98%;          /* off-white */
-    --muted: 0 0% 20%;               /* dark muted */
-    --muted-foreground: 220 9% 46%;  /* warm-gray */
-    --border: 0 0% 20%;              /* dark border */
-    --input: 0 0% 15%;               /* dark input */
-    --ring: 212 12% 47%;             /* primary (consistent) */
-    --primary: 212 12% 47%;          /* primary (consistent) */
-    --primary-foreground: 0 0% 98%;  /* off-white */
-    --secondary: 0 0% 15%;           /* dark secondary */
+    --background: 0 0% 10.2%; /* off-black */
+    --foreground: 0 0% 98%; /* off-white */
+    --muted: 0 0% 20%; /* dark muted */
+    --muted-foreground: 220 9% 46%; /* warm-gray */
+    --border: 0 0% 20%; /* dark border */
+    --input: 0 0% 15%; /* dark input */
+    --ring: 212 12% 47%; /* primary (consistent) */
+    --primary: 212 12% 47%; /* primary (consistent) */
+    --primary-foreground: 0 0% 98%; /* off-white */
+    --secondary: 0 0% 15%; /* dark secondary */
     --secondary-foreground: 0 0% 98%; /* off-white */
   }
 }
@@ -500,14 +535,25 @@ The frontend architecture implements a **Mathematically Perfect Brutalist Design
   }
 
   /* Architectural typography hierarchy */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight;
   }
 
   /* Mathematical line height system */
-  .text-mega { line-height: 0.9; }
-  .text-hero { line-height: 1.1; }
-  .text-display { line-height: 1.2; }
+  .text-mega {
+    line-height: 0.9;
+  }
+  .text-hero {
+    line-height: 1.1;
+  }
+  .text-display {
+    line-height: 1.2;
+  }
 }
 
 /* Architectural component styles */
@@ -558,8 +604,14 @@ The frontend architecture implements a **Mathematically Perfect Brutalist Design
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(1rem); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -599,12 +651,14 @@ The frontend architecture implements a **Mathematically Perfect Brutalist Design
 With only 3 pages and simplified functionality, manual testing is sufficient:
 
 1. **Homepage Testing**:
+
    - Hero section loads correctly
    - AI products display properly
    - Navigation works smoothly
    - Framer Motion animations perform well
 
 2. **About Page Testing**:
+
    - Content renders correctly
    - Passion projects showcase displays
    - Page transitions are smooth
@@ -626,36 +680,37 @@ export const testUtils = {
     const requiredElements = {
       home: ['hero', 'products', 'navigation'],
       about: ['content', 'projects', 'navigation'],
-      contact: ['contact-info', 'navigation']
-    };
+      contact: ['contact-info', 'navigation'],
+    }
 
-    return requiredElements[page].every(id =>
-      document.getElementById(id) !== null
-    );
+    return requiredElements[page].every(
+      id => document.getElementById(id) !== null
+    )
   },
 
   // Check performance metrics
   checkLoadTime: () => {
-    const [navigation] = performance.getEntriesByType('navigation');
-    return navigation.loadEventEnd - navigation.loadEventStart;
+    const [navigation] = performance.getEntriesByType('navigation')
+    return navigation.loadEventEnd - navigation.loadEventStart
   },
 
   // Validate accessibility basics
   checkA11y: () => {
-    const images = document.querySelectorAll('img');
-    const links = document.querySelectorAll('a');
+    const images = document.querySelectorAll('img')
+    const links = document.querySelectorAll('a')
 
     return {
       imagesWithAlt: Array.from(images).every(img => img.getAttribute('alt')),
-      linksWithText: Array.from(links).every(link => link.textContent?.trim())
-    };
-  }
-};
+      linksWithText: Array.from(links).every(link => link.textContent?.trim()),
+    }
+  },
+}
 ```
 
 ### Removed Testing Libraries
 
 **No Longer Required:**
+
 - Automated testing frameworks (manual testing for 3 pages)
 - Testing Library utilities
 - Jest configuration
@@ -664,6 +719,7 @@ export const testUtils = {
 - Integration testing setup
 
 **Replaced With:**
+
 - Manual browser testing
 - Visual inspection
 - Device testing (mobile/desktop)
@@ -694,7 +750,8 @@ npm run lighthouse     # Lighthouse audit (if configured)
 # Keyboard navigation testing
 # Screen reader testing
 ```
-```
+
+````
 
 ### Manual Testing Best Practices
 
@@ -721,13 +778,13 @@ NODE_ENV=development
 
 # Deployment - Secure Production
 VERCEL_TOKEN=deployment_token_for_static_site
-```
+````
 
 ### Environment Architecture Patterns
 
 ```typescript
 // lib/env.ts - Clean Environment Management
-import { z } from 'zod';
+import { z } from 'zod'
 
 // Simplified environment schema
 const envSchema = z.object({
@@ -737,10 +794,10 @@ const envSchema = z.object({
 
   // Contact - simple email only
   CONTACT_EMAIL: z.string().email(),
-});
+})
 
 // Type-safe environment - beautiful precision
-export type Env = z.infer<typeof envSchema>;
+export type Env = z.infer<typeof envSchema>
 
 // Simplified environment validation
 function validateEnv(): Env {
@@ -748,28 +805,30 @@ function validateEnv(): Env {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     CONTACT_EMAIL: process.env.CONTACT_EMAIL,
-  };
+  }
 
   try {
-    return envSchema.parse(env);
+    return envSchema.parse(env)
   } catch (error) {
-    console.error('❌ Invalid environment variables:', error);
-    throw new Error('Environment validation failed - clean configuration required');
+    console.error('❌ Invalid environment variables:', error)
+    throw new Error(
+      'Environment validation failed - clean configuration required'
+    )
   }
 }
 
 // Export validated environment - simplified access
-export const env = validateEnv();
+export const env = validateEnv()
 
 // Environment utilities - minimal helpers
-export const isProduction = env.NODE_ENV === 'production';
-export const isDevelopment = env.NODE_ENV === 'development';
+export const isProduction = env.NODE_ENV === 'production'
+export const isDevelopment = env.NODE_ENV === 'development'
 
 export const getBaseUrl = () => {
-  if (isProduction) return env.NEXT_PUBLIC_SITE_URL;
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return 'http://localhost:3000';
-};
+  if (isProduction) return env.NEXT_PUBLIC_SITE_URL
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`
+  return 'http://localhost:3000'
+}
 ```
 
 ## Frontend Developer Standards
@@ -835,21 +894,21 @@ npm run lighthouse   # Performance auditing
 
 ```typescript
 // Component imports - simplified precision
-import { ComponentName } from '@/components/ui/component-name';
-import { ProductCard } from '@/components/features/showcase/product-card';
-import { LayoutComponent } from '@/components/layout/layout-name';
+import { ComponentName } from '@/components/ui/component-name'
+import { ProductCard } from '@/components/features/showcase/product-card'
+import { LayoutComponent } from '@/components/layout/layout-name'
 
 // Utility imports - minimal helpers
-import { cn } from '@/lib/utils';
-import { env } from '@/lib/env';
-import { contactUtils } from '@/lib/contact-utils';
+import { cn } from '@/lib/utils'
+import { env } from '@/lib/env'
+import { contactUtils } from '@/lib/contact-utils'
 
 // Animation imports - Framer Motion for visual excellence
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion'
 
 // Type imports - simplified precision
-import type { ComponentProps } from '@/types/components';
-import type { ContactInfo } from '@/types/contact';
+import type { ComponentProps } from '@/types/components'
+import type { ContactInfo } from '@/types/contact'
 ```
 
 #### File Naming Conventions - Beautiful Organization
@@ -887,21 +946,21 @@ const HeroSection = ({ title, subtitle, description }) => (
       <p className="text-base">{description}</p>
     </div>
   </motion.section>
-);
+)
 
 // Simple contact utility for mailto approach
 const handleContact = (subject?: string) => {
-  window.location.href = contactUtils.getContactLink(subject);
-};
+  window.location.href = contactUtils.getContactLink(subject)
+}
 
 // Simplified configuration
 const config = {
   siteUrl: env.NEXT_PUBLIC_SITE_URL,
   contactEmail: env.CONTACT_EMAIL,
   isProduction: isProduction,
-};
+}
 ```
 
 ---
 
-*This simplified frontend architecture document serves as the secure foundation for developing the Superoptimised website with visual perfection and minimal complexity. Using Next.js 14.2.25 (CVE-2025-29927 security fix), React 18.3.1, TypeScript 5.6.3, Tailwind CSS 3.4.14, and Framer Motion 10.18.0, this architecture achieves "Wow, this looks beautiful" through a secure, minimal 3-page structure showcasing simple AI products, passion projects, and innovation with friendly, authentic communication via simple mailto: contact approach.*
+_This simplified frontend architecture document serves as the secure foundation for developing the Superoptimised website with visual perfection and minimal complexity. Using Next.js 14.2.25 (CVE-2025-29927 security fix), React 18.3.1, TypeScript 5.6.3, Tailwind CSS 3.4.14, and Framer Motion 10.18.0, this architecture achieves "Wow, this looks beautiful" through a secure, minimal 3-page structure showcasing simple AI products, passion projects, and innovation with friendly, authentic communication via simple mailto: contact approach._

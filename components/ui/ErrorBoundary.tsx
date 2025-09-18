@@ -21,23 +21,25 @@ interface ErrorBoundaryProps {
 }
 
 // Default fallback UI component with brutalist design consistency
-const DefaultErrorFallback: React.FC<{ error?: Error; retry: () => void; level?: string; componentName?: string }> = ({
-  error,
-  retry,
-  level = 'component',
-  componentName = 'Component'
-}) => (
-  <div className={cn(
-    'flex flex-col items-center justify-center',
-    'bg-background border-2 border-primary',
-    'text-center',
-    // Perfect Fifth spacing progression for visual precision
-    {
-      'min-h-screen p-2xl': level === 'root',
-      'min-h-4xl p-xl': level === 'section',
-      'min-h-3xl p-lg': level === 'component',
-    }
-  )}>
+const DefaultErrorFallback: React.FC<{
+  error?: Error
+  retry: () => void
+  level?: string
+  componentName?: string
+}> = ({ error, retry, level = 'component', componentName = 'Component' }) => (
+  <div
+    className={cn(
+      'flex flex-col items-center justify-center',
+      'bg-background border-2 border-primary',
+      'text-center',
+      // Perfect Fifth spacing progression for visual precision
+      {
+        'min-h-screen p-2xl': level === 'root',
+        'min-h-4xl p-xl': level === 'section',
+        'min-h-3xl p-lg': level === 'component',
+      }
+    )}
+  >
     {/* Error icon with brutalist styling */}
     <div className="mb-lg text-4xl text-primary">⚠️</div>
 
@@ -49,17 +51,11 @@ const DefaultErrorFallback: React.FC<{ error?: Error; retry: () => void; level?:
     <p className="mb-xl text-sm text-muted-foreground max-w-md">
       {level === 'root'
         ? 'Something went wrong with the application. Please try refreshing the page.'
-        : `The ${componentName.toLowerCase()} component encountered an error. You can try again or continue using other parts of the page.`
-      }
+        : `The ${componentName.toLowerCase()} component encountered an error. You can try again or continue using other parts of the page.`}
     </p>
 
     {/* Retry button using existing Button component */}
-    <Button
-      variant="primary"
-      size="md"
-      onClick={retry}
-      className="mb-sm"
-    >
+    <Button variant="primary" size="md" onClick={retry} className="mb-sm">
       Try Again
     </Button>
 
@@ -79,7 +75,10 @@ const DefaultErrorFallback: React.FC<{ error?: Error; retry: () => void; level?:
 )
 
 // Error Boundary class component following React 18.3.1 patterns
-export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export class ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props)
     this.state = { hasError: false }

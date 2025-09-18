@@ -24,10 +24,10 @@ The website exists primarily for legal compliance and professional presence, not
 
 ### Change Log
 
-| Date | Version | Description | Author |
-|------|---------|-------------|---------|
-| 2025-09-17 | 2.0 | Reworked for authentic content and design showcase focus | UX Expert |
-| 2025-09-16 | 1.0 | Initial UI/UX specification based on PRD and design system | UX Expert |
+| Date       | Version | Description                                                | Author    |
+| ---------- | ------- | ---------------------------------------------------------- | --------- |
+| 2025-09-17 | 2.0     | Reworked for authentic content and design showcase focus   | UX Expert |
+| 2025-09-16 | 1.0     | Initial UI/UX specification based on PRD and design system | UX Expert |
 
 ## Information Architecture (IA)
 
@@ -66,10 +66,12 @@ graph TD
 **Purpose:** Showcase company identity and design system capabilities through beautiful presentation
 
 **Content Flow:**
+
 1. **Company Introduction:** "Superoptimised" with "We create AI products with beautiful UI/UX"
 2. **Design Philosophy:** Brief statement about our approach to creating beautiful, functional interfaces
 
 **Presentation Patterns:**
+
 - Hero typography that demonstrates dramatic scale and perfect spacing
 - Clean, architectural layout with purposeful white space
 - Typography hierarchy that guides the eye naturally through content
@@ -79,11 +81,13 @@ graph TD
 **Purpose:** Share authentic information about our passion and focus areas
 
 **Content Sections:**
+
 1. **Passion Projects:** Genuine description of what drives our work
 2. **Innovation Focus:** Our commitment to pushing boundaries in AI and design
 3. **Beautiful UI/UX + AI Core:** How we combine aesthetic excellence with AI capabilities
 
 **Presentation Patterns:**
+
 - Scannable content structure with beautiful typography
 - Visual rhythm created through consistent spacing
 - Content that feels personal and authentic, not marketing-driven
@@ -93,10 +97,12 @@ graph TD
 **Purpose:** Provide friendly, accessible contact information
 
 **Content Elements:**
+
 1. **Friendly Paragraph:** Warm, approachable introduction to getting in touch
 2. **Email Presentation:** Professional email address presented beautifully
 
 **Presentation Patterns:**
+
 - Welcoming tone without sales pressure
 - Email as primary contact method, elegantly displayed
 - Simple, clean layout that puts focus on human connection
@@ -110,6 +116,7 @@ graph TD
 **Design Focus:** Showcase our identity and design capabilities through the page itself
 
 **Key Elements:**
+
 - Hero section with "Superoptimised" in dramatic typography
 - Subtitle: "We create AI products with beautiful UI/UX"
 - Clean navigation header exemplifying brutalist precision
@@ -124,6 +131,7 @@ graph TD
 **Design Focus:** Present authentic content about our passion and innovation focus
 
 **Key Elements:**
+
 - Content sections for passion projects, innovation focus, and UI/UX + AI approach
 - Typography hierarchy that guides natural reading flow
 - Consistent spacing that maintains visual rhythm
@@ -138,6 +146,7 @@ graph TD
 **Design Focus:** Create welcoming, human connection point
 
 **Key Elements:**
+
 - Friendly introductory paragraph with warm tone
 - Email address presented with typographic elegance
 - Simple, uncluttered layout focusing on connection
@@ -158,6 +167,7 @@ graph TD
 **Purpose:** Create "wow, this looks beautiful" reactions through perfect typography
 
 **Scale System:**
+
 - mega: `clamp(4rem, 8vw, 7.5rem)` for hero brand name
 - hero: `clamp(3rem, 6vw, 5rem)` for page headers
 - display: `clamp(1.5rem, 3vw, 2.5rem)` for section headers
@@ -172,11 +182,13 @@ graph TD
 **Purpose:** Minimal, beautiful interactions that enhance content presentation
 
 **Link Styling:**
+
 - Clean, underlined text links for content navigation
 - Subtle hover states that maintain design integrity
 - Focus states that prioritize accessibility without breaking aesthetic
 
 **Email Presentation:**
+
 - Typography-focused email display
 - Elegant hover effects for interactivity
 - Copy-to-clipboard functionality as progressive enhancement
@@ -201,31 +213,32 @@ graph TD
 
 ### Color Palette
 
-| Color Type | Hex Code | Usage |
-|------------|----------|-------|
-| Primary | `#64748b` | Interactive elements, links, focus states |
-| Off-Black | `#1a1a1a` | Primary text, dark mode background |
-| Off-White | `#fafafa` | Light mode background, dark mode text |
-| Warm Gray | `#6b7280` | Secondary text, muted content |
-| Light Gray | `#f3f4f6` | Borders, subtle backgrounds |
+| Color Type | Hex Code  | Usage                                     |
+| ---------- | --------- | ----------------------------------------- |
+| Primary    | `#64748b` | Interactive elements, links, focus states |
+| Off-Black  | `#1a1a1a` | Primary text, dark mode background        |
+| Off-White  | `#fafafa` | Light mode background, dark mode text     |
+| Warm Gray  | `#6b7280` | Secondary text, muted content             |
+| Light Gray | `#f3f4f6` | Borders, subtle backgrounds               |
 
 ### Typography
 
 #### Font Families
+
 - **Primary:** Inter (with OpenType features enabled)
 - **Display:** Lexend for hero text
 - **Monospace:** JetBrains Mono for code elements
 
 #### Type Scale
 
-| Element | Size | Weight | Line Height |
-|---------|------|--------|-------------|
-| Hero | `clamp(3rem, 6vw, 5rem)` | 700 | 1.1 |
-| Display | `clamp(1.5rem, 3vw, 2.5rem)` | 600 | 1.2 |
-| H1 | `2.25rem` | 700 | 1.2 |
-| H2 | `1.875rem` | 600 | 1.3 |
-| Body | `1rem` | 400 | 1.6 |
-| Small | `0.875rem` | 400 | 1.5 |
+| Element | Size                         | Weight | Line Height |
+| ------- | ---------------------------- | ------ | ----------- |
+| Hero    | `clamp(3rem, 6vw, 5rem)`     | 700    | 1.1         |
+| Display | `clamp(1.5rem, 3vw, 2.5rem)` | 600    | 1.2         |
+| H1      | `2.25rem`                    | 700    | 1.2         |
+| H2      | `1.875rem`                   | 600    | 1.3         |
+| Body    | `1rem`                       | 400    | 1.6         |
+| Small   | `0.875rem`                   | 400    | 1.5         |
 
 ### Iconography
 
@@ -238,6 +251,7 @@ graph TD
 **Grid System:** Responsive grid with max-width of 1200px for main content
 
 **Spacing Scale:**
+
 - xs: `0.5rem` (8px)
 - sm: `1rem` (16px)
 - md: `2rem` (32px)
@@ -254,16 +268,19 @@ graph TD
 ### Key Requirements
 
 **Visual:**
+
 - Color contrast ratios: 4.5:1 minimum for normal text, 3:1 for large text
 - Focus indicators: 2px ring with primary color and 2px offset
 - Text sizing: Support up to 200% zoom without horizontal scrolling
 
 **Interaction:**
+
 - Keyboard navigation: Full site navigable via keyboard with logical tab order
 - Screen reader support: Semantic HTML structure with proper ARIA labels where needed
 - Touch targets: Minimum 44px × 44px for all interactive elements
 
 **Content:**
+
 - Alternative text: Descriptive alt text for any images used
 - Heading structure: Logical heading hierarchy (h1 → h2 → h3)
 - Form labels: Explicit labels for email contact functionality
@@ -276,12 +293,12 @@ Manual testing with keyboard navigation, screen reader testing with NVDA/VoiceOv
 
 ### Breakpoints
 
-| Breakpoint | Min Width | Max Width | Target Devices |
-|------------|-----------|-----------|----------------|
-| Mobile | 320px | 767px | Smartphones |
-| Tablet | 768px | 1023px | Tablets, large phones |
-| Desktop | 1024px | 1439px | Desktop computers |
-| Wide | 1440px | - | Large desktop screens |
+| Breakpoint | Min Width | Max Width | Target Devices        |
+| ---------- | --------- | --------- | --------------------- |
+| Mobile     | 320px     | 767px     | Smartphones           |
+| Tablet     | 768px     | 1023px    | Tablets, large phones |
+| Desktop    | 1024px    | 1439px    | Desktop computers     |
+| Wide       | 1440px    | -         | Large desktop screens |
 
 ### Adaptation Patterns
 
@@ -340,6 +357,7 @@ Typography-focused design minimizes resource dependencies. Beautiful layouts ach
 This updated UI/UX specification transforms the website from a conversion-focused marketing tool into a beautiful showcase of design capabilities. The specification prioritizes authentic content presentation, architectural design precision, and the "wow, this looks beautiful" reaction over lead generation.
 
 Key transformations:
+
 - Removed all conversion-focused UX patterns and marketing personas
 - Replaced service-selling flows with authentic content about passion projects and innovation
 - Emphasized brutalist design system as both tool and demonstration

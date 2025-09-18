@@ -3,7 +3,7 @@ const nextConfig = {
   // Removed output: 'export' for Vercel compatibility and future API support
   trailingSlash: true,
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   experimental: {
     turbo: {

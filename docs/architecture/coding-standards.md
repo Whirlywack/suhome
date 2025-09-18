@@ -63,19 +63,19 @@ npm run analyze        # Bundle size analysis
 
 ```typescript
 // Component imports - following design system
-import { Button } from '@/components/ui/button';
-import { Heading, Text } from '@/components/ui/typography';
-import { HeroSection } from '@/components/sections/hero';
+import { Button } from '@/components/ui/button'
+import { Heading, Text } from '@/components/ui/typography'
+import { HeroSection } from '@/components/sections/hero'
 
 // Utility imports - minimal helpers
-import { cn } from '@/lib/utils';
-import { env } from '@/lib/env';
+import { cn } from '@/lib/utils'
+import { env } from '@/lib/env'
 
 // Animation imports - Framer Motion for visual excellence
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion'
 
 // Type imports - design system compliance
-import type { ComponentProps } from '@/types/components';
+import type { ComponentProps } from '@/types/components'
 ```
 
 ### Design System Compliance Examples

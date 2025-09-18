@@ -47,7 +47,8 @@ export function logError(
     level,
     timestamp: new Date().toISOString(),
     location: typeof window !== 'undefined' ? window.location.href : 'SSR',
-    userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : undefined,
+    userAgent:
+      typeof window !== 'undefined' ? window.navigator.userAgent : undefined,
   }
 
   // Development logging with full context

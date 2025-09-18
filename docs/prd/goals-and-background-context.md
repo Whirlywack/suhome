@@ -1,6 +1,7 @@
 # Goals and Background Context
 
 ## Goals
+
 - Create a simple, beautiful website that states what the company actually does
 - Implement a brutalist design system with architectural precision and perfect spacing
 - Present content clearly and authentically without marketing language
@@ -15,6 +16,6 @@ This is not a service business seeking clients - leads come from elsewhere. The 
 
 ## Change Log
 
-| Date | Version | Description | Author |
-|------|---------|-------------|---------|
-| 2025-09-16 | 1.0 | Initial PRD creation based on project brief | PM Agent |
+| Date       | Version | Description                                 | Author   |
+| ---------- | ------- | ------------------------------------------- | -------- |
+| 2025-09-16 | 1.0     | Initial PRD creation based on project brief | PM Agent |
