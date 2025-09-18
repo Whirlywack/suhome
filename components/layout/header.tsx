@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { SITE_CONFIG } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import ThemeToggle from '@/components/ui/theme-toggle'
@@ -16,6 +16,12 @@ const navigation = [
 // Header component with smooth scroll navigation
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Logo click animation handler
+  const handleLogoClick = () => {
+    setIsMobileMenuOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   // Smooth scroll to section
   const handleScrollToSection = (href: string) => {
@@ -38,29 +44,45 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border">
       <div className="container flex items-center justify-between" style={{ height: '4.5rem' }}>
-        {/* Logo/Brand - architectural precision */}
-        <Link href="/" className="flex items-center space-x-sm">
+        {/* Logo/Brand - architectural precision with Framer Motion */}
+        <motion.button
+          onClick={handleLogoClick}
+          className="flex items-center space-x-sm cursor-pointer"
+          whileTap={{ scale: 0.4 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+        >
           <div
             className="text-lg font-bold"
             style={{ letterSpacing: '-0.01em' }}
           >
             {SITE_CONFIG.name}
           </div>
-        </Link>
+        </motion.button>
 
         {/* Desktop Navigation - smooth scroll */}
         <div className="hidden md:flex items-center" style={{ gap: '3.375rem' }}>
           <nav className="flex items-center" style={{ gap: '3.375rem' }}>
-            {navigation.map(item => (
-              <button
-                key={item.href}
-                onClick={() => handleScrollToSection(item.href)}
-                className="text-sm font-medium uppercase text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-                style={{ letterSpacing: '0.1em' }}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navigation.map(item => {
+              // Set different scale values based on target
+              const getScale = () => {
+                if (item.href === '#home') return 0.4
+                if (item.href === '#contact') return 0.5
+                return 0.7 // about and others
+              }
+
+              return (
+                <motion.button
+                  key={item.href}
+                  onClick={() => handleScrollToSection(item.href)}
+                  className="text-sm font-medium uppercase text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                  style={{ letterSpacing: '0.1em' }}
+                  whileTap={{ scale: getScale() }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                >
+                  {item.label}
+                </motion.button>
+              )
+            })}
           </nav>
 
           {/* Theme toggle for desktop */}
@@ -124,20 +146,31 @@ export function Header() {
         >
           <div className="container py-lg space-y-md">
             {/* Mobile smooth scroll navigation */}
-            {navigation.map(item => (
-              <button
-                key={item.href}
-                onClick={() => handleScrollToSection(item.href)}
-                className={cn(
-                  'block text-sm font-medium uppercase tracking-wider transition-colors w-full text-left',
-                  'text-foreground/80 hover:text-foreground py-sm cursor-pointer',
-                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                  'focus-visible:ring-offset-2 focus-visible:ring-offset-background'
-                )}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navigation.map(item => {
+              // Set different scale values based on target
+              const getScale = () => {
+                if (item.href === '#home') return 0.4
+                if (item.href === '#contact') return 0.5
+                return 0.7 // about and others
+              }
+
+              return (
+                <motion.button
+                  key={item.href}
+                  onClick={() => handleScrollToSection(item.href)}
+                  className={cn(
+                    'block text-sm font-medium uppercase tracking-wider transition-colors w-full text-left',
+                    'text-foreground/80 hover:text-foreground py-sm cursor-pointer',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+                    'focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+                  )}
+                  whileTap={{ scale: getScale() }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                >
+                  {item.label}
+                </motion.button>
+              )
+            })}
           </div>
         </div>
       )}
