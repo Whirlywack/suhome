@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Lexend } from 'next/font/google'
 import './globals.css'
 import ErrorBoundary from '@/components/ui/ErrorBoundary'
+import Header from '@/components/layout/header'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,7 +18,8 @@ const lexend = Lexend({
 
 export const metadata: Metadata = {
   title: 'SuperOptimised - AI Products & Beautiful UI/UX',
-  description: 'Creating innovative AI products with exceptional user experience and beautiful design',
+  description:
+    'Creating innovative AI products with exceptional user experience and beautiful design',
 }
 
 export default function RootLayout({
@@ -28,7 +30,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${lexend.variable}`}>
       <head>
-        {/* Theme initialization script placeholder for future theme system */}
+        {/* Theme initialization script to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const theme = savedTheme || systemTheme;
+                document.documentElement.setAttribute('data-theme', theme);
+              })();
+            `,
+          }}
+        />
       </head>
       <body className="font-inter antialiased">
         {/* Skip link for accessibility */}
@@ -40,6 +54,7 @@ export default function RootLayout({
         </a>
 
         <ErrorBoundary level="root" componentName="Application">
+          <Header />
           {children}
         </ErrorBoundary>
       </body>
