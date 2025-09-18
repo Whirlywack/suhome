@@ -3,6 +3,7 @@ import { Inter, Lexend } from 'next/font/google'
 import './globals.css'
 import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import Header from '@/components/layout/header'
+import CustomCursor from '@/components/ui/CustomCursor'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -129,6 +130,7 @@ export default function RootLayout({
         </a>
 
         <ErrorBoundary level="root" componentName="Application">
+          <CustomCursor />
           <Header />
           {children}
         </ErrorBoundary>
