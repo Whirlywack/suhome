@@ -13,6 +13,7 @@ declare global {
       }
     ) => void
     dataLayer: any[]
+    clarity: (action: string, ...args: any[]) => void
   }
 }
 

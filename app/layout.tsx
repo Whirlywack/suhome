@@ -7,6 +7,7 @@ import CustomCursor from '@/components/ui/CustomCursor'
 import ScrollToTop from '@/components/ui/ScrollToTop'
 import { Analytics } from '@vercel/analytics/next'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import MicrosoftClarity from '@/components/analytics/MicrosoftClarity'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -93,6 +94,9 @@ export default function RootLayout({
         {/* Viewport meta tag for proper mobile rendering */}
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+        {/* Google Search Console verification */}
+        <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''} />
+
         {/* Favicon links */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -113,7 +117,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Structured Data for Local Business */}
+        {/* Enhanced Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -123,12 +127,24 @@ export default function RootLayout({
               name: 'Superoptimised',
               description: 'Indie development studio specializing in UI/UX design and AI integration',
               url: 'https://superoptimised.com',
+              logo: 'https://superoptimised.com/apple-touch-icon.png',
+              sameAs: [],
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'London',
                 addressCountry: 'GB'
               },
-              email: 'connect@superoptimised.com'
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: 'connect@superoptimised.com',
+                contactType: 'customer service'
+              },
+              foundingDate: '2024',
+              knowsAbout: ['UI Design', 'UX Design', 'AI Development', 'Digital Design'],
+              serviceArea: {
+                '@type': 'Place',
+                name: 'London, United Kingdom'
+              }
             })
           }}
         />
@@ -150,6 +166,7 @@ export default function RootLayout({
         </ErrorBoundary>
         <Analytics />
         <GoogleAnalytics />
+        <MicrosoftClarity />
       </body>
     </html>
   )
