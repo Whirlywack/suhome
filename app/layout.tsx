@@ -87,6 +87,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${lexend.variable}`}>
       <head>
+        {/* Viewport meta tag for proper mobile rendering */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
         {/* Theme initialization script to prevent flash */}
         <script
           dangerouslySetInnerHTML={{

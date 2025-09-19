@@ -10,13 +10,14 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem', // Mobile: Tight padding for small screens
-        'mobile-lg': '1.25rem', // Large Mobile: Comfortable padding
-        sm: '1.5rem', // Small Tablet: Standard padding
-        md: '2rem', // Tablet: Generous padding
-        lg: '2.5rem', // Desktop: Spacious padding
-        xl: '3rem', // Large Desktop: Maximum padding
-        '2xl': '3rem', // Ultra-wide: Consistent padding
+        DEFAULT: '0.75rem', // Mobile: Optimized for screen utilization (12px each side)
+        'mobile-md': '0.875rem', // Standard Mobile: iPhone 12 Pro optimized (14px each side)
+        'mobile-lg': '1rem', // Large Mobile: Comfortable but efficient (16px each side)
+        sm: '1.25rem', // Small Tablet: More breathing room
+        md: '1.5rem', // Tablet: Comfortable reading
+        lg: '2rem', // Desktop: Spacious padding
+        xl: '2.5rem', // Large Desktop: Generous padding
+        '2xl': '3rem', // Ultra-wide: Maximum padding
         '4k': '3.5rem', // 4K: Maximum comfortable padding
       },
       screens: {
@@ -33,7 +34,7 @@ const config: Config = {
       fontFamily: {
         inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         lexend: ['var(--font-lexend)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-lexend)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       colors: {
@@ -86,7 +87,7 @@ const config: Config = {
           { lineHeight: '1.2', letterSpacing: 'normal' },
         ],
         mega: [
-          'clamp(3rem, 1.5rem + 4vw, 6rem)',
+          'clamp(3rem, 1rem + 5vw, 8rem)',
           { lineHeight: '0.95', letterSpacing: '-0.02em' },
         ],
       },
@@ -129,7 +130,8 @@ const config: Config = {
       // Multi-Screen Breakpoints (rem units for perfect scaling)
       screens: {
         xs: '20rem', // 320px - Minimum phone width
-        'mobile-lg': '26.75rem', // 428px - Large phones (iPhone 14 Pro Max)
+        'mobile-md': '24rem', // 384px - Standard phones (iPhone SE, iPhone 14 Pro)
+        'mobile-lg': '23rem', // 368px - Ensures iPhone 12 Pro (390px) triggers mobile-lg
         sm: '36rem', // 576px - Mobile landscape/Small tablet
         md: '48rem', // 768px - Tablet portrait
         lg: '64rem', // 1024px - Desktop/Laptop

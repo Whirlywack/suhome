@@ -1,194 +1,140 @@
-# Deep Research Prompt: Scroll Bouncing Conflict with Framer Motion
+# Critical Mobile Layout Investigation: Persistent White Space & Viewport Issues
 
 ## Problem Description
 
-I'm experiencing persistent scroll bouncing at page boundaries (top/bottom) in a Next.js 14.2.25 application that uses Framer Motion for smooth scroll navigation. The bouncing occurs even when manually dragging the scrollbar directly, suggesting a deep browser/JavaScript conflict that persists despite multiple fixes.
+Despite adding the correct viewport meta tag (`<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />`), the mobile layout on iPhone 12 Pro (390px width) still exhibits critical issues:
 
-**Critical Issue**: When scrolling up and reaching the top, continued scrolling automatically bounces back down. When scrolling down and reaching the bottom, it bounces back up. This happens even with direct scrollbar manipulation, not just programmatic scrolling.
+1. **Massive white space on the right side** - approximately 30-40% of the screen width
+2. **Content appears to be cut off or misaligned** - text is partially visible on the left edge
+3. **Layout not properly constraining to mobile viewport** - content appears wider than 390px
+4. **Possible horizontal overflow** causing layout break
 
-## Current Implementation
+## Current Technical Setup
 
-### Technology Stack
-- Next.js 14.2.25 with App Router
-- React 18.3.1 with TypeScript 5.6.3
-- Framer Motion 10.18.0 for smooth scroll animations
-- Tailwind CSS 3.4.14
-- Intersection Observer API for section detection
+- **Framework**: Next.js 14.2.25 with App Router
+- **Styling**: Tailwind CSS with custom responsive system
+- **Container System**: Custom padding and breakpoints using Perfect Fifth progression
+- **Viewport Meta**: Correctly implemented in layout.tsx
+- **Device**: iPhone 12 Pro (390px × 844px)
 
-### Framer Motion Smooth Scroll Implementation
-```typescript
-// /lib/hooks/useScrollToSection.ts
-import { animate } from 'framer-motion'
+## Specific Investigation Areas Needed
 
-const navigationState = {
-  lastNavigationTime: 0,
-  targetSection: '',
-  isNavigating: false
-}
+### 1. Container System Analysis
+**Request specific code examination of:**
+```
+/Users/superoptimised/Documents/superoptimisedquickweb/tailwind.config.ts
+```
+- Lines 10-32: Container configuration with custom padding
+- Lines 131-141: Mobile breakpoint definitions
+- Check if `mobile-md: '24rem'` (384px) breakpoint is triggering correctly on 390px width
 
-export function useScrollToSection() {
-  const scrollToSection = useCallback((sectionId: string) => {
-    // Set navigation state BEFORE scrolling
-    navigationState.lastNavigationTime = Date.now()
-    navigationState.targetSection = sectionId
-    navigationState.isNavigating = true
+### 2. Global CSS Investigation
+**Request specific code examination of:**
+```
+/Users/superoptimised/Documents/superoptimisedquickweb/app/globals.css
+```
+- Lines 36-93: Responsive font scaling system
+- Lines 139-153: Texture background positioning
+- Lines 248-262: Architectural container and section styles
+- Check for any fixed widths, absolute positioning, or overflow issues
 
-    // Store in window for global access
-    if (typeof window !== 'undefined') {
-      (window as any).__navState = navigationState
-    }
+### 3. Main Page Layout Analysis
+**Request specific code examination of:**
+```
+/Users/superoptimised/Documents/superoptimisedquickweb/app/page.tsx
+```
+- All container, section, and grid implementations
+- Any hardcoded styles or fixed dimensions
+- Grid layouts that might be forcing specific widths
+- Typography scaling that might cause overflow
 
-    // Handle home section with Framer Motion
-    if (sectionId === 'home') {
-      animate(window.scrollY, 0, {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
-        onUpdate: (value) => {
-          window.scrollTo(0, Math.round(value))
-        },
-        onComplete: () => {
-          window.scrollTo(0, 0) // Ensure exactly at top
-          navigationState.isNavigating = false
-        }
-      })
-      return
-    }
+### 4. Header Component Investigation
+**Request specific code examination of:**
+```
+/Users/superoptimised/Documents/superoptimisedquickweb/components/layout/header.tsx
+```
+- Mobile navigation implementation
+- Any fixed positioning or widths
+- Flexbox layouts that might be causing issues
 
-    // Handle other sections
-    const element = document.querySelector(`#${sectionId}`)
-    if (!element) {
-      navigationState.isNavigating = false
-      return
-    }
+### 5. Layout Root Investigation
+**Request specific code examination of:**
+```
+/Users/superoptimised/Documents/superoptimisedquickweb/app/layout.tsx
+```
+- Body and HTML element styling
+- Any wrapper elements causing width constraints
+- Script tags that might affect layout
 
-    const targetPosition = element.getBoundingClientRect().top + window.scrollY
-    const headerOffset = 72
-    const finalPosition = targetPosition - headerOffset
+## Critical Questions to Answer
 
-    animate(window.scrollY, finalPosition, {
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      onUpdate: (value) => {
-        window.scrollTo(0, Math.round(value))
-      },
-      onComplete: () => {
-        window.scrollTo(0, finalPosition)
-        navigationState.isNavigating = false
-      }
-    })
-  }, [duration, prefersReducedMotion])
+1. **What is the computed width of the main container on 390px screen?**
+   - Should be 390px - (2 × 12px padding) = 366px
+   - Is it calculating correctly?
 
-  return { scrollToSection }
-}
+2. **Are there any elements with fixed widths wider than 390px?**
+   - Typography elements with fixed font sizes
+   - Grid columns with fixed pixel values
+   - Images or SVGs with hardcoded dimensions
+
+3. **Is the Perfect Fifth spacing system causing overflow?**
+   - Font scaling calculations at mobile-md breakpoint
+   - Container padding calculations
+   - Section spacing implementations
+
+4. **Are there CSS properties causing layout expansion?**
+   - `min-width` declarations
+   - `transform` properties affecting layout
+   - `position: absolute` elements positioned outside viewport
+   - `overflow-x: visible` anywhere in the hierarchy
+
+5. **Is the viewport meta tag being overridden?**
+   - Other scripts affecting viewport
+   - CSS `@viewport` rules
+   - Framework-specific viewport handling
+
+## Debugging Commands Needed
+
+```bash
+# Check for hardcoded pixel values that might cause overflow
+grep -r "px" --include="*.tsx" --include="*.ts" --include="*.css" .
+
+# Check for fixed widths
+grep -r "width:" --include="*.tsx" --include="*.ts" --include="*.css" .
+
+# Check for min-width declarations
+grep -r "min-width" --include="*.tsx" --include="*.ts" --include="*.css" .
+
+# Check for transform properties
+grep -r "transform" --include="*.tsx" --include="*.ts" --include="*.css" .
+
+# Check for absolute positioning
+grep -r "position: absolute" --include="*.tsx" --include="*.ts" --include="*.css" .
 ```
 
-### Intersection Observer Implementation
-```typescript
-// /lib/hooks/useActiveSection.ts
-export function useActiveSection() {
-  const [activeSection, setActiveSection] = useState<string>('home')
+## Expected Findings
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Check navigation state to prevent conflicts
-        const navState = (window as any).__navState
-        const isRecentNavigation = navState && (Date.now() - navState.lastNavigationTime) < 700
+The investigation should reveal:
+1. **The exact element(s) causing the 390px viewport to overflow**
+2. **Whether the container system is calculating mobile padding correctly**
+3. **If typography scaling is creating elements wider than the viewport**
+4. **Any CSS properties that force horizontal expansion**
+5. **Whether the Tailwind responsive breakpoints are triggering at the right viewport widths**
 
-        if (isRecentNavigation && navState.isNavigating) {
-          return // Don't update during navigation
-        }
+## Success Criteria
 
-        // Find most visible section
-        let mostVisibleSection = activeSection
-        let maxVisibilityRatio = 0
+After fixes, the mobile layout should:
+- Fill exactly 390px width with proper 12px side padding
+- Have no horizontal scroll or white space
+- Display content properly constrained within the viewport
+- Scale typography and spacing according to the Perfect Fifth system without overflow
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxVisibilityRatio) {
-            maxVisibilityRatio = entry.intersectionRatio
-            mostVisibleSection = entry.target.id
-          }
-        })
+## Priority Investigation Order
 
-        if (mostVisibleSection !== activeSection && maxVisibilityRatio > 0.2) {
-          setActiveSection(mostVisibleSection)
-        }
-      },
-      {
-        threshold: [0, 0.1, 0.3, 0.5, 1.0],
-        rootMargin: '-72px 0px -40% 0px'
-      }
-    )
+1. **Container system calculations** (highest priority)
+2. **Typography overflow issues**
+3. **Grid layout constraints**
+4. **Global CSS conflicts**
+5. **Component-specific positioning issues**
 
-    // Observe sections
-    const sectionIds = ['home', 'about', 'contact']
-    sectionIds.forEach((sectionId) => {
-      const element = document.getElementById(sectionId)
-      if (element) observer.observe(element)
-    })
-
-    return () => observer.disconnect()
-  }, [threshold, rootMargin, activeSection, sectionIds])
-
-  return activeSection
-}
-```
-
-### CSS Configuration
-```css
-/* /app/globals.css */
-/* Smooth scrolling behavior handled by Framer Motion */
-html {
-  scroll-behavior: auto; /* Changed from 'smooth' to prevent conflicts */
-}
-
-/* Anchor scrolling configuration for fixed header */
-[id] {
-  scroll-margin-top: var(--nav-h); /* 72px */
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-```
-
-## Attempts Made to Fix the Issue
-
-1. **Removed CSS `scroll-behavior: smooth`** - Changed to `auto` to prevent browser native smooth scroll conflicts with Framer Motion
-2. **Implemented timestamp-based navigation blocking** - Prevents Intersection Observer updates during Framer Motion animations
-3. **Added pixel rounding with `Math.round()`** - Eliminates sub-pixel precision issues
-4. **Used explicit position setting in `onComplete`** - Ensures animations end at exact target positions
-5. **Removed all programmatic scroll event listeners** - Eliminated competing scroll detection systems
-6. **Simplified navigation state management** - Single global state object instead of complex flag systems
-
-## Research Questions
-
-1. **What causes scroll bouncing at boundaries when using Framer Motion's `animate()` with `window.scrollTo()`?**
-2. **Are there known conflicts between Framer Motion scroll animations and browser scroll behavior, especially at document boundaries?**
-3. **How should `window.scrollTo()` be properly used within Framer Motion animations to prevent boundary bouncing?**
-4. **Are there alternative Framer Motion patterns for smooth scroll that don't conflict with native browser scrolling?**
-5. **What are the best practices for combining Intersection Observer API with Framer Motion scroll animations?**
-6. **Could the issue be related to viewport/document height calculations or overflow behavior?**
-7. **Are there specific browser quirks or known issues with programmatic scrolling at document boundaries?**
-
-## Specific Solutions Needed
-
-1. **Working code example** of smooth scroll with Framer Motion that doesn't cause boundary bouncing
-2. **Alternative implementation approach** if the current `animate()` + `window.scrollTo()` pattern is fundamentally flawed
-3. **Debugging techniques** to identify the root cause of the bouncing behavior
-4. **Configuration options** for Framer Motion or browser APIs that prevent scroll conflicts
-5. **Detection methods** to identify if other JavaScript or CSS is interfering with scroll behavior
-
-## Expected Deliverables
-
-- Complete working code solution that eliminates scroll bouncing
-- Explanation of why the current implementation causes the issue
-- Best practices for Framer Motion smooth scroll in production applications
-- Any additional configuration or setup required for stable scroll behavior
-
-Please provide detailed code examples and explanations for any proposed solutions.
+Please provide specific code snippets from the requested files and detailed analysis of any elements that could cause viewport width expansion beyond 390px.

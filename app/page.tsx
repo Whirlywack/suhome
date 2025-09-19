@@ -3,91 +3,59 @@
 // motion import removed - no longer needed
 import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import ContactButton from '@/components/ui/ContactButton'
+import { Heading, Text } from '@/components/ui/typography'
 
 export default function Home() {
   return (
     <>
       <main id="main-content" className="min-h-screen bg-background">
         {/* Hero */}
-        <section id="home" className="relative text-center" style={{
-          paddingTop: '5rem',
-          paddingBottom: '3.375rem',
-          marginTop: '4.5rem'
-        }}>
+        <section id="home" className="architectural-section text-center mt-[4.5rem]">
           <div className="container">
             <ErrorBoundary level="section" componentName="Hero">
-              <h1
-                className="relative hero-title"
-                style={{
-                  fontSize: '8rem',
-                  fontWeight: '200',
-                  lineHeight: '0.85',
-                  letterSpacing: '-0.05em',
-                  marginBottom: '2.5rem'
-                }}
+              <Heading
+                variant="mega"
+                className="relative hero-title mb-2xl"
+                as="h1"
               >
                 Superoptimised
-              </h1>
-              <p
-                className="text-muted-foreground mx-auto"
-                style={{
-                  fontSize: '1.25rem',
-                  lineHeight: '1.4',
-                  color: 'hsl(var(--muted-foreground))',
-                  maxWidth: '42rem',
-                  fontWeight: '300'
-                }}
+              </Heading>
+              <Text
+                variant="large"
+                className="text-muted-foreground mx-auto max-w-[42rem] font-light"
               >
                 An indie dev studio in London. Projects are chosen by fit — curiosity, design,
                 and the chance to make something enjoyable, meaningful, or just plain fun.
-              </p>
+              </Text>
             </ErrorBoundary>
           </div>
         </section>
 
         {/* Studio Story */}
-        <section className="relative" style={{ padding: '2.25rem 0' }}>
+        <section className="relative py-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid gap-9 items-baseline mb-12" style={{ gridTemplateColumns: 'auto 1fr' }}>
+            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin"
-                style={{
-                  fontSize: '3rem',
-                  fontWeight: '100',
-                  lineHeight: '1',
-                  width: '6rem'
-                }}
+                className="text-muted-foreground font-thin text-4xl leading-none"
               >
                 01
               </div>
-              <h2
-                style={{
-                  fontSize: '2.25rem',
-                  fontWeight: '600',
-                  lineHeight: '1.1',
-                  letterSpacing: '-0.02em'
-                }}
-              >
+              <Heading variant="h1" as="h2">
                 Studio Story
-              </h2>
+              </Heading>
             </div>
 
             {/* Content Grid */}
-            <div className="grid gap-9" style={{ gridTemplateColumns: '1fr 2fr' }}>
+            <div className="z-pattern-content">
               <div
-                className="text-muted-foreground font-medium uppercase"
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  letterSpacing: '0.1em'
-                }}
+                className="text-muted-foreground font-medium uppercase text-sm tracking-wide"
               >
                 Philosophy<br />& Process
               </div>
-              <div style={{ fontSize: '1.125rem', lineHeight: '1.5' }}>
+              <div className="text-lg leading-normal">
                 <ErrorBoundary level="section" componentName="StudioStory">
-                  <p style={{ marginBottom: '1rem' }}>
+                  <p className="mb-lg">
                     Superoptimised exists to follow ideas wherever they lead.
                     Sometimes the result is small, almost throwaway; other
                     times it grows into something bigger. The scale matters
@@ -105,58 +73,31 @@ export default function Home() {
         </section>
 
         {/* Notes on AI */}
-        <section className="relative" style={{ padding: '2.25rem 0' }}>
+        <section className="relative py-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid gap-9 items-baseline mb-12" style={{ gridTemplateColumns: 'auto 1fr' }}>
+            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin"
-                style={{
-                  fontSize: '3rem',
-                  fontWeight: '100',
-                  lineHeight: '1',
-                  width: '6rem'
-                }}
+                className="text-muted-foreground font-thin text-4xl leading-none"
               >
                 02
               </div>
-              <h2
-                style={{
-                  fontSize: '2.25rem',
-                  fontWeight: '600',
-                  lineHeight: '1.1',
-                  letterSpacing: '-0.02em'
-                }}
-              >
+              <Heading variant="h1" as="h2">
                 Notes on AI
-              </h2>
+              </Heading>
             </div>
 
             {/* Content Grid */}
-            <div className="grid gap-9" style={{ gridTemplateColumns: '1fr 2fr' }}>
+            <div className="z-pattern-content">
               <div
-                className="text-muted-foreground font-medium uppercase"
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  letterSpacing: '0.1em'
-                }}
+                className="text-muted-foreground font-medium uppercase text-sm tracking-wide"
               >
                 Technology<br />& Humanity
               </div>
-              <div style={{ fontSize: '1.125rem', lineHeight: '1.5' }}>
+              <div className="text-lg leading-normal">
                 <ErrorBoundary level="section" componentName="AINotes">
                   <div
-                    className="italic text-accent border-l-4 bg-subtle mb-9"
-                    style={{
-                      fontSize: '1.25rem',
-                      fontWeight: '300',
-                      padding: '2.25rem',
-                      borderLeftColor: 'hsl(var(--accent))',
-                      borderLeftWidth: '3px',
-                      background: 'hsl(var(--subtle))',
-                      margin: '2.25rem 0'
-                    }}
+                    className="italic text-xl font-light p-xl border-l-4 border-primary bg-subtle mb-2xl my-2xl"
                   >
                     AI isn&apos;t a feature to bolt on. It feels closer to the printing
                     press or the microchip — a shift so deep it changes the way
@@ -176,46 +117,28 @@ export default function Home() {
         </section>
 
         {/* Principles */}
-        <section className="relative" style={{ padding: '2.25rem 0' }}>
+        <section className="relative py-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid gap-9 items-baseline mb-12" style={{ gridTemplateColumns: 'auto 1fr' }}>
+            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin"
-                style={{
-                  fontSize: '3rem',
-                  fontWeight: '100',
-                  lineHeight: '1',
-                  width: '6rem'
-                }}
+                className="text-muted-foreground font-thin text-4xl leading-none"
               >
                 03
               </div>
-              <h2
-                style={{
-                  fontSize: '2.25rem',
-                  fontWeight: '600',
-                  lineHeight: '1.1',
-                  letterSpacing: '-0.02em'
-                }}
-              >
+              <Heading variant="h1" as="h2">
                 Principles
-              </h2>
+              </Heading>
             </div>
 
             {/* Content Grid */}
-            <div className="grid gap-9" style={{ gridTemplateColumns: '1fr 2fr' }}>
+            <div className="z-pattern-content">
               <div
-                className="text-muted-foreground font-medium uppercase"
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  letterSpacing: '0.1em'
-                }}
+                className="text-muted-foreground font-medium uppercase text-sm tracking-wide"
               >
                 Design<br />Values
               </div>
-              <div style={{ fontSize: '1.125rem', lineHeight: '1.5' }}>
+              <div className="text-lg leading-normal">
                 <ErrorBoundary level="section" componentName="Principles">
                   <div className="grid gap-6">
                     <div className="grid grid-cols-[3rem_1fr] gap-4 items-baseline pb-4 border-b border-border">
@@ -242,61 +165,38 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" className="relative" style={{ padding: '2.25rem 0' }}>
+        <section id="about" className="relative py-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid gap-9 items-baseline mb-12" style={{ gridTemplateColumns: 'auto 1fr' }}>
+            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin"
-                style={{
-                  fontSize: '3rem',
-                  fontWeight: '100',
-                  lineHeight: '1',
-                  width: '6rem'
-                }}
+                className="text-muted-foreground font-thin text-4xl leading-none"
               >
                 04
               </div>
-              <h2
-                style={{
-                  fontSize: '2.25rem',
-                  fontWeight: '600',
-                  lineHeight: '1.1',
-                  letterSpacing: '-0.02em'
-                }}
-              >
+              <Heading variant="h1" as="h2">
                 About
-              </h2>
+              </Heading>
             </div>
 
             {/* Content Grid */}
-            <div className="grid gap-9" style={{ gridTemplateColumns: '1fr 2fr' }}>
+            <div className="z-pattern-content">
               <div
-                className="text-muted-foreground font-medium uppercase"
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  letterSpacing: '0.1em'
-                }}
+                className="text-muted-foreground font-medium uppercase text-sm tracking-wide"
               >
                 Team<br />& Values
               </div>
-              <div style={{ fontSize: '1.125rem', lineHeight: '1.5' }}>
+              <div className="text-lg leading-normal">
                 <ErrorBoundary level="section" componentName="About">
-                  <p style={{ marginBottom: '2rem' }}>
+                  <p className="mb-2xl">
                     Superoptimised is small by design. A few people, enough to
                     experiment, never enough to get lost in scale. Work
                     happens where curiosity and fit align. Everything else is
                     politely left behind.
                   </p>
 
-                  <div style={{ marginBottom: '2rem' }}>
-                    <h3 style={{
-                      fontSize: '1.25rem',
-                      fontWeight: '600',
-                      marginBottom: '0.75rem',
-                      lineHeight: '1.2'
-                    }}>
+                  <div className="mb-2xl">
+                    <h3 className="text-xl font-semibold mb-3 leading-tight">
                       The Journey
                     </h3>
                     <p>
@@ -307,13 +207,8 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div style={{ marginBottom: '2rem' }}>
-                    <h3 style={{
-                      fontSize: '1.25rem',
-                      fontWeight: '600',
-                      marginBottom: '0.75rem',
-                      lineHeight: '1.2'
-                    }}>
+                  <div className="mb-2xl">
+                    <h3 className="text-xl font-semibold mb-3 leading-tight">
                       Focus
                     </h3>
                     <p>
@@ -326,13 +221,8 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div style={{ marginBottom: '2rem' }}>
-                    <h3 style={{
-                      fontSize: '1.25rem',
-                      fontWeight: '600',
-                      marginBottom: '0.75rem',
-                      lineHeight: '1.2'
-                    }}>
+                  <div className="mb-2xl">
+                    <h3 className="text-xl font-semibold mb-3 leading-tight">
                       Design and Experience
                     </h3>
                     <p>
@@ -345,12 +235,7 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <h3 style={{
-                      fontSize: '1.25rem',
-                      fontWeight: '600',
-                      marginBottom: '0.75rem',
-                      lineHeight: '1.2'
-                    }}>
+                    <h3 className="text-xl font-semibold mb-3 leading-tight">
                       Who
                     </h3>
                     <p>
@@ -368,59 +253,39 @@ export default function Home() {
         {/* Contact - Dark theme */}
         <section
           id="contact"
-          className="relative bg-foreground text-background"
-          style={{ padding: '2.25rem 0', marginTop: '4rem' }}
+          className="relative bg-foreground text-background py-xl mt-3xl"
         >
           <div className="container">
             {/* Section Header */}
-            <div className="grid gap-9 items-baseline mb-12" style={{ gridTemplateColumns: 'auto 1fr' }}>
+            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-background/60 font-thin"
-                style={{
-                  fontSize: '3rem',
-                  fontWeight: '100',
-                  lineHeight: '1',
-                  width: '6rem'
-                }}
+                className="text-background/60 font-thin text-4xl leading-none"
               >
                 05
               </div>
-              <h2
-                className="text-background"
-                style={{
-                  fontSize: '2.25rem',
-                  fontWeight: '600',
-                  lineHeight: '1.1',
-                  letterSpacing: '-0.02em'
-                }}
-              >
+              <Heading variant="h1" as="h2" className="text-background">
                 Contact
-              </h2>
+              </Heading>
             </div>
 
             {/* Content Grid */}
-            <div className="grid gap-9" style={{ gridTemplateColumns: '1fr 2fr' }}>
+            <div className="z-pattern-content">
               <div
-                className="text-background/60 font-medium uppercase"
-                style={{
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  letterSpacing: '0.1em'
-                }}
+                className="text-background/60 font-medium uppercase text-sm tracking-wide"
               >
                 Get In<br />Touch
               </div>
-              <div style={{ fontSize: '1.125rem', lineHeight: '1.5' }}>
+              <div className="text-lg leading-normal">
                 <ErrorBoundary level="section" componentName="Contact">
-                  <p className="text-background/80" style={{ marginBottom: '1rem' }}>
+                  <p className="text-background/80 mb-lg">
                     Superoptimised is usually at capacity, but an open channel
                     remains. If a project feels aligned — thoughtful, curious,
                     or simply fun — a short note is welcome.
                   </p>
-                  <p className="text-background/80" style={{ marginBottom: '1.5rem' }}>
+                  <p className="text-background/80 mb-xl">
                     No forms, no funnels. Just an email.
                   </p>
-                  <div style={{ marginTop: '1.5rem' }}>
+                  <div className="mt-xl">
                     <ContactButton />
                   </div>
                 </ErrorBoundary>
