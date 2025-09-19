@@ -37,7 +37,7 @@ export default function Home() {
             {/* Section Header */}
             <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin text-4xl leading-none"
+                className="text-muted-foreground font-thin text-5xl leading-none"
               >
                 01
               </div>
@@ -78,7 +78,7 @@ export default function Home() {
             {/* Section Header */}
             <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin text-4xl leading-none"
+                className="text-muted-foreground font-thin text-5xl leading-none"
               >
                 02
               </div>
@@ -122,7 +122,7 @@ export default function Home() {
             {/* Section Header */}
             <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin text-4xl leading-none"
+                className="text-muted-foreground font-thin text-5xl leading-none"
               >
                 03
               </div>
@@ -170,7 +170,7 @@ export default function Home() {
             {/* Section Header */}
             <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-muted-foreground font-thin text-4xl leading-none"
+                className="text-muted-foreground font-thin text-5xl leading-none"
               >
                 04
               </div>
@@ -259,7 +259,7 @@ export default function Home() {
             {/* Section Header */}
             <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
               <div
-                className="text-background/60 font-thin text-4xl leading-none"
+                className="text-background/60 font-thin text-5xl leading-none"
               >
                 05
               </div>

@@ -30,7 +30,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
           'font-display tracking-tight',
           // Variant styles - beautiful visual hierarchy using semantic tokens
           {
-            'text-mega font-bold leading-none': variant === 'mega',
+            'text-mega font-extralight leading-none': variant === 'mega',
             'text-hero font-bold leading-tight': variant === 'hero',
             'text-display font-semibold leading-tight': variant === 'display',
             'text-4xl font-bold leading-tight': variant === 'h1', // Maps to semantic 4xl

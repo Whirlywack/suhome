@@ -10,10 +10,10 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '0.75rem', // Mobile: Optimized for screen utilization (12px each side)
-        'mobile-md': '0.875rem', // Standard Mobile: iPhone 12 Pro optimized (14px each side)
-        'mobile-lg': '1rem', // Large Mobile: Comfortable but efficient (16px each side)
-        sm: '1.25rem', // Small Tablet: More breathing room
+        DEFAULT: '1.5rem', // Mobile: Comfortable breathing room (24px each side)
+        'mobile-md': '1.5rem', // Standard Mobile: iPhone 12 Pro optimized (24px each side)
+        'mobile-lg': '1.5rem', // Large Mobile: Consistent comfortable spacing (24px each side)
+        sm: '1.75rem', // Small Tablet: More breathing room
         md: '1.5rem', // Tablet: Comfortable reading
         lg: '2rem', // Desktop: Spacious padding
         xl: '2.5rem', // Large Desktop: Generous padding
@@ -34,8 +34,18 @@ const config: Config = {
       fontFamily: {
         inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         lexend: ['var(--font-lexend)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        'sf-pro': [
+          'SF Pro Display',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif'
+        ],
       },
       colors: {
         // Design system token mapping - HSL-based for theme switching
@@ -87,7 +97,7 @@ const config: Config = {
           { lineHeight: '1.2', letterSpacing: 'normal' },
         ],
         mega: [
-          'clamp(3rem, 1rem + 5vw, 8rem)',
+          'clamp(3rem, 1rem + 3vw, 4.5rem)',
           { lineHeight: '0.95', letterSpacing: '-0.02em' },
         ],
       },
