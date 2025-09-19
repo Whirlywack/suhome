@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { trackContactClick } from '@/lib/analytics'
 
 interface ContactButtonProps {
   className?: string
@@ -113,6 +114,7 @@ export const ContactButton = ({ className = '' }: ContactButtonProps) => {
         textAlign: 'center'
       }}
       whileTap={{ scale: 0.98 }}
+      onClick={trackContactClick}
       data-animating={isAnimating}
     >
       <span>

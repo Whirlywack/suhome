@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useEffect } from 'react'
 import { Heading, Text } from '@/components/ui/typography'
+import { track404 } from '@/lib/analytics'
 
 const AnimatedDigit = ({ digit, delay }: { digit: string; delay: number }) => {
   return (
@@ -22,6 +24,11 @@ const AnimatedDigit = ({ digit, delay }: { digit: string; delay: number }) => {
 }
 
 export default function NotFound() {
+  // Track 404 page views
+  useEffect(() => {
+    track404()
+  }, [])
+
   return (
     <main className="min-h-screen bg-background flex items-center justify-center">
       <div className="text-center space-y-xl">

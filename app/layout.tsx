@@ -5,6 +5,8 @@ import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import Header from '@/components/layout/header'
 import CustomCursor from '@/components/ui/CustomCursor'
 import ScrollToTop from '@/components/ui/ScrollToTop'
+import { Analytics } from '@vercel/analytics/next'
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -146,6 +148,8 @@ export default function RootLayout({
           <Header />
           {children}
         </ErrorBoundary>
+        <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   )
