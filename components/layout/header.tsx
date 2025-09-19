@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+// useState removed - no longer needed for mobile menu state
 import { motion } from 'framer-motion'
 import { SITE_CONFIG } from '@/lib/constants'
-import { cn } from '@/lib/utils'
+// cn import removed - no longer needed after hamburger menu removal
 import ThemeToggle from '@/components/ui/theme-toggle'
 
 // Navigation - scroll-based for single page
@@ -15,18 +15,15 @@ const navigation = [
 
 // Header component with smooth scroll navigation
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  // Mobile menu state removed - using minimal scroll-to-top approach
 
   // Logo click animation handler
   const handleLogoClick = () => {
-    setIsMobileMenuOpen(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   // Smooth scroll to section
   const handleScrollToSection = (href: string) => {
-    setIsMobileMenuOpen(false)
-
     // Trigger contact animation if clicking contact
     if (href === '#contact') {
       window.dispatchEvent(new CustomEvent('contactNavClicked'))
@@ -94,91 +91,14 @@ export function Header() {
           <ThemeToggle className="ml-md" />
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="md:hidden flex items-center space-x-md">
+        {/* Mobile Navigation - Minimal approach with just theme toggle */}
+        <div className="md:hidden">
           {/* Theme toggle for mobile */}
           <ThemeToggle />
-
-          {/* Hamburger menu button */}
-          <button
-            type="button"
-            className={cn(
-              'inline-flex items-center justify-center p-sm rounded-md',
-              'text-foreground/80 hover:text-foreground hover:bg-accent',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-              'focus-visible:ring-offset-2 focus-visible:ring-offset-background'
-            )}
-            aria-controls="mobile-menu"
-            aria-expanded={isMobileMenuOpen}
-            aria-label="Toggle navigation menu"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <span className="sr-only">Open main menu</span>
-            {/* Hamburger icon */}
-            <svg
-              className={cn('h-lg w-lg transition-transform', {
-                'rotate-45': isMobileMenuOpen,
-              })}
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              )}
-            </svg>
-          </button>
         </div>
       </div>
 
-      {/* Mobile Menu Panel */}
-      {isMobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80"
-        >
-          <div className="container py-lg space-y-md">
-            {/* Mobile smooth scroll navigation */}
-            {navigation.map(item => {
-              // Set different scale values based on target
-              const getScale = () => {
-                if (item.href === '#home') return 0.4
-                if (item.href === '#contact') return 0.5
-                return 0.7 // about and others
-              }
-
-              return (
-                <motion.button
-                  key={item.href}
-                  onClick={() => handleScrollToSection(item.href)}
-                  className={cn(
-                    'block text-sm font-medium uppercase tracking-wider transition-colors w-full text-left',
-                    'text-foreground/80 hover:text-foreground py-sm cursor-pointer',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                    'focus-visible:ring-offset-2 focus-visible:ring-offset-background'
-                  )}
-                  whileTap={{ scale: getScale() }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
-                >
-                  {item.label}
-                </motion.button>
-              )
-            })}
-          </div>
-        </div>
-      )}
+      {/* Mobile Menu Panel removed - using minimal scroll-to-top approach */}
     </header>
   )
 }

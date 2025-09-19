@@ -4,6 +4,7 @@ import './globals.css'
 import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import Header from '@/components/layout/header'
 import CustomCursor from '@/components/ui/CustomCursor'
+import ScrollToTop from '@/components/ui/ScrollToTop'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -131,6 +132,7 @@ export default function RootLayout({
 
         <ErrorBoundary level="root" componentName="Application">
           <CustomCursor />
+          <ScrollToTop />
           <Header />
           {children}
         </ErrorBoundary>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+// motion import removed - no longer needed
 import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import ContactButton from '@/components/ui/ContactButton'
 
