@@ -32,7 +32,7 @@ export default function Home() {
         </section>
 
         {/* Studio Story */}
-        <section className="relative py-xl">
+        <section className="relative pt-lg pb-xl">
           <div className="container">
             {/* Section Header */}
             <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
