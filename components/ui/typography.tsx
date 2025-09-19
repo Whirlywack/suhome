@@ -27,7 +27,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         ref={ref}
         className={cn(
           // Base heading styles - architectural foundation
-          'font-display tracking-tight',
+          'font-display',
           // Variant styles - beautiful visual hierarchy using semantic tokens
           {
             'text-mega font-extralight leading-none': variant === 'mega',

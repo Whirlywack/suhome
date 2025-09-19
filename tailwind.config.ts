@@ -34,7 +34,7 @@ const config: Config = {
       fontFamily: {
         inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         lexend: ['var(--font-lexend)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        display: ['-apple-system', 'BlinkMacSystemFont', 'var(--font-inter)', 'SF Pro Display', 'system-ui', 'sans-serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         'sf-pro': [
           'SF Pro Display',
@@ -97,7 +97,7 @@ const config: Config = {
           { lineHeight: '1.2', letterSpacing: 'normal' },
         ],
         mega: [
-          'clamp(3rem, 1rem + 3vw, 4.5rem)',
+          'clamp(3rem, 1rem + 4vw, 8rem)',
           { lineHeight: '0.95', letterSpacing: '-0.02em' },
         ],
       },
