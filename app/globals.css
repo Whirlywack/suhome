@@ -213,6 +213,39 @@
     z-index: 50;
   }
 
+  /* Hero title responsive sizing with media queries */
+  .hero-title {
+    /* Mobile base - good for phones */
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+  }
+
+  /* Tablet - scales up nicely */
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: clamp(5rem, 8vw, 7rem) !important;
+      letter-spacing: -0.04em;
+      line-height: 0.87;
+    }
+  }
+
+  /* Desktop - large and impactful */
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: 10rem !important;
+      letter-spacing: -0.05em;
+      line-height: 0.85;
+    }
+  }
+
+  /* Large desktop - even bigger */
+  @media (min-width: 1440px) {
+    .hero-title {
+      font-size: 11rem !important;
+    }
+  }
+
   /* Hero title decorative line above */
   .hero-title::before {
     content: '';
