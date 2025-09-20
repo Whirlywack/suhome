@@ -213,6 +213,21 @@
     z-index: 50;
   }
 
+  /* Hero title styles - restore desktop size, fix mobile responsiveness */
+  h1.hero-title {
+    font-size: 8rem; /* Desktop: large fixed size */
+    letter-spacing: -0.05em;
+    line-height: 0.85;
+  }
+
+  /* Mobile: use responsive clamp instead of !important override */
+  @media (max-width: 36rem) {
+    .hero-title {
+      font-size: clamp(2.5rem, 1rem + 4vw, 4rem); /* Responsive mobile scaling */
+      line-height: 0.9;
+    }
+  }
+
   /* Hero title decorative line above */
   .hero-title::before {
     content: '';
