@@ -5,6 +5,22 @@ import { useEffect, useState } from 'react'
 export const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+      const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches
+      setIsMobile(isTouchDevice || hasCoarsePointer)
+    }
+
+    checkIfMobile()
+    window.addEventListener('resize', checkIfMobile)
+
+    return () => {
+      window.removeEventListener('resize', checkIfMobile)
+    }
+  }, [])
 
   useEffect(() => {
     const updateCursorPosition = (e: MouseEvent) => {
@@ -28,6 +44,9 @@ export const CustomCursor = () => {
       document.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [])
+
+  // Don't render the cursor at all on mobile devices
+  if (isMobile) return null
 
   return (
     <>
