@@ -1,9 +1,8 @@
-'use client'
-
-// motion import removed - no longer needed
+// Server component - no 'use client' needed for static content
 import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import ContactButton from '@/components/ui/ContactButton'
 import { Heading, Text } from '@/components/ui/typography'
+import SectionHeader from '@/components/ui/SectionHeader'
 
 export default function Home() {
   return (
@@ -35,16 +34,7 @@ export default function Home() {
         <section className="relative pt-lg pb-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
-              <div
-                className="text-muted-foreground font-thin text-5xl leading-none"
-              >
-                01
-              </div>
-              <Heading variant="h1" as="h2">
-                Studio Story
-              </Heading>
-            </div>
+            <SectionHeader number="01" title="Studio Story" />
 
             {/* Content Grid */}
             <div className="z-pattern-content">
@@ -76,16 +66,7 @@ export default function Home() {
         <section className="relative py-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
-              <div
-                className="text-muted-foreground font-thin text-5xl leading-none"
-              >
-                02
-              </div>
-              <Heading variant="h1" as="h2">
-                Notes on AI
-              </Heading>
-            </div>
+            <SectionHeader number="02" title="Notes on AI" />
 
             {/* Content Grid */}
             <div className="z-pattern-content">
@@ -120,16 +101,7 @@ export default function Home() {
         <section className="relative py-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
-              <div
-                className="text-muted-foreground font-thin text-5xl leading-none"
-              >
-                03
-              </div>
-              <Heading variant="h1" as="h2">
-                Principles
-              </Heading>
-            </div>
+            <SectionHeader number="03" title="Principles" />
 
             {/* Content Grid */}
             <div className="z-pattern-content">
@@ -168,16 +140,7 @@ export default function Home() {
         <section id="about" className="relative py-xl">
           <div className="container">
             {/* Section Header */}
-            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
-              <div
-                className="text-muted-foreground font-thin text-5xl leading-none"
-              >
-                04
-              </div>
-              <Heading variant="h1" as="h2">
-                About
-              </Heading>
-            </div>
+            <SectionHeader number="04" title="About" />
 
             {/* Content Grid */}
             <div className="z-pattern-content">
@@ -257,16 +220,7 @@ export default function Home() {
         >
           <div className="container">
             {/* Section Header */}
-            <div className="grid grid-cols-1 mobile-lg:grid-cols-[auto_1fr] gap-4 mobile-lg:gap-9 items-baseline mb-8">
-              <div
-                className="text-background/60 font-thin text-5xl leading-none"
-              >
-                05
-              </div>
-              <Heading variant="h1" as="h2" className="text-background">
-                Contact
-              </Heading>
-            </div>
+            <SectionHeader number="05" title="Contact" isDark />
 
             {/* Content Grid */}
             <div className="z-pattern-content">
