@@ -213,11 +213,36 @@
     z-index: 50;
   }
 
-  /* Hero title styles - higher specificity to override Tailwind */
+  /* Container query setup for hero section */
+  #home {
+    container-type: inline-size;
+    container-name: hero;
+  }
+
+  /* Hero title with modern container queries - no conflicting systems */
   h1.hero-title {
-    letter-spacing: -0.05em;
-    font-size: 8rem;
-    line-height: 0.85;
+    /* Mobile-first with container query units */
+    font-size: clamp(3.5rem, 12cqi, 5rem);
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+  }
+
+  /* Tablet: container-based breakpoint */
+  @container hero (min-width: 576px) {
+    h1.hero-title {
+      font-size: clamp(5rem, 10cqi, 8rem);
+      letter-spacing: -0.04em;
+      line-height: 0.87;
+    }
+  }
+
+  /* Desktop: fixed size for large containers */
+  @container hero (min-width: 1024px) {
+    h1.hero-title {
+      font-size: 8rem;
+      letter-spacing: -0.05em;
+      line-height: 0.85;
+    }
   }
 
   /* Hero title decorative line above */
@@ -230,14 +255,6 @@
     width: 5rem;
     height: 2px;
     background: hsl(var(--foreground));
-  }
-
-  /* Mobile responsive hero title */
-  @media (max-width: 36rem) {
-    .hero-title {
-      font-size: 2.5rem !important;
-      line-height: 0.9 !important;
-    }
   }
 
   /* Reduced motion support */
