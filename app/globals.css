@@ -213,13 +213,6 @@
     z-index: 50;
   }
 
-  /* Hero title styles - higher specificity to override Tailwind */
-  h1.hero-title {
-    letter-spacing: -0.05em;
-    font-size: 8rem;
-    line-height: 0.85;
-  }
-
   /* Hero title decorative line above */
   .hero-title::before {
     content: '';
@@ -230,14 +223,6 @@
     width: 5rem;
     height: 2px;
     background: hsl(var(--foreground));
-  }
-
-  /* Mobile responsive hero title */
-  @media (max-width: 36rem) {
-    .hero-title {
-      font-size: 2.5rem !important;
-      line-height: 0.9 !important;
-    }
   }
 
   /* Reduced motion support */
