@@ -213,18 +213,35 @@
     z-index: 50;
   }
 
-  /* Hero title styles - restore desktop size, fix mobile responsiveness */
-  h1.hero-title {
-    font-size: 8rem; /* Desktop: large fixed size */
-    letter-spacing: -0.05em;
-    line-height: 0.85;
+  /* Container query setup for hero section */
+  #home {
+    container-type: inline-size;
+    container-name: hero;
   }
 
-  /* Mobile: improved clamp values for proper visual hierarchy */
-  @media (max-width: 36rem) {
+  /* Hero title with modern container queries - no conflicting systems */
+  h1.hero-title {
+    /* Mobile-first with container query units */
+    font-size: clamp(3.5rem, 12cqi, 5rem);
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+  }
+
+  /* Tablet: container-based breakpoint */
+  @container hero (min-width: 576px) {
     h1.hero-title {
-      font-size: clamp(3.5rem, 2rem + 6vw, 5rem); /* Better minimum for visual hierarchy */
-      line-height: 0.9;
+      font-size: clamp(5rem, 10cqi, 8rem);
+      letter-spacing: -0.04em;
+      line-height: 0.87;
+    }
+  }
+
+  /* Desktop: fixed size for large containers */
+  @container hero (min-width: 1024px) {
+    h1.hero-title {
+      font-size: 8rem;
+      letter-spacing: -0.05em;
+      line-height: 0.85;
     }
   }
 
