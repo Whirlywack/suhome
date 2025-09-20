@@ -219,30 +219,20 @@
     container-name: hero;
   }
 
-  /* Hero title with modern container queries - no conflicting systems */
+  /* Hero title with smooth container query scaling */
   .hero-title {
-    /* Mobile-first with container query units */
-    font-size: clamp(3.5rem, 12cqi, 5rem);
-    letter-spacing: -0.03em;
-    line-height: 0.9;
-  }
+    /* Single fluid scaling system using container query units */
+    /* Starts at ~3rem on mobile, scales smoothly to ~8rem on large screens */
+    font-size: clamp(3rem, 8cqi, 8rem);
 
-  /* Tablet: container-based breakpoint */
-  @container hero (min-width: 576px) {
-    .hero-title {
-      font-size: clamp(5rem, 10cqi, 10rem);
-      letter-spacing: -0.04em;
-      line-height: 0.87;
-    }
-  }
+    /* Progressive letter-spacing that tightens as size increases */
+    letter-spacing: clamp(-0.02em, -2cqi, -0.05em);
 
-  /* Desktop: larger size for better visual impact */
-  @container hero (min-width: 1024px) {
-    .hero-title {
-      font-size: 10rem !important; /* Increased from 8rem for better desktop presence */
-      letter-spacing: -0.05em;
-      line-height: 0.85;
-    }
+    /* Line height that adjusts with size */
+    line-height: clamp(0.85, 0.01cqi + 0.85, 0.95);
+
+    /* Override Tailwind's text-mega class */
+    font-size: clamp(3rem, 8cqi, 8rem) !important;
   }
 
   /* Hero title decorative line above */
