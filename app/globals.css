@@ -239,7 +239,7 @@
   /* Desktop: larger size for better visual impact */
   @container hero (min-width: 1024px) {
     .hero-title {
-      font-size: 10rem; /* Increased from 8rem for better desktop presence */
+      font-size: 10rem !important; /* Increased from 8rem for better desktop presence */
       letter-spacing: -0.05em;
       line-height: 0.85;
     }
