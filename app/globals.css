@@ -213,35 +213,36 @@
     z-index: 50;
   }
 
-  /* Container query setup for hero section */
-  #home {
-    container-type: inline-size;
-    container-name: hero;
-  }
-
-  /* Hero title with modern container queries - no conflicting systems */
-  h1.hero-title {
-    /* Mobile-first with container query units */
-    font-size: clamp(3.5rem, 12cqi, 5rem);
+  /* Hero title responsive sizing with media queries */
+  .hero-title {
+    /* Mobile base - good for phones */
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
     letter-spacing: -0.03em;
     line-height: 0.9;
   }
 
-  /* Tablet: container-based breakpoint */
-  @container hero (min-width: 576px) {
-    h1.hero-title {
-      font-size: clamp(5rem, 10cqi, 8rem);
+  /* Tablet - scales up nicely */
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: clamp(5rem, 8vw, 7rem) !important;
       letter-spacing: -0.04em;
       line-height: 0.87;
     }
   }
 
-  /* Desktop: fixed size for large containers */
-  @container hero (min-width: 1024px) {
-    h1.hero-title {
-      font-size: 8rem;
+  /* Desktop - large and impactful */
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: 10rem !important;
       letter-spacing: -0.05em;
       line-height: 0.85;
+    }
+  }
+
+  /* Large desktop - even bigger */
+  @media (min-width: 1440px) {
+    .hero-title {
+      font-size: 11rem !important;
     }
   }
 

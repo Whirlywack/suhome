@@ -97,8 +97,8 @@ const config: Config = {
           { lineHeight: '1.2', letterSpacing: 'normal' },
         ],
         mega: [
-          'clamp(3rem, 1rem + 4vw, 8rem)',
-          { lineHeight: '0.95', letterSpacing: '-0.02em' },
+          'clamp(2.75rem, 1.5rem + 7vw, 12rem)',
+          { lineHeight: '0.9', letterSpacing: '-0.02em' },
         ],
       },
 
