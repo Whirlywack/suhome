@@ -220,7 +220,7 @@
   }
 
   /* Hero title with modern container queries - no conflicting systems */
-  h1.hero-title {
+  .hero-title {
     /* Mobile-first with container query units */
     font-size: clamp(3.5rem, 12cqi, 5rem);
     letter-spacing: -0.03em;
@@ -229,17 +229,17 @@
 
   /* Tablet: container-based breakpoint */
   @container hero (min-width: 576px) {
-    h1.hero-title {
-      font-size: clamp(5rem, 10cqi, 8rem);
+    .hero-title {
+      font-size: clamp(5rem, 10cqi, 10rem);
       letter-spacing: -0.04em;
       line-height: 0.87;
     }
   }
 
-  /* Desktop: fixed size for large containers */
+  /* Desktop: larger size for better visual impact */
   @container hero (min-width: 1024px) {
-    h1.hero-title {
-      font-size: 8rem;
+    .hero-title {
+      font-size: 10rem; /* Increased from 8rem for better desktop presence */
       letter-spacing: -0.05em;
       line-height: 0.85;
     }
