@@ -3,6 +3,8 @@ import ErrorBoundary from '@/components/ui/ErrorBoundary'
 import ContactButton from '@/components/ui/ContactButton'
 import { Heading, Text } from '@/components/ui/typography'
 import SectionHeader from '@/components/ui/SectionHeader'
+import StudioStorySection from '@/components/sections/StudioStory'
+import NotesOnAISection from '@/components/sections/NotesOnAI'
 
 export default function Home() {
   return (
@@ -31,71 +33,10 @@ export default function Home() {
         </section>
 
         {/* Studio Story */}
-        <section className="relative pt-lg pb-xl">
-          <div className="container">
-            {/* Section Header */}
-            <SectionHeader number="01" title="Studio Story" />
-
-            {/* Content Grid */}
-            <div className="z-pattern-content">
-              <div
-                className="text-muted-foreground font-medium uppercase text-sm tracking-wide"
-              >
-                Philosophy<br />& Process
-              </div>
-              <div className="text-lg leading-normal">
-                <ErrorBoundary level="section" componentName="StudioStory">
-                  <p className="mb-lg">
-                    Superoptimised exists to follow ideas wherever they lead.
-                    Sometimes the result is small, almost throwaway; other
-                    times it grows into something bigger. The scale matters
-                    less than the spark.
-                  </p>
-                  <p>
-                    The process is more of a rhythm than a method: sketch an
-                    idea, test it, shape it, discard or keep. Curiosity and
-                    play drive everything. What stays is what feels alive.
-                  </p>
-                </ErrorBoundary>
-              </div>
-            </div>
-          </div>
-        </section>
+        <StudioStorySection />
 
         {/* Notes on AI */}
-        <section className="relative py-xl">
-          <div className="container">
-            {/* Section Header */}
-            <SectionHeader number="02" title="Notes on AI" />
-
-            {/* Content Grid */}
-            <div className="z-pattern-content">
-              <div
-                className="text-muted-foreground font-medium uppercase text-sm tracking-wide"
-              >
-                Technology<br />& Humanity
-              </div>
-              <div className="text-lg leading-normal">
-                <ErrorBoundary level="section" componentName="AINotes">
-                  <div
-                    className="italic text-xl font-light p-xl border-l-4 border-primary bg-subtle mb-2xl my-2xl"
-                  >
-                    AI isn&apos;t a feature to bolt on. It feels closer to the printing
-                    press or the microchip — a shift so deep it changes the way
-                    people live and create. A kind of quiet miracle.
-                  </div>
-                  <p>
-                    Superoptimised approaches it with curiosity and care. The
-                    goal is not to automate everything, but to fold
-                    intelligence into the everyday in ways that feel natural,
-                    playful, and humane. When it works, life becomes lighter:
-                    less friction, more joy, new kinds of meaning.
-                  </p>
-                </ErrorBoundary>
-              </div>
-            </div>
-          </div>
-        </section>
+        <NotesOnAISection />
 
         {/* Principles */}
         <section className="relative py-xl">
