@@ -220,9 +220,9 @@
     line-height: 0.85;
   }
 
-  /* Mobile: use responsive clamp instead of !important override */
+  /* Mobile: use responsive clamp with matching specificity */
   @media (max-width: 36rem) {
-    .hero-title {
+    h1.hero-title {
       font-size: clamp(2.5rem, 1rem + 4vw, 4rem); /* Responsive mobile scaling */
       line-height: 0.9;
     }
