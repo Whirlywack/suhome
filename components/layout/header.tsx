@@ -38,20 +38,23 @@ export function Header() {
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       })
     }
   }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border">
-      <div className="container flex items-center justify-between" style={{ height: '4.5rem' }}>
+      <div
+        className="container flex items-center justify-between"
+        style={{ height: '4.5rem' }}
+      >
         {/* Logo/Brand - architectural precision with Framer Motion */}
         <motion.button
           onClick={handleLogoClick}
           className="flex items-center space-x-sm cursor-pointer"
           whileTap={{ scale: 0.4 }}
-          transition={{ duration: 0.2, ease: "easeInOut" }}
+          transition={{ duration: 0.2, ease: 'easeInOut' }}
         >
           <div
             className="text-lg font-bold"
@@ -62,7 +65,10 @@ export function Header() {
         </motion.button>
 
         {/* Desktop Navigation - smooth scroll */}
-        <div className="hidden md:flex items-center" style={{ gap: '3.375rem' }}>
+        <div
+          className="hidden md:flex items-center"
+          style={{ gap: '3.375rem' }}
+        >
           <nav className="flex items-center" style={{ gap: '3.375rem' }}>
             {navigation.map(item => {
               // Set different scale values based on target
@@ -79,7 +85,7 @@ export function Header() {
                   className="text-sm font-medium uppercase text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
                   style={{ letterSpacing: '0.1em' }}
                   whileTap={{ scale: getScale() }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  transition={{ duration: 0.2, ease: 'easeInOut' }}
                 >
                   {item.label}
                 </motion.button>

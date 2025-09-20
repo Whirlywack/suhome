@@ -9,7 +9,8 @@ export const CustomCursor = () => {
 
   useEffect(() => {
     const checkIfMobile = () => {
-      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+      const isTouchDevice =
+        'ontouchstart' in window || navigator.maxTouchPoints > 0
       const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches
       setIsMobile(isTouchDevice || hasCoarsePointer)
     }

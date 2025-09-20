@@ -92,15 +92,35 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${lexend.variable}`}>
       <head>
         {/* Viewport meta tag for proper mobile rendering */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
         {/* Google Search Console verification */}
-        <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''} />
+        <meta
+          name="google-site-verification"
+          content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''}
+        />
 
         {/* Favicon links */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* Theme initialization script to prevent flash */}
@@ -125,27 +145,33 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Superoptimised',
-              description: 'Indie development studio specializing in UI/UX design and AI integration',
+              description:
+                'Indie development studio specializing in UI/UX design and AI integration',
               url: 'https://superoptimised.com',
               logo: 'https://superoptimised.com/apple-touch-icon.png',
               sameAs: [],
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'London',
-                addressCountry: 'GB'
+                addressCountry: 'GB',
               },
               contactPoint: {
                 '@type': 'ContactPoint',
                 email: 'connect@superoptimised.com',
-                contactType: 'customer service'
+                contactType: 'customer service',
               },
               foundingDate: '2024',
-              knowsAbout: ['UI Design', 'UX Design', 'AI Development', 'Digital Design'],
+              knowsAbout: [
+                'UI Design',
+                'UX Design',
+                'AI Development',
+                'Digital Design',
+              ],
               serviceArea: {
                 '@type': 'Place',
-                name: 'London, United Kingdom'
-              }
-            })
+                name: 'London, United Kingdom',
+              },
+            }),
           }}
         />
       </head>

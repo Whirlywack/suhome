@@ -32,7 +32,7 @@ export const ContactButton = ({ className = '' }: ContactButtonProps) => {
     const totalIterations = scramblePhase + targetText.length // 4 + 26 = 30 total
 
     const interval = setInterval(() => {
-      setDisplayText((current) =>
+      setDisplayText(current =>
         current
           .split('')
           .map((char, index) => {
@@ -73,7 +73,8 @@ export const ContactButton = ({ className = '' }: ContactButtonProps) => {
       const contactSection = document.getElementById('contact')
       if (contactSection) {
         const rect = contactSection.getBoundingClientRect()
-        const isVisible = rect.top <= window.innerHeight * 0.7 && rect.bottom >= 0
+        const isVisible =
+          rect.top <= window.innerHeight * 0.7 && rect.bottom >= 0
 
         if (isVisible) {
           hasTriggered = true
@@ -111,15 +112,13 @@ export const ContactButton = ({ className = '' }: ContactButtonProps) => {
         padding: '1rem 1.5rem',
         border: '1px solid hsla(var(--background) / 0.3)',
         minWidth: '280px',
-        textAlign: 'center'
+        textAlign: 'center',
       }}
       whileTap={{ scale: 0.98 }}
       onClick={trackContactClick}
       data-animating={isAnimating}
     >
-      <span>
-        {displayText}
-      </span>
+      <span>{displayText}</span>
     </motion.a>
   )
 }

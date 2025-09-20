@@ -45,6 +45,7 @@ const themeInit = `(function(){
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 return (
+
 <html lang="en" suppressHydrationWarning>
 <head>
 {/_ Before-paint theme init – replace with nonce/hash in CSP when ready _/}
@@ -75,6 +76,7 @@ import ContactEmail from "@/components/sections/contact-email"
 
 export default function HomePage() {
 return (
+
 <main id="main">
 <Hero />
 {/_ One-pager sections (also present as standalone pages) _/}
@@ -122,6 +124,7 @@ const mobileNav = [
 export default function Header() {
 const [open, setOpen] = useState(false)
 return (
+
 <header className="sticky top-0 z-50 border-b backdrop-blur supports-[backdrop-filter]:bg-background/70">
 <nav className="mx-auto max-w-6xl h-14 px-4 flex items-center justify-between">
 <Link href="/" className="font-medium">Superoptimised</Link>

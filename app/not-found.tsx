@@ -14,7 +14,7 @@ const AnimatedDigit = ({ digit, delay }: { digit: string; delay: number }) => {
       transition={{
         duration: 0.3,
         delay: delay,
-        ease: 'easeOut'
+        ease: 'easeOut',
       }}
       className="inline-block"
     >
@@ -52,7 +52,7 @@ export default function NotFound() {
             padding: '1rem 1.5rem',
             border: '1px solid hsla(var(--foreground) / 0.3)',
             minWidth: '140px',
-            textAlign: 'center'
+            textAlign: 'center',
           }}
         >
           Go Home

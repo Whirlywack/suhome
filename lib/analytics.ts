@@ -28,7 +28,7 @@ export const trackContactClick = () => {
   event('contact_click', {
     event_category: 'engagement',
     event_label: 'email_contact',
-    value: 1
+    value: 1,
   })
 }
 
@@ -37,7 +37,7 @@ export const track404 = () => {
   event('page_not_found', {
     event_category: 'navigation',
     event_label: '404_error',
-    value: 1
+    value: 1,
   })
 }
 
@@ -66,10 +66,15 @@ export const captureError = (error: Error, context?: Record<string, any>) => {
   }
 }
 
-export const captureMessage = (message: string, level: 'info' | 'warning' | 'error' = 'info') => {
+export const captureMessage = (
+  message: string,
+  level: 'info' | 'warning' | 'error' = 'info'
+) => {
   if (typeof window !== 'undefined') {
-    import('@sentry/nextjs').then(({ captureMessage: sentryCaptureMessage }) => {
-      sentryCaptureMessage(message, level)
-    })
+    import('@sentry/nextjs').then(
+      ({ captureMessage: sentryCaptureMessage }) => {
+        sentryCaptureMessage(message, level)
+      }
+    )
   }
 }

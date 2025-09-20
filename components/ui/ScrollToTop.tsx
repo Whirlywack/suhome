@@ -23,7 +23,7 @@ export function ScrollToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
   }
 
@@ -42,10 +42,10 @@ export function ScrollToTop() {
           style={{
             // Perfect Fifth positioning system - pure minimalist positioning
             bottom: '1.5rem', // xl spacing (Perfect Fifth)
-            right: '1.5rem',   // xl spacing (Perfect Fifth)
+            right: '1.5rem', // xl spacing (Perfect Fifth)
             // Just enough space for touch target around the arrow
-            width: '2.5rem',   // 40px - minimal touch target
-            height: '2.5rem'   // 40px - square touch area
+            width: '2.5rem', // 40px - minimal touch target
+            height: '2.5rem', // 40px - square touch area
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export function ScrollToTop() {
           transition={{
             type: 'spring',
             stiffness: 400,
-            damping: 25
+            damping: 25,
           }}
           aria-label="Scroll to top"
           title="Scroll to top"

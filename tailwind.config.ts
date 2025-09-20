@@ -34,7 +34,14 @@ const config: Config = {
       fontFamily: {
         inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         lexend: ['var(--font-lexend)', 'system-ui', 'sans-serif'],
-        display: ['-apple-system', 'BlinkMacSystemFont', 'var(--font-inter)', 'SF Pro Display', 'system-ui', 'sans-serif'],
+        display: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'var(--font-inter)',
+          'SF Pro Display',
+          'system-ui',
+          'sans-serif',
+        ],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         'sf-pro': [
           'SF Pro Display',
@@ -44,7 +51,7 @@ const config: Config = {
           'Roboto',
           'Helvetica Neue',
           'Arial',
-          'sans-serif'
+          'sans-serif',
         ],
       },
       colors: {
