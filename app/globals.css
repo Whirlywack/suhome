@@ -213,6 +213,17 @@
     z-index: 50;
   }
 
+  /* Hero title decorative line above */
+  .hero-title::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 2px;
+    background: hsl(var(--foreground));
+  }
 
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
