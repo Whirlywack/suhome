@@ -79,33 +79,26 @@ const config: Config = {
         // Use HSL design tokens above for all styling
       },
       fontSize: {
-        // Perfect Typography Scale - Musical Harmony + Golden Ratio
-        xs: ['0.75rem', { lineHeight: '1.4' }], // 12px - Captions, fine print
-        sm: ['0.875rem', { lineHeight: '1.5' }], // 14px - Small text, UI labels
-        base: ['1rem', { lineHeight: '1.6' }], // 16px - Body text baseline
-        lg: ['1.125rem', { lineHeight: '1.6' }], // 18px - Large body text
-        xl: ['1.25rem', { lineHeight: '1.5' }], // 20px - Subheadings
-        '2xl': ['1.5rem', { lineHeight: '1.4' }], // 24px - Section headings (Perfect Fifth)
-        '3xl': ['1.875rem', { lineHeight: '1.3' }], // 30px - Major headings (Golden Ratio)
-        '4xl': ['2.25rem', { lineHeight: '1.2' }], // 36px - Page headings (Perfect Fifth from 2xl)
-        '5xl': ['3rem', { lineHeight: '1.1' }], // 48px - Hero headings (Perfect Fifth from 3xl)
-        '6xl': ['3.75rem', { lineHeight: '1.05' }], // 60px - Display headings (Golden Ratio)
-        '7xl': ['4.5rem', { lineHeight: '1' }], // 72px - Mega headings (Perfect Fifth)
-        '8xl': ['6rem', { lineHeight: '0.95' }], // 96px - Ultra display (Perfect Fifth)
-        '9xl': ['8rem', { lineHeight: '0.9' }], // 128px - Maximum impact (Perfect Fifth)
-
-        // Responsive clamp versions for fluid scaling
-        hero: [
-          'clamp(2.25rem, 1rem + 3vw, 4.5rem)',
-          { lineHeight: '1.1', letterSpacing: '-0.01em' },
-        ],
+        xs: ['var(--font-size-xs)', { lineHeight: '1.4' }],
+        sm: ['var(--font-size-sm)', { lineHeight: '1.45' }],
+        base: ['var(--font-size-base)', { lineHeight: 'var(--line-height-body)' }],
+        lg: ['var(--font-size-lg)', { lineHeight: '1.55' }],
+        xl: ['var(--font-size-xl)', { lineHeight: '1.35' }],
+        '2xl': ['var(--font-size-2xl)', { lineHeight: '1.25' }],
+        '3xl': ['var(--font-size-3xl)', { lineHeight: '1.2' }],
+        '4xl': ['var(--font-size-4xl)', { lineHeight: '1.15' }],
+        '5xl': ['var(--font-size-5xl)', { lineHeight: '1.1' }],
         display: [
-          'clamp(1.5rem, 0.75rem + 2vw, 3rem)',
-          { lineHeight: '1.2', letterSpacing: 'normal' },
+          'var(--font-size-display)',
+          { lineHeight: '1.2', letterSpacing: 'var(--letter-spacing-tight)' },
+        ],
+        hero: [
+          'var(--font-size-hero)',
+          { lineHeight: '1.1', letterSpacing: 'var(--letter-spacing-display)' },
         ],
         mega: [
-          'clamp(3rem, 1rem + 4vw, 8rem)',
-          { lineHeight: '0.95', letterSpacing: '-0.02em' },
+          'var(--font-size-mega)',
+          { lineHeight: '1.05', letterSpacing: 'var(--letter-spacing-mega)' },
         ],
       },
 
