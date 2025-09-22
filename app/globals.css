@@ -6,7 +6,7 @@
 @layer base {
   :root {
     /* Responsive Root Font Size - Perfect Scaling Foundation */
-    font-size: 100%; /* Mobile: Respects user preference (usually 16px) */
+    font-size: 100%;
 
     /* Brutalist Color System - Light Mode Architecture */
     --background: 0 0% 97%; /* updated off-white */
@@ -31,63 +31,71 @@
     /* Typography architectural variables */
     --font-feature-settings: 'cv01', 'cv02', 'cv03', 'cv04', 'cv05', 'cv06',
       'cv09', 'cv10', 'cv11';
+
+    /* Typography scale tokens */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-display: clamp(1.5rem, 0.75rem + 2vw, 3rem);
+    --font-size-hero: clamp(2.25rem, 1rem + 4vw, 5rem);
+    --font-size-mega: clamp(3.5rem, 1rem + 10vw, 8rem);
+
+    --line-height-snug: 1.2;
+    --line-height-tight: 1.15;
+    --line-height-dense: 1.05;
+    --line-height-body: 1.65;
+    --letter-spacing-tight: -0.015em;
+    --letter-spacing-display: -0.02em;
+    --letter-spacing-mega: -0.05em;
   }
 
   /* Advanced Responsive Root Font Size - Multi-Screen Optimization */
 
-  /* Standard Mobile (iPhone SE, iPhone 14 Pro, etc.) */
   @media (min-width: 24rem) {
-    /* 384px */
     :root {
-      font-size: 103.125%; /* 16.5px equivalent - Standard phones optimization */
+      font-size: 103.125%;
     }
   }
 
-  /* Large Mobile/Phablet (iPhone 14 Pro Max, etc.) */
   @media (min-width: 26.75rem) {
-    /* 428px */
     :root {
-      font-size: 106.25%; /* 17px equivalent - Larger phones need bigger text */
+      font-size: 106.25%;
     }
   }
 
-  /* Mobile Landscape/Small Tablet */
   @media (min-width: 36rem) {
-    /* 576px */
     :root {
-      font-size: 112.5%; /* 18px equivalent - Landscape reading optimization */
+      font-size: 112.5%;
     }
   }
 
-  /* Tablet Portrait */
   @media (min-width: 48rem) {
-    /* 768px */
     :root {
-      font-size: 118.75%; /* 19px equivalent - Tablet-specific readability */
+      font-size: 118.75%;
     }
   }
 
-  /* Desktop/Laptop */
   @media (min-width: 64rem) {
-    /* 1024px */
     :root {
-      font-size: 125%; /* 20px equivalent - Desktop optimization */
+      font-size: 125%;
     }
   }
 
-  /* Large Desktop */
   @media (min-width: 90rem) {
-    /* 1440px */
     :root {
-      font-size: 131.25%; /* 21px equivalent - Large screen readability */
+      font-size: 131.25%;
     }
   }
 
-  /* 4K/Ultra-wide */
   @media (min-width: 160rem) {
-    /* 2560px */
     :root {
-      font-size: 137.5%; /* 22px equivalent - Maximum readability */
+      font-size: 137.5%;
     }
   }
 
@@ -165,17 +173,6 @@
     @apply font-display tracking-tight;
   }
 
-  /* Mathematical line height system */
-  .text-mega {
-    line-height: 0.9;
-  }
-  .text-hero {
-    line-height: 1.1;
-  }
-  .text-display {
-    line-height: 1.2;
-  }
-
   /* Anchor scrolling configuration for fixed header */
   [id] {
     scroll-margin-top: var(--nav-h);
@@ -216,36 +213,8 @@
     z-index: 50;
   }
 
-  /* Container query setup for hero section */
-  #home {
-    container-type: inline-size;
-    container-name: hero;
-  }
-
-  /* Hero title with modern container queries - no conflicting systems */
   h1.hero-title {
-    /* Mobile-first with container query units */
-    font-size: clamp(3.5rem, 12cqi, 5rem);
-    letter-spacing: -0.03em;
-    line-height: 0.9;
-  }
-
-  /* Tablet: container-based breakpoint */
-  @container hero (min-width: 576px) {
-    h1.hero-title {
-      font-size: clamp(5rem, 10cqi, 8rem);
-      letter-spacing: -0.04em;
-      line-height: 0.87;
-    }
-  }
-
-  /* Desktop: fixed size for large containers */
-  @container hero (min-width: 1024px) {
-    h1.hero-title {
-      font-size: 8rem;
-      letter-spacing: -0.05em;
-      line-height: 0.85;
-    }
+    text-wrap: balance;
   }
 
   /* Hero title decorative line above */
@@ -281,7 +250,7 @@
   .architectural-section {
     @apply py-3xl;
     /* Perfect Fifth spacing - Scales harmoniously with font size */
-    max-width: 72rem; /* Optimal reading width - 1152px at 16px, scales proportionally */
+    max-width: 72rem; /* Optimal reading width - 1152px at 16px */
     margin: 0 auto;
     /* No additional padding - relies on container system for responsive spacing */
   }
